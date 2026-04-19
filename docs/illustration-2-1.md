@@ -21,8 +21,8 @@ Referenced in Chapter 1. Four equally-weighted cards: off-limits to AI, not an A
   <rect class="ill21-outcome-rect" x="25" y="35" width="180" height="160" rx="4" />
   <text class="ill21-outcome-label" x="115" y="75">Off-limits to AI</text>
   <line class="ill21-outcome-rule" x1="55" y1="95" x2="175" y2="95" />
-  <text class="ill21-outcome-sub" x="115" y="125">The category stays</text>
-  <text class="ill21-outcome-sub" x="115" y="143">un-automated —</text>
+  <text class="ill21-outcome-sub" x="115" y="125">AI stays out</text>
+  <text class="ill21-outcome-sub" x="115" y="143">of the category —</text>
   <text class="ill21-outcome-sub" x="115" y="161">now or later.</text>
 
   <rect class="ill21-outcome-rect" x="215" y="35" width="180" height="160" rx="4" />
@@ -42,7 +42,7 @@ Referenced in Chapter 1. Four equally-weighted cards: off-limits to AI, not an A
   <rect class="ill21-outcome-rect" x="595" y="35" width="180" height="160" rx="4" />
   <text class="ill21-outcome-label" x="685" y="75">Autonomous AI</text>
   <line class="ill21-outcome-rule" x1="625" y1="95" x2="745" y2="95" />
-  <text class="ill21-outcome-sub" x="685" y="125">The machine decides</text>
+  <text class="ill21-outcome-sub" x="685" y="125">AI decides</text>
   <text class="ill21-outcome-sub" x="685" y="143">under controls</text>
   <text class="ill21-outcome-sub" x="685" y="161">built for the decision.</text>
 

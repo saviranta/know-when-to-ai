@@ -18,10 +18,10 @@ The method is built for one kind of AI use — AI deployed inside an organisatio
 
 The method can produce four different answers for any engagement, each named and defensible, each reached at a specific point in the work:
 
-- **Off-limits to AI.** Some problems arrive as decisions that should not be handed to a machine at all, regardless of capability. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing. For categories like these, the honest recommendation is to leave them un-automated, now and later. The method makes that recommendation available, not hidden.
+- **Off-limits to AI.** Some problems arrive as decisions that should not be handed to AI at all, regardless of capability. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing. For categories like these, the honest recommendation is to keep AI out, now and later — however tempting the capability curve gets. The method makes that recommendation available, not hidden.
 - **Not an AI problem.** Some problems look technical but are not. Bad process, unclear ownership, a policy question dressed as a tooling question. The honest fix is policy, process, or people — not a model. The method makes that redirection available as a named answer, not an embarrassment.
-- **AI as assistant.** Some problems pass the first two checks, but when the routing work is done, no machine placement can be made responsible enough for this specific decision. The decision stays with a human. A machine can still support — retrieval, summarisation, option generation — but the decision and its consequences belong to a person.
-- **Autonomous AI.** The rest are routable to a machine that makes the call under controls built for it. The method says where in the system each piece belongs — from simple rules at one end through to autonomous agents at the other — and what would have to be true for each route to be trustworthy. That is where the rest of the book earns its space.
+- **AI as assistant.** Some problems pass the first two checks, but when the routing work is done, no AI placement can be made responsible enough for this specific decision. The decision stays with a human. AI can still support — retrieval, summarisation, option generation — but the decision and its consequences belong to a person.
+- **Autonomous AI.** The rest are routable to AI that makes the call under controls built for it. The method says where in the system each piece belongs — from simple rules at one end through to autonomous agents at the other — and what would have to be true for each route to be trustworthy. That is where the rest of the book earns its space.
 
 Four answers, produced at the places in the method where they are honestly answerable. No pre-commitment to any one of them.
 
@@ -46,8 +46,8 @@ See Illustration 1.1.
   <rect class="ch1-outcome-rect" x="25" y="35" width="180" height="160" rx="4" />
   <text class="ch1-outcome-label" x="115" y="75">Off-limits to AI</text>
   <line class="ch1-outcome-rule" x1="55" y1="95" x2="175" y2="95" />
-  <text class="ch1-outcome-sub" x="115" y="125">The category stays</text>
-  <text class="ch1-outcome-sub" x="115" y="143">un-automated —</text>
+  <text class="ch1-outcome-sub" x="115" y="125">AI stays out</text>
+  <text class="ch1-outcome-sub" x="115" y="143">of the category —</text>
   <text class="ch1-outcome-sub" x="115" y="161">now or later.</text>
 
   <rect class="ch1-outcome-rect" x="215" y="35" width="180" height="160" rx="4" />
@@ -67,7 +67,7 @@ See Illustration 1.1.
   <rect class="ch1-outcome-rect" x="595" y="35" width="180" height="160" rx="4" />
   <text class="ch1-outcome-label" x="685" y="75">Autonomous AI</text>
   <line class="ch1-outcome-rule" x1="625" y1="95" x2="745" y2="95" />
-  <text class="ch1-outcome-sub" x="685" y="125">The machine decides</text>
+  <text class="ch1-outcome-sub" x="685" y="125">AI decides</text>
   <text class="ch1-outcome-sub" x="685" y="143">under controls</text>
   <text class="ch1-outcome-sub" x="685" y="161">built for the decision.</text>
 
@@ -86,7 +86,7 @@ The third: two reading modes. First pass, cover to cover, in about half a day �
 
 A curated collection of external sources, pulled into one method by the author.
 
-Most of the method's pieces are not new. The refusal to treat a social problem as a technical one comes from Broussard [1]. The list of decision categories that should stay un-automated comes from McQuillan [2]. The older claim that some decisions depend on a human bearing their outcome traces to Weizenbaum's 1976 argument [3], which the book keeps in part and modifies in part — explained where it matters, not summarised here. MECE, Five Whys, Ishikawa, Jobs-to-be-Done, the pyramid principle — each is a familiar piece of management consulting, credited to its actual origin where the popular attribution is wrong. The governance spine borrows from NIST and ISO. The interaction-design stack borrows from Amershi, PAIR, and Shneiderman. The book's contribution is not new pieces; it is the selection, the ordering, and the decisions about where each piece fits in a single, runnable method.
+Most of the method's pieces are not new. The refusal to treat a social problem as a technical one comes from Broussard [1]. The list of decision categories that should stay off-limits to AI comes from McQuillan [2]. The older claim that some decisions depend on a human bearing their outcome traces to Weizenbaum's 1976 argument [3], which the book keeps in part and modifies in part — explained where it matters, not summarised here. MECE, Five Whys, Ishikawa, Jobs-to-be-Done, the pyramid principle — each is a familiar piece of management consulting, credited to its actual origin where the popular attribution is wrong. The governance spine borrows from NIST and ISO. The interaction-design stack borrows from Amershi, PAIR, and Shneiderman. The book's contribution is not new pieces; it is the selection, the ordering, and the decisions about where each piece fits in a single, runnable method.
 
 The author's own recommendations are distinguished from the sources'. Where this book says *do X because of Y*, the reader can follow Y back to the source that argues for it. Where the book says *don't do X because it usually fails at step Z*, the reader can check whether the claim is a widely held finding or the author's editorial judgement. Both are marked.
 

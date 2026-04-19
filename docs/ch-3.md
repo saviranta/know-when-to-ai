@@ -38,7 +38,7 @@ See Illustration 3.1.
 
   <rect class="ch2m-rect-heavy" x="420" y="30" width="340" height="75" rx="4" />
   <text class="ch2m-label" x="590" y="62">Abolition check</text>
-  <text class="ch2m-sub" x="590" y="84">Is this categorically off-limits to automate?</text>
+  <text class="ch2m-sub" x="590" y="84">Is this categorically off-limits to AI?</text>
 
   <line class="ch2m-arrow-thick" x1="400" y1="108" x2="400" y2="148" />
   <polygon class="ch2m-head" points="393,148 407,148 400,161" />
