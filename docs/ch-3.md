@@ -47,11 +47,11 @@ The illustration shows the whole shape of the method; nothing else is being reve
 
 Two gates stand above the method. They are not refinements of it. They decide whether the method runs at all.
 
-The first gate is the **Technochauvinism Check** (Broussard, 2018) [verified]: is this a technical problem at all, or a social problem renamed? Both answers are valid; the gate forces the question to be asked before a tool is reached for.
+The first gate is the **Technochauvinism Check** [1]: is this a technical problem at all, or a social problem renamed? Both answers are valid; the gate forces the question to be asked before a tool is reached for.
 
-The second gate is **Who Signs** — a signature test descended from Weizenbaum's *Computer Power and Human Reason* (1976) [verified], stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? Weizenbaum's original argument mixed two claims — that machines could not compute certain decisions, and that they should not. The empirical half has not survived the last decade; a modern model can produce sentencing-style reasoning, therapy-style dialogue, custody-style weighing. The moral half has. When a signature dissolves into a vendor, a committee, or a model, the feedback loop breaks and the accountability that gave the category its moral weight disappears. The gate turns on that — not on what the machine can compute.
+The second gate is **Who Signs** — a signature test descended from Weizenbaum's *Computer Power and Human Reason* [2], stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? Weizenbaum's original argument mixed two claims — that machines could not compute certain decisions, and that they should not. The empirical half has not survived the last decade; a modern model can produce sentencing-style reasoning, therapy-style dialogue, custody-style weighing. The moral half has. When a signature dissolves into a vendor, a committee, or a model, the feedback loop breaks and the accountability that gave the category its moral weight disappears. The gate turns on that — not on what the machine can compute.
 
-The effect on the method is simple. Everything else waits. Tier 1 does not open until both gates have been answered, and the two gates produce four outcomes: abolish the automation category entirely (rare, documented in McQuillan 2022 [verified]); redirect to a non-technical fix; retain the human and use AI in an advisory role only; or proceed. Only the last opens the door to Tier 1.
+The effect on the method is simple. Everything else waits. Tier 1 does not open until both gates have been answered, and the two gates produce four outcomes: abolish the automation category entirely (rare, documented in McQuillan [3]); redirect to a non-technical fix; retain the human and use AI in an advisory role only; or proceed. Only the last opens the door to Tier 1.
 
 [Chapter 4](ch-4.md) carries the full treatment — the worked examples, the escalation paths, the rooms in which each gate is asked.
 
@@ -61,11 +61,11 @@ A word on the two views. Illustration 1.1 shows six stages: Frame → Diagnose �
 
 Inside the method, five gates run in order. Each gate has a name, one question, and one artefact it produces. Nothing more.
 
-**G1 Observe.** What is actually happening? Most briefs arrive pre-diagnosed by the person writing the brief. G1 undoes that. It goes to the work — the operator's desk, the queue, the actual customer call — and writes down what is happening in the operator's or the customer's words, not the sponsor's. The output is a short paragraph: what is happening, to whom, since when, with what second-order effects, what changed recently. This paragraph is the **situation statement**. It is the only artefact G1 produces. Hammer's 1990 [verified] warning about automating the cow-path applies here: you cannot route a problem you have not seen.
+**G1 Observe.** What is actually happening? Most briefs arrive pre-diagnosed by the person writing the brief. G1 undoes that. It goes to the work — the operator's desk, the queue, the actual customer call — and writes down what is happening in the operator's or the customer's words, not the sponsor's. The output is a short paragraph: what is happening, to whom, since when, with what second-order effects, what changed recently. This paragraph is the **situation statement**. It is the only artefact G1 produces. Hammer's warning about automating the cow-path [4] applies here: you cannot route a problem you have not seen.
 
-**G2 Decompose.** Independent pieces, or one tangled thing? G2 takes the situation statement and breaks it into pieces that can be routed separately. The backbone is Minto's pyramid and its MECE discipline — mutually exclusive, collectively exhaustive. Specialist frames sit under the backbone: Ishikawa (1943) [verified] for multi-cause brainstorms; 5 Whys, attributed via Ohno (1988) [secondary] to Sakichi Toyoda, for simple chains; Ulwick's operational Jobs-to-be-Done (2005) [verified] when the shape of a solution is unknown; fault trees when failure is safety-critical. The output is an **issue tree**: the problem as a set of independent sub-problems, each small enough to route.
+**G2 Decompose.** Independent pieces, or one tangled thing? G2 takes the situation statement and breaks it into pieces that can be routed separately. The backbone is Minto's pyramid [5] and its MECE discipline — mutually exclusive, collectively exhaustive. Specialist frames sit under the backbone: Ishikawa [6] for multi-cause brainstorms; 5 Whys, attributed via Ohno [7] to Sakichi Toyoda, for simple chains; Ulwick's operational Jobs-to-be-Done [8] when the shape of a solution is unknown; fault trees when failure is safety-critical. The output is an **issue tree**: the problem as a set of independent sub-problems, each small enough to route.
 
-**G3 Route.** Where does each piece belong? This is the gate most engagements fail at. Given the pieces from G2, each piece is placed against the right computational substrate — a rule, a statistical model, classical ML, an LLM feature, retrieval-augmented generation, a single agent, a tool-using agent, a multi-agent system — or handed back to a human. The default is *not agentic*. Each sub-problem needs a positive case to be routed above rules or statistics. The output is a **routing map**: each piece with its destination named and justified. Tools enter the method here and only here. The atlas is the reference.
+**G3 Route.** Where does each piece belong? This is the gate most engagements fail at. Given the pieces from G2, each piece is placed against the right computational substrate — a rule, a statistical model, classical ML, an LLM feature, retrieval-augmented generation [9], a single agent, a tool-using agent, a multi-agent system — or handed back to a human. The default is *not agentic*. Each sub-problem needs a positive case to be routed above rules or statistics. The output is a **routing map**: each piece with its destination named and justified. Tools enter the method here and only here. The atlas is the reference.
 
 **G4 Sequence.** In what order, given dependencies? G4 draws the dependency graph across the routed pieces. Three lenses read the graph: what depends on what; what is reversible and what is not; what the blast radius is if a piece fails. A piece that is irreversible and high-blast-radius runs last, behind a shadow-mode pilot and a staged rollout. A piece that is reversible and contained can run first, even if it is the larger piece. The output is a **dependency order** — a numbered sequence with reversibility and blast-radius notes attached.
 
@@ -87,9 +87,9 @@ The atlas itself is not a glossary. Every entry follows the same eight-section t
 
 Two quiet bands sit to the side of the main method. Most engagements do not need them on first pass. Large or regulated engagements cannot function without them.
 
-On one side are the three **access indices** — the subject of [Chapter 10](ch-10.md). They help decide where a problem enters the method. The first index is **task codifiability**: a spectrum from tasks with explicit rules or labelable outcomes (payroll) to tasks that rely on judgment (settling a contested divorce). The second is **weight class**: featherweight tools (a 5 Whys takes minutes) to industrial programmes (ISO 42001 certification takes months). The third is **starting points** — a catalogue of eight common entries into an engagement, from a new build to an incident review to a compliance mandate. A problem triaged through all three indices arrives at G1 with its rough shape already named.
+On one side are the three **access indices** — the subject of [Chapter 10](ch-10.md). They help decide where a problem enters the method. The first index is **task codifiability**: a spectrum from tasks with explicit rules or labelable outcomes (payroll) to tasks that rely on judgment (settling a contested divorce). The second is **weight class**: featherweight tools (a 5 Whys takes minutes) to industrial programmes (ISO 42001 [10] certification takes months). The third is **starting points** — a catalogue of eight common entries into an engagement, from a new build to an incident review to a compliance mandate. A problem triaged through all three indices arrives at G1 with its rough shape already named.
 
-On the other side sit the ten **cross-cutting overlays** — the subject of [Chapter 11](ch-11.md). Each overlay is a discipline that most teams re-invent badly and that runs across the whole method rather than living at one gate. The ten are: a data readiness gate; evals-as-code; rung-indexed total cost of ownership (the published agent-multiplier figure is roughly ten to twenty times a single LLM call); a three-stage rollout pattern (shadow, canary, progressive); an adaptation decision tree (prompt, then retrieval, then fine-tune, then agent, in that order, with stop rules); a privacy control ladder; the NIST and ISO governance spine; a retirement protocol; the interaction-design stack (HAX, PAIR, Shneiderman's two-dimensional human-centred AI frame); and data contracts. Each overlay has a home chapter or atlas entry.
+On the other side sit the ten **cross-cutting overlays** — the subject of [Chapter 11](ch-11.md). Each overlay is a discipline that most teams re-invent badly and that runs across the whole method rather than living at one gate. The ten are: a data readiness gate; evals-as-code; rung-indexed total cost of ownership (the published agent-multiplier figure is roughly ten to twenty times a single LLM call); a three-stage rollout pattern (shadow, canary, progressive); an adaptation decision tree (prompt, then retrieval, then fine-tune, then agent, in that order, with stop rules); a privacy control ladder; the NIST [11] and ISO governance spine; a retirement protocol; the interaction-design stack (HAX [12], PAIR, Shneiderman's two-dimensional human-centred AI frame [13]); and data contracts. Each overlay has a home chapter or atlas entry.
 
 A closing note on scope. The indices and overlays are the reason this is a 220-page book and not a 40-page pamphlet. They hold the method up under realistic conditions — regulated industries, messy data, governance regimes, long time horizons. They are for later use. The method runs without them.
 
@@ -107,16 +107,28 @@ Front matter and back matter are thin. A preface, a reader's guide, a glossary, 
 
 ## Sources
 
-- **[verified]** Broussard, M. (2018). *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press.
-- **[verified]** Weizenbaum, J. (1976). *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman.
-- **[verified]** McQuillan, D. (2022). *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press.
-- **[verified]** Minto, B. (1987). *The Pyramid Principle: Logic in Writing, Thinking and Problem Solving*. Pitman.
-- **[verified]** Ishikawa, K. (1943 diagram; 1968 Japanese / 1976 English). *Guide to Quality Control*. Asian Productivity Organization.
-- **[secondary]** Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production*. Productivity Press.
-- **[verified]** Ulwick, A. (2005). *What Customers Want*. McGraw-Hill.
-- **[verified]** Hammer, M. (1990). "Reengineering Work: Don't Automate, Obliterate." *Harvard Business Review*, July–August 1990.
-- **[verified]** Lewis, P. et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *NeurIPS 2020* / arXiv 2005.11401.
-- **[verified]** NIST (2023). *AI Risk Management Framework 1.0* (NIST AI 100-1).
-- **[verified]** ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system*.
-- **[verified]** Amershi, S. et al. (2019). "Guidelines for Human-AI Interaction." *Proc. CHI 2019*. DOI 10.1145/3290605.3300233.
-- **[verified]** Shneiderman, B. (2022). *Human-Centered AI*. Oxford University Press.
+[1] Broussard M. *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press; 2018. **[verified]**
+
+[2] Weizenbaum J. *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman; 1976. **[verified]**
+
+[3] McQuillan D. *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press; 2022. **[verified]**
+
+[4] Hammer M. Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. 1990 Jul–Aug. **[verified]**
+
+[5] Minto B. *The Pyramid Principle: Logic in Writing, Thinking and Problem Solving*. Pitman; 1987. **[verified]**
+
+[6] Ishikawa K. *Guide to Quality Control*. Asian Productivity Organization; 1968 (Japanese) / 1976 (English). Diagram dates to 1943 at Kawasaki Steel. **[verified]**
+
+[7] Ohno T. *Toyota Production System: Beyond Large-Scale Production*. Productivity Press; 1988. **[secondary]**
+
+[8] Ulwick A. *What Customers Want*. McGraw-Hill; 2005. **[verified]**
+
+[9] Lewis P, Perez E, Piktus A, et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: *NeurIPS*; 2020. arXiv:2005.11401. **[verified]**
+
+[10] ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system*. International Organization for Standardization; 2023. **[verified]**
+
+[11] NIST. *AI Risk Management Framework 1.0* (NIST AI 100-1). National Institute of Standards and Technology; 2023. **[verified]**
+
+[12] Amershi S, Weld D, Vorvoreanu M, et al. Guidelines for Human-AI Interaction. In: *Proc. CHI 2019*. DOI:10.1145/3290605.3300233. **[verified]**
+
+[13] Shneiderman B. *Human-Centered AI*. Oxford University Press; 2022. **[verified]**

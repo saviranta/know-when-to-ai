@@ -16,11 +16,11 @@ A wrongly accepted project costs a year and a reputation. A wrongly refused one 
 
 ## Four answers, not one
 
-Above the method sit two gates — questions, not classifiers. The first is the Technochauvinism Check (Broussard, 2018) [verified]: is this a technical problem at all, or a social problem wearing a technical costume? The second is **Who Signs** — a signature test descended from Weizenbaum (1976) [verified]: can a named human actually carry the outcome of this decision, or does the signature dissolve into a vendor, a committee, or a model? Weizenbaum's 1976 argument mixed two claims — that machines *could not* compute certain decisions, and that they *should not*. The empirical half has not survived the last decade. The moral half has, and the gate rests on that half only. [Chapter 4](ch-4.md) teaches them in full.
+Above the method sit two gates — questions, not classifiers. The first is the Technochauvinism Check [1]: is this a technical problem at all, or a social problem wearing a technical costume? The second is **Who Signs** — a signature test descended from Weizenbaum [2]: can a named human actually carry the outcome of this decision, or does the signature dissolve into a vendor, a committee, or a model? Weizenbaum's 1976 argument mixed two claims — that machines *could not* compute certain decisions, and that they *should not*. The empirical half has not survived the last decade. The moral half has, and the gate rests on that half only. [Chapter 4](ch-4.md) teaches them in full.
 
 Together, the two gates produce four outcomes:
 
-- **Abolish.** The category of decision should not be made by machine, now or later. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing — McQuillan (2022) [verified] names this list. The method exposes abolition as an available recommendation, not as an outlier.
+- **Abolish.** The category of decision should not be made by machine, now or later. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing — McQuillan [3] names this list. The method exposes abolition as an available recommendation, not as an outlier.
 - **Judge.** The decision belongs to a human because the signature has to stay with one — with a person whose career moves with the outcome. The method can still *support* the human — retrieval, summarisation, option generation — but the name on the decision is human. The test is not what the model can compute; it is what happens to accountability if the model decides.
 - **Redirect.** The problem is not technical. The right answer is a policy change, a process fix, a different conversation, or a better manager. Tools would make the wrong thing faster.
 - **Proceed.** The gates pass. The method opens. Then the next question is *at which rung*.
@@ -110,6 +110,8 @@ On to the shape.
 
 ## Sources
 
-- **[verified]** Broussard, M. (2018). *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press.
-- **[verified]** Weizenbaum, J. (1976). *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman.
-- **[verified]** McQuillan, D. (2022). *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press.
+[1] Broussard M. *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press; 2018. **[verified]**
+
+[2] Weizenbaum J. *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman; 1976. **[verified]**
+
+[3] McQuillan D. *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press; 2022. **[verified]**

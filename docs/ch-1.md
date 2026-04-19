@@ -14,7 +14,7 @@ A warning about the stance of this book. Two gates sit above every other decisio
 
 The middle dropped out. That is the shortest honest account of the last three years.
 
-Tasks that used to absorb an afternoon — drafting a memo, summarising a deposition, writing a first-pass regression, producing a slide outline, triaging a support queue — now take minutes. Not because they became easier. Because a different actor does them. Anthropic's December 2024 work on agentic patterns and its 2025 follow-ups on context engineering, long-running harnesses, and multi-agent research systems describe the same trajectory from inside the tooling: more of the workflow now runs in machine-machine loops, with humans at the ends. Plan-and-execute, orchestrator-worker, evaluator-optimiser — these are the design patterns of the middle layer, and they are the middle layer that used to be someone's job.
+Tasks that used to absorb an afternoon — drafting a memo, summarising a deposition, writing a first-pass regression, producing a slide outline, triaging a support queue — now take minutes. Not because they became easier. Because a different actor does them. Anthropic's December 2024 work on agentic patterns [1] and its 2025 follow-ups on context engineering, long-running harnesses, and multi-agent research systems [2] describe the same trajectory from inside the tooling: more of the workflow now runs in machine-machine loops, with humans at the ends. Plan-and-execute, orchestrator-worker, evaluator-optimiser — these are the design patterns of the middle layer, and they are the middle layer that used to be someone's job.
 
 What moved. Summary. Synthesis of long documents. Boilerplate generation. First-pass code. First-pass analysis. Translation. Routine drafting. Schedule arithmetic. Comparative research. The kind of work a junior person used to produce so a senior person could react to it. That loop is now mostly inside a model.
 
@@ -24,7 +24,7 @@ The first is **framing**. Deciding what the problem actually is. Deciding who it
 
 The second is **the signature**. Someone signs. Someone carries the outcome. Models do not. Vendors do not, contractually. Organisations carry reputational risk but not personal risk. The named owner — a human whose career moves with the decision — is how consequence attaches, and it is what keeps the feedback loop closed. When a system fails and no one's name is on the failure, the organisation learns nothing. Another version of the same system gets built next year, by someone who also did not sign.
 
-This is where Weizenbaum's 1976 line shows up, stripped of its capability claim. His objection was not really that a computer could not weigh a custody decision or pass a sentence — modern models can produce the text, and can produce it well. His objection was that passing one removes the accountability that gave the category its moral weight in the first place. The line is about *who bears the outcome*, not *what the machine can compute*. A signature that dissolves into a vendor, a model, or a committee is an accountability vacuum whether or not the underlying task had a computable answer. The book uses the gate that way. The capability half of the 1976 argument is allowed to age; the accountability half is load-bearing and survives.
+This is where Weizenbaum's 1976 line [3] shows up, stripped of its capability claim. His objection was not really that a computer could not weigh a custody decision or pass a sentence — modern models can produce the text, and can produce it well. His objection was that passing one removes the accountability that gave the category its moral weight in the first place. The line is about *who bears the outcome*, not *what the machine can compute*. A signature that dissolves into a vendor, a model, or a committee is an accountability vacuum whether or not the underlying task had a computable answer. The book uses the gate that way. The capability half of the 1976 argument is allowed to age; the accountability half is load-bearing and survives.
 
 A caveat about "what stayed". The two are not fixed job descriptions. They are two acts that keep recurring in every engagement, and they recur at higher density than they used to, because the work between them has collapsed. The framing conversation used to be the opening ten minutes of a three-month project. It is now most of week one. The signature conversation used to happen at sign-off. It now has to happen at the routing gate, because by sign-off the system has already been running in production for a month.
 
@@ -32,7 +32,7 @@ Two footnotes to "what changed", because forecasting is not the business of this
 
 No prediction here about which model or vendor wins. The method is model-agnostic. If the frontier names change in eighteen months — and they will — the routing decisions in later chapters do not. They sit above the tool.
 
-No prediction about capability curves. The method is written for the present. Some of the Tier-0 gates are written so they survive capability improvements — Weizenbaum's line holds whether or not a model can compute the judged decision, because the objection was never that the machine could not do it. The objection was that doing it was the wrong move.
+No prediction about capability curves. The method is written for the present. The Tier-0 gates are written to survive capability shifts — the Who Signs gate turns on who carries the outcome, not on what a machine can compute, so a more capable model does not close it.
 
 The shift, then, is not that machines got more capable. It is that the interesting work moved earlier in the chain. Framing, routing, and carrying the outcome — work that used to be bundled into the middle of an engagement — is now most of the engagement. Everything downstream of those three acts runs fast. Everything upstream of them is where the method lives.
 
@@ -40,11 +40,11 @@ The shift, then, is not that machines got more capable. It is that the interesti
 
 Before any of that, two checks. Call them Tier 0. They sit above the method, not inside it. Either one can stop an engagement cold. [Chapter 4](ch-4.md) teaches them properly, with worked examples; this is the announcement.
 
-**Gate one. The Technochauvinism Check.** Broussard's term, from *Artificial Unintelligence* (2018) [verified]. The one-sentence test: is this a technical problem, or a social problem being renamed? Build the model anyway and the governance failure is automated at scale.
+**Gate one. The Technochauvinism Check.** Broussard's term, from *Artificial Unintelligence* [4]. The one-sentence test: is this a technical problem, or a social problem being renamed? Build the model anyway and the governance failure is automated at scale.
 
-**Gate two. Who Signs.** A signature test, descended from Weizenbaum's *Computer Power and Human Reason* (1976) [verified] but stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? If the signature dissolves into a vendor, a committee, or a model, the gate fails — not because the machine cannot compute the answer, but because there is no longer anyone for the answer to fail on. Weizenbaum's moral core survives capability shifts. His empirical claim about what machines cannot do does not, and the method does not rely on it.
+**Gate two. Who Signs.** A signature test, descended from Weizenbaum's *Computer Power and Human Reason* [3] but stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? If the signature dissolves into a vendor, a committee, or a model, the gate fails — not because the machine cannot compute the answer, but because there is no longer anyone for the answer to fail on. Weizenbaum's moral core survives capability shifts. His empirical claim about what machines cannot do does not, and the method does not rely on it.
 
-A third move, narrower, sits behind these. Dan McQuillan's *Resisting AI* (2022) [verified] argues that for certain decision categories — predictive policing, automated welfare sanctioning, immigration risk scoring — the honest recommendation is abolition, not better governance. The method has to be able to say that out loud. [Chapter 2](ch-2.md) clears that space.
+A third move, narrower, sits behind these. Dan McQuillan's *Resisting AI* [5] argues that for certain decision categories — predictive policing, automated welfare sanctioning, immigration risk scoring — the honest recommendation is abolition, not better governance. The method has to be able to say that out loud. [Chapter 2](ch-2.md) clears that space.
 
 For now: two gates, one referral. Nothing else in the method runs until they are answered. [Chapter 4](ch-4.md) carries the full treatment.
 
@@ -103,7 +103,7 @@ That is the whole shape. Six stages. Three indices. Ten overlays. Five failure m
 
 Two disciplines hold the rest of the manuscript honest.
 
-The first is reference. Every cited source carries a tag on first mention: verified, partial, secondary, vendor-origin, pre-canonical, single-author. Where an idea is misattributed, the provenance is stated in-line. MECE is often attributed to Minto; she traced the logic to Aristotle. Five Whys is attributed to Ohno; he credited Sakichi Toyoda. Jobs-to-be-Done is attributed to Christensen; the operational form is Ulwick's. Small repairs, made visible. The point is not pedantry. It is that a book that invites consequential decisions has to show its working.
+The first is reference. Every cited source is listed at the end of each chapter with a provenance tag — verified, partial, secondary, vendor-origin, pre-canonical, single-author. Inline citations are numeric. An author's name appears in the sentence only when the name is doing real work there. Where an idea is misattributed, the provenance is stated in-line: MECE is often attributed to Minto [6]; she traced the logic to Aristotle. Five Whys is attributed to Ohno [7]; he credited Sakichi Toyoda. Jobs-to-be-Done is attributed to Christensen; the operational form is Ulwick's [8]. Small repairs, made visible. The point is not pedantry. It is that a book that invites consequential decisions has to show its working.
 
 The second is voice. Short paragraphs. One claim at a time. The work is named, not the worker — no "the consultant", no "the decision-maker", no "the practitioner". No role label is needed to know when the book is talking to you. Where the evidence supports a recommendation, I make it. Where it does not, I say so. You will not find the word *leverage* in what follows.
 
@@ -111,11 +111,18 @@ The door is open. Next, what the book is about.
 
 ## Sources
 
-- **[verified]** Broussard, M. (2018). *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press.
-- **[verified]** Weizenbaum, J. (1976). *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman.
-- **[verified]** McQuillan, D. (2022). *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press.
-- **[verified]** Anthropic (2024). *Building Effective Agents*.
-- **[verified]** Anthropic (2025). *Effective Context Engineering for AI Agents*.
-- **[secondary]** Minto, B. (1987). *The Pyramid Principle*. Pitman.
-- **[secondary]** Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production*. Productivity Press.
-- **[verified]** Ulwick, A. (2005). *What Customers Want*. McGraw-Hill.
+[1] Anthropic. *Building Effective Agents*. Anthropic; 2024. **[verified]**
+
+[2] Anthropic. *Effective Context Engineering for AI Agents*. Anthropic; 2025. **[verified]**
+
+[3] Weizenbaum J. *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman; 1976. **[verified]**
+
+[4] Broussard M. *Artificial Unintelligence: How Computers Misunderstand the World*. MIT Press; 2018. **[verified]**
+
+[5] McQuillan D. *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press; 2022. **[verified]**
+
+[6] Minto B. *The Pyramid Principle*. Pitman; 1987. **[secondary]**
+
+[7] Ohno T. *Toyota Production System: Beyond Large-Scale Production*. Productivity Press; 1988. **[secondary]**
+
+[8] Ulwick A. *What Customers Want*. McGraw-Hill; 2005. **[verified]**
