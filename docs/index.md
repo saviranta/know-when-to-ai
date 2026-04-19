@@ -8,15 +8,16 @@ This site renders the book in progress. Chapters appear here as they move from m
 
 ## Currently published
 
-- **[Chapter 2 — What this book is not](ch-2.md)** — the three genres this book refuses to be: strategy deck, vendor guide, manifesto.
+- **[Chapter 1 — What this book is](ch-1.md)** — two acts that keep needing a human, and the four answers the method can produce.
+- **[Chapter 2 — The method at a glance](ch-2.md)** — two gates above, five triage gates inside, the atlas below.
 
 ## Rendering demos
 
 Three representative illustrations, shown as standalone pages so you can see how each technique behaves in light and dark mode:
 
-- [Illustration 1.1 — Mermaid flowchart](illustration-1-1.md)
-- [Illustration 2.1 — Inline SVG](illustration-2-1.md)
-- [Illustration 8.1 — CSS matrix](illustration-8-1.md)
+- [Mermaid flowchart — the method spine](illustration-1-1.md)
+- [Inline SVG — the four answers](illustration-2-1.md)
+- [CSS matrix — routing](illustration-8-1.md)
 
 ## House rule
 

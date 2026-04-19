@@ -1,123 +1,113 @@
-# Chapter 2 — What this book is about
+# Chapter 2 — The method at a glance
 
-One question sits under the whole book. *Is this an AI problem?*
+The entire method fits on one page. This chapter is that page, expanded.
 
-Most AI books answer a different question — *how do I build this* — and presume the first question is already settled. This one doesn't. The reader shows up with a brief. The brief contains a name — a chatbot, an agent, a copilot, a retrieval system, a classifier — and an expectation that the name is the answer. The first move is to refuse the shortcut and ask what the problem actually is.
+What follows is the whole shape of the book, walked at a slow pace. Two gates sit above the method. Five gates sit inside it. A toolbox hangs below. Three indices and ten overlays stand to the side. Every later chapter does one of these things in more detail; nothing is added that is not shown here first.
 
-## Match the problem to the rung
-
-The honest first answer to *should we use AI here?* is *which rung, and is any rung the right move?*
-
-The method's job is placement. The rungs include *not AI at all*, and they include *multi-agent* at the far end, and several others in between. Some problems are nails. Some are screws. Some are social problems wearing technical costumes. A few are accountability questions with no machine answer. The method has to produce each of those answers cleanly, and none of them is the presumption.
-
-That discipline runs against most of the literature. A strategy deck is pre-committed to *yes*; its commercial logic requires it. A vendor-comparison guide assumes the decision to buy is already made; the question left is *which*. A manifesto, for or against, tells you what to feel about AI rather than what to decide about a specific problem on a specific Tuesday.
-
-A wrongly accepted project costs a year and a reputation. A wrongly refused one costs an opportunity. A method that can only produce *yes* is a sales funnel; a method that can only produce *no* is a manifesto; a method that produces the right answer for the problem in front of it is a method. The one in this book is trying to be the third thing.
-
-## Four answers, produced at three places
-
-The book produces four recommendations, and the place where each one is produced matters as much as the answer itself. Two are Tier-0 outcomes, above the method: *Abolish* and *Redirect*. One is a routing outcome, inside the method at G3: *Judge*. The fourth is the default that opens the rest of the book: *Proceed*.
-
-**Above the method** sit two gates — questions, not classifiers. The first is the Technochauvinism Check [1]: is this a technical problem at all, or a social problem wearing a technical costume? Fail it, and the answer is *Redirect* — policy, process, or people, not tools. The second is the **abolition check**, drawn from McQuillan [3]: is this one of the decision categories — predictive policing, automated welfare sanctioning, immigration risk scoring, automated sentencing — where no plausible set of controls could make AI delegation acceptable, regardless of future capability? Fail it, and the answer is *Abolish*.
-
-A note on Weizenbaum [2]. Earlier drafts of this book placed a broader accountability test at Gate 2, descended from Weizenbaum's 1976 argument that some decisions are not the kind a machine should take. Weizenbaum mixed two claims — that machines *could not* compute judgment-heavy decisions, and that they *should not*, because accountability depends on a human bearing the outcome. The empirical half has not held up; modern models can produce judgment-shaped reasoning credibly. The normative half has held up, but it is too wide to sit above the method as a pre-gate: most problems need decomposition, routing, and controls design before anyone can honestly answer whether adequate safeguards can be built. Tier 0 keeps only the narrow categorical refusal — answerable from the brief alone. The broader controls question moves inside the method, to routing. The split is this book's modification of Weizenbaum, not his own claim. Without it, the gate would refuse problems that careful engineering genuinely does make routable.
-
-**Inside the method**, at the routing stage (G3), sits the third outcome: *Judge*. For problems that clear both Tier-0 gates, the routing decision may still land on a human — not because the category is off-limits, but because, after decomposition and routing, no AI placement clears the controls bar for this particular problem. The method may still support the human — retrieval, summarisation, option generation — but the name on the decision is human.
-
-**The default** is the fourth outcome: *Proceed*. The gates pass. Routing finds an AI placement whose controls are viable. The method opens fully, and the next question is *at which rung, and with which controls*.
-
-- **Abolish** (Tier 0). The category of decision should not be made by machine, now or later. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing. The method exposes abolition as an available recommendation, not as an outlier.
-- **Redirect** (Tier 0). The problem is not technical. The right answer is a policy change, a process fix, a different conversation, or a better manager. Tools would make the wrong thing faster.
-- **Judge** (at G3 Route). No AI rung clears the controls bar for this specific problem. A human holds the decision. AI may support, but not decide.
-- **Proceed** (default). The method opens fully. Routing finds an AI rung whose controls are viable, and the engagement moves into Sequence and Commit.
-
-A book that can produce only *proceed* is a manifesto. This one produces all four, in named ways, at named places.
+## 2.1 The method on one page
 
 See Illustration 2.1.
 
-<div style="max-width: 860px; margin: 2rem auto;">
-<svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch2-ill21-title">
-  <title id="ch2-ill21-title">Four outcomes produced at three places</title>
+```mermaid
+flowchart TD
+  subgraph TIER0["TIER 0 &mdash; before any tool is chosen"]
+    direction LR
+    G0A["<b>Technochauvinism check</b><br/><i>Is there a positive reason to use AI here?</i>"]
+    G0B["<b>Abolition check</b><br/><i>Is this categorically off-limits to automate?</i>"]
+  end
 
-  <style>
-    .ch2-outcome-rect { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; }
-    .ch2-outcome-rule { stroke: var(--md-default-fg-color, #000); stroke-width: 1; opacity: 0.5; }
-    .ch2-outcome-label { font: 700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.16em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; }
-    .ch2-outcome-origin { font: 500 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.14em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.7; }
-    .ch2-outcome-sub { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; }
-    .ch2-caption { font: 600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.12em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; }
-    .ch2-divider { stroke: var(--md-default-fg-color, #000); stroke-width: 1; opacity: 0.35; }
-    .ch2-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.18em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.6; }
-  </style>
+  TIER0 ==> TIER1
 
-  <text class="ch2-band" x="400" y="18">Four outcomes produced at three places</text>
+  subgraph TIER1["TIER 1 &mdash; the five triage gates"]
+    direction LR
+    G1["<b>G1 Observe</b><br/><i>Situation statement</i>"] --> G2["<b>G2 Decompose</b><br/><i>Issue tree</i>"] --> G3["<b>G3 Route</b><br/><i>Routing map</i>"] --> G4["<b>G4 Sequence</b><br/><i>Dependency order</i>"] --> G5["<b>G5 Commit</b><br/><i>Named owner</i>"]
+    G3 -. "loopbacks allowed" .-> G2
+  end
 
-  <rect class="ch2-outcome-rect" x="25" y="35" width="180" height="180" rx="4" />
-  <text class="ch2-outcome-label" x="115" y="72">Abolish</text>
-  <text class="ch2-outcome-origin" x="115" y="89">Tier 0 &mdash; Gate 2</text>
-  <line class="ch2-outcome-rule" x1="55" y1="105" x2="175" y2="105" />
-  <text class="ch2-outcome-sub" x="115" y="135">Category stays</text>
-  <text class="ch2-outcome-sub" x="115" y="153">un-automated —</text>
-  <text class="ch2-outcome-sub" x="115" y="171">now or later.</text>
+  TIER1 -.-> ATLAS[["Atlas &mdash; tools enter at G3, and only at G3"]]
+  ATLAS -. "tools in" .-> G3
 
-  <rect class="ch2-outcome-rect" x="215" y="35" width="180" height="180" rx="4" />
-  <text class="ch2-outcome-label" x="305" y="72">Redirect</text>
-  <text class="ch2-outcome-origin" x="305" y="89">Tier 0 &mdash; Gate 1</text>
-  <line class="ch2-outcome-rule" x1="245" y1="105" x2="365" y2="105" />
-  <text class="ch2-outcome-sub" x="305" y="135">Not a technical</text>
-  <text class="ch2-outcome-sub" x="305" y="153">problem. Policy,</text>
-  <text class="ch2-outcome-sub" x="305" y="171">process, or people.</text>
+  classDef tier0Gate stroke-width:3px,font-weight:bold;
+  classDef tier1Gate stroke-width:1.5px;
+  classDef loadBearing stroke-width:2.5px,font-weight:bold;
+  classDef atlasNote stroke-dasharray:4 4,stroke-width:1px,font-style:italic;
+  class G0A,G0B tier0Gate;
+  class G1,G2,G4,G5 tier1Gate;
+  class G3 loadBearing;
+  class ATLAS atlasNote;
+```
 
-  <rect class="ch2-outcome-rect" x="405" y="35" width="180" height="180" rx="4" />
-  <text class="ch2-outcome-label" x="495" y="72">Judge</text>
-  <text class="ch2-outcome-origin" x="495" y="89">In method &mdash; G3 Route</text>
-  <line class="ch2-outcome-rule" x1="435" y1="105" x2="555" y2="105" />
-  <text class="ch2-outcome-sub" x="495" y="135">No AI rung clears</text>
-  <text class="ch2-outcome-sub" x="495" y="153">the controls bar.</text>
-  <text class="ch2-outcome-sub" x="495" y="171">A human decides.</text>
+*Illustration 2.1 — The method at a glance. Two Tier-0 gates sit above five Tier-1 gates. The atlas enters at G3 only. Loopbacks from G3 back to G2 are cheap and expected.*
 
-  <rect class="ch2-outcome-rect" x="595" y="35" width="180" height="180" rx="4" />
-  <text class="ch2-outcome-label" x="685" y="72">Proceed</text>
-  <text class="ch2-outcome-origin" x="685" y="89">Default</text>
-  <line class="ch2-outcome-rule" x1="625" y1="105" x2="745" y2="105" />
-  <text class="ch2-outcome-sub" x="685" y="135">Method opens.</text>
-  <text class="ch2-outcome-sub" x="685" y="153">Routing finds a</text>
-  <text class="ch2-outcome-sub" x="685" y="171">rung with viable controls.</text>
+The top band holds the two Tier 0 gates. The row below it is Tier 1 — the five triage gates, left to right, in the order they run. Below the row is the atlas strip, where every tool enters the method at G3. To each side are quiet rails pointing to the three access indices and the ten overlays. Those are for later. The method itself runs without them.
 
-  <line class="ch2-divider" x1="25" y1="230" x2="775" y2="230" />
-  <text class="ch2-caption" x="400" y="250">Two Tier-0 outcomes &mdash; one in-method &mdash; one default</text>
-</svg>
-</div>
+The illustration shows the whole shape of the method; nothing else is being revealed on the page.
 
-*Illustration 2.1 — Four outcomes, three places. Abolish and Redirect are Tier-0 decisions, answerable from the brief. Judge is a routing decision inside the method, after controls for the specific problem have been considered. Proceed is the default when routing finds a viable placement.*
+## 2.2 Tier 0 — the two gates
 
-## What the book gives you
+Two gates stand above the method. They are not refinements of it. They decide whether the method runs at all.
 
-A method, with a toolbox.
+The first gate is the **Technochauvinism Check** [1]: is this a technical problem at all, or a social problem renamed? Both answers are valid; the gate forces the question to be asked before a tool is reached for. Failing it produces *Not an AI problem* — policy, process, or people, not tools.
 
-The method is six stages — frame, diagnose, decompose, route, sequence, commit — plus two gates above them. Each stage has one question and produces one artefact. The order is the order an engagement runs.
+The second gate is the **abolition check**, drawn from McQuillan's *Resisting AI* [3]. The one-sentence test: is this decision in a category where no plausible set of controls could make AI delegation acceptable — regardless of future model capability? Predictive policing, automated welfare sanctioning, immigration risk scoring, automated sentencing. For categories like these, the honest answer is that better governance is not the fix. The test is categorical, not case-by-case, and answerable from the brief alone. Failing it produces *Off-limits to AI*.
 
-The toolbox is the atlas — twenty-six tools, each as a single reference card: what the tool is, where it came from, what it is for, what it fails at, when not to use it. The atlas enters the method at one specific gate — routing — and nowhere else. Routing errors swamp tool-choice errors; pick the rung first, then the tool on that rung.
+A note on what Gate 2 is not, because the earlier framing of this book placed a broader test here. Weizenbaum's 1976 argument [2] mixed two claims — that machines *could not* compute judgment-heavy decisions, and that they *should not*, because accountability depends on a human bearing the outcome. The capability half has not held up; a modern model can produce sentencing-style reasoning, therapy-style dialogue, custody-style weighing credibly. The normative half has held up, and this book keeps it. But the normative half is too wide to sit above the method as a pre-gate: most problems need decomposition and routing before anyone can honestly answer whether the controls available — audit trails, human review, rollback triggers, sunset criteria — are adequate for the specific decision in front of us. That engineering question belongs inside the method, at G3 Route, and is threaded through Sequence and Commit as a cross-cutting **controls overlay** (§2.5). Tier 0 keeps only the categorical refusal. The split — narrow categorical refusal above, controls viability inside — is this book's modification of Weizenbaum, not a restatement of his original line. He would likely have kept both halves at the gate; the book does not, because without the split the pre-gate refuses problems that careful engineering genuinely does make routable.
 
-Around the method stand three access indices (how a problem enters) and ten overlays (the disciplines that cut across every engagement — data readiness, evals, rollout, governance, privacy, retirement). Part 3 picks them up. Part 2 teaches the stages. Part 4 is the atlas.
+The effect on the method is simple. Everything else waits for the two Tier-0 gates, which can produce two outcomes: *Off-limits to AI* (Gate 2 fails) or *Not an AI problem* (Gate 1 fails). If both gates pass, Tier 1 opens. Two further outcomes are available inside the method: *AI as assistant* (produced at G3 Route when no AI rung clears the controls bar for a specific sub-problem — a human holds the decision, the machine supports) and *Autonomous AI* (produced at G3 Route when a rung does clear the controls bar — the machine makes the call under the controls designed for it). Four outcomes in all, produced at three places — Gate 1, Gate 2, and G3.
 
-The book is written for two uses. First pass, cover to cover — half a day, to see the shape. Tenth pass, a single stage before a decision meeting — ten minutes, to refresh the one question that matters this afternoon. Both uses are intended.
+[Chapter 4](ch-4.md) carries the full treatment — the worked examples, the escalation paths, the rooms in which each gate is asked.
 
-## Why it ages in years, not months
+A word on the two views. Illustration 1.1 in [Chapter 1](ch-1.md) shows the four outcomes. Illustrations 2.1 and 6.1 show the method as five triage gates: **Observe**, Decompose, Route, Sequence, Commit. A fuller six-stage view is used in Part 2 and splits Observe into **Frame** and **Diagnose**. Both are the same method viewed at two altitudes. The six-stage view is the book's spine and structures Part 2. The five-gate view is the working altitude for the 30-minute triage session [Chapter 6](ch-6.md) teaches, where Frame and Diagnose happen inside one conversation.
 
-No model is named as the winner. No capability threshold is predicted. No timeline is set.
+## 2.3 Tier 1 — the five triage gates
 
-The method is model-agnostic for a concrete reason. The gates sit above the model. The routing matrix names *rungs* — rules, statistics, classical machine learning, language-model feature, retrieval-augmented generation, single agent, tool-using agent, multi-agent — not vendors of rungs. When the frontier shifts, the rung does not. The tool at the rung may update; the atlas entry still reads correctly. That is what a method earns by refusing to forecast: it ages in years rather than months.
+Inside the method, five gates run in order. Each gate has a name, one question, and one artefact it produces. Nothing more.
 
-*Not a forecast* is not the same as *not an opinion*. Where the evidence supports a recommendation, the book makes one. Where it does not, the book says so.
+**G1 Observe.** What is actually happening? Most briefs arrive pre-diagnosed by the person writing the brief. G1 undoes that. It goes to the work — the operator's desk, the queue, the actual customer call — and writes down what is happening in the operator's or the customer's words, not the sponsor's. The output is a short paragraph: what is happening, to whom, since when, with what second-order effects, what changed recently. This paragraph is the **situation statement**. It is the only artefact G1 produces. Hammer's warning about automating the cow-path [4] applies here: you cannot route a problem you have not seen.
 
-## The test
+**G2 Decompose.** Independent pieces, or one tangled thing? G2 takes the situation statement and breaks it into pieces that can be routed separately. The backbone is Minto's pyramid [5] and its MECE discipline — mutually exclusive, collectively exhaustive. Specialist frames sit under the backbone: Ishikawa [6] for multi-cause brainstorms; 5 Whys, attributed via Ohno [7] to Sakichi Toyoda, for simple chains; Ulwick's operational Jobs-to-be-Done [8] when the shape of a solution is unknown; fault trees when failure is safety-critical. The output is an **issue tree**: the problem as a set of independent sub-problems, each small enough to route.
 
-A method benefits the work.
+**G3 Route.** Where does each piece belong, and can we build the controls for that placement? This is the gate most engagements fail at. Given the pieces from G2, each piece is placed against the right computational substrate — a rule, a statistical model, classical ML, an LLM feature, retrieval-augmented generation [9], a single agent, a tool-using agent, a multi-agent system — or handed back to a human. The default is *not agentic*. Each sub-problem needs a positive case to be routed above rules or statistics, and a plausible controls design for the placement — audit trail, human review point, rollback trigger — before the route is accepted. Where no rung clears the controls bar, the piece produces the *AI as assistant* outcome: a human holds the decision, and the method may still support them with retrieval, summarisation, or option generation. Where a rung does clear the controls bar, the piece produces the *Autonomous AI* outcome: the machine makes the call under the controls designed for it. The output is a **routing map**: each piece with its destination named, its controls design sketched, and its route justified. Tools enter the method here and only here. The atlas is the reference.
 
-That line is the test of the whole book. If the method is good, the work gets better. If the method is bad, the work gets worse in a way the method makes visible. A method that cannot be wrong about a specific engagement is not a method — it is a style. The one in this book can be wrong, at named gates, in named ways. The chapters that follow show where.
+**G4 Sequence.** In what order, given dependencies? G4 draws the dependency graph across the routed pieces. Three lenses read the graph: what depends on what; what is reversible and what is not; what the blast radius is if a piece fails. A piece that is irreversible and high-blast-radius runs last, behind a shadow-mode pilot and a staged rollout. A piece that is reversible and contained can run first, even if it is the larger piece. The output is a **dependency order** — a numbered sequence with reversibility and blast-radius notes attached.
 
-On to the shape.
+**G5 Commit.** Who carries the decision? A commitment without a named owner is not a commitment. G5 names one person — not a committee, not a role, not a rotating seat — who owns the outcome, controls the resources to change course, and signs the rollback triggers. The output is a one-page document: owner, triggers for rollback, review cadence, sunset criteria. If the gate cannot produce that page with a real name on it, the engagement does not cross into implementation.
+
+The five gates run in order, but they are not one-way. The arc on Illustration 2.1 from G3 back to G2 is doing real work. Routing often discovers that the decomposition was wrong — a piece that looked independent turns out to share a data pipeline with another, or a piece that looked routable to rules turns out to hide a judgment. When this happens, the loopback is cheap. Pretending it did not happen is expensive.
+
+## 2.4 Tools enter at G3
+
+The atlas comes in at G3 and not before. This is a deliberate ordering, and it is worth one paragraph of defence.
+
+Routing errors swamp tool-choice errors. A correctly chosen LLM, pointed at the wrong sub-problem, produces a well-evaluated answer to a question nobody asked. A correctly framed sub-problem, pointed at an imperfect tool, produces a close-to-right answer that a human can repair. The first is expensive to detect and more expensive to fix. The second is visible and cheap. The method holds tools back until G3 because the cost of a wrong tool is bounded by the cost of replacing the tool; the cost of a wrong route is bounded by the size of the engagement.
+
+The five most common routing errors sit together because they are variants of the same mistake: choosing a tool before the routing is clear. Promoting a rule-based piece to an LLM because LLMs are newer. Demoting a judgment piece to a classifier because the classifier performs well on the training distribution. Reaching for an agent when a single function call would do. Routing to classical ML without a label budget. Routing to retrieval-augmented generation when the knowledge base is not retrievable-quality yet. The atlas entries for each of these tools say this in the *when not to use* section. [Chapter 8](ch-8.md) treats them one by one.
+
+The atlas itself is not a glossary. Every entry follows the same eight-section template: purpose, anatomy, example, pitfalls, when not to use, provenance, related tools, verification tag. Twenty-six tools recur across the method. They are the toolbox — no more, no fewer.
+
+## 2.5 Overlays and indices
+
+Two quiet bands sit to the side of the main method. Most engagements do not need them on first pass. Large or regulated engagements cannot function without them.
+
+On one side are the three **access indices** — the subject of [Chapter 10](ch-10.md). They help decide where a problem enters the method. The first index is **task codifiability**: a spectrum from tasks with explicit rules or labelable outcomes (payroll) to tasks that rely on judgment (settling a contested divorce). The second is **weight class**: featherweight tools (a 5 Whys takes minutes) to industrial programmes (ISO 42001 [10] certification takes months). The third is **starting points** — a catalogue of eight common entries into an engagement, from a new build to an incident review to a compliance mandate. A problem triaged through all three indices arrives at G1 with its rough shape already named.
+
+On the other side sit the ten **cross-cutting overlays** — the subject of [Chapter 11](ch-11.md). Each overlay is a discipline that most teams re-invent badly and that runs across the whole method rather than living at one gate. The ten are: a data readiness gate; evals-as-code; rung-indexed total cost of ownership (the published agent-multiplier figure is roughly ten to twenty times a single LLM call); a three-stage rollout pattern (shadow, canary, progressive); an adaptation decision tree (prompt, then retrieval, then fine-tune, then agent, in that order, with stop rules); a privacy control ladder; the NIST [11] and ISO governance spine; a retirement protocol; the interaction-design stack (HAX [12], PAIR, Shneiderman's two-dimensional human-centred AI frame [13]); and data contracts. Each overlay has a home chapter or atlas entry.
+
+Several of these overlays — evals-as-code, the three-stage rollout, the governance spine, the retirement protocol, the privacy ladder — together form what this book calls the **controls discipline**: the engineering answer to the question *can adequate safeguards be built to make AI delegation acceptable for this specific problem?* That question is first sketched at G3 Route (the controls design that justifies the rung choice), committed to at G4 Sequence (the rollout gates, rollback triggers, and staging that let the controls actually bite), and closed at G5 Commit (the named owner, review cadence, and sunset criteria that keep the controls alive). The controls discipline is the book's modification of Weizenbaum's normative line: where he placed a single categorical refusal at the gate, the book places a categorical refusal *and* a case-by-case engineering discipline that runs across three gates of the method. The second is an extension of his work, not his original claim.
+
+A closing note on scope. The indices and overlays are the reason this is a 220-page book and not a 40-page pamphlet. They hold the method up under realistic conditions — regulated industries, messy data, governance regimes, long time horizons. They are for later use. The method runs without them.
+
+## 2.6 How the rest of the book is shaped
+
+Part 2 teaches the gates. One chapter per gate or pair of gates: frame, diagnose, decompose, route, sequence and commit. The gates are taught in the order the method runs. Part 2 is the book's spine.
+
+Part 3 adds the views that sit across the method: the three access indices, the ten overlays, the five governance failure modes, and a chapter on retirement — what to stop doing. Part 3 is where the method meets realistic conditions.
+
+Part 4 is the atlas. Twenty-six tool entries, each in the same template. Read once in order if you have never met the tools before. Thereafter, look up entries on demand.
+
+Front matter and back matter are thin. A preface, a reader's guide, a glossary, and a compiled sources list. They earn their space by being short.
+
+[Chapter 4](ch-4.md) opens Part 2 with Frame — the first Tier-1 stage. Tier 0 sits above all six stages and is treated in Chapter 4 alongside Frame, because the framing conversation is where the Tier-0 gates are actually run.
 
 ## Sources
 
@@ -126,3 +116,23 @@ On to the shape.
 [2] Weizenbaum J. *Computer Power and Human Reason: From Judgment to Calculation*. W. H. Freeman; 1976. **[verified]**
 
 [3] McQuillan D. *Resisting AI: An Anti-fascist Approach to Artificial Intelligence*. Bristol University Press; 2022. **[verified]**
+
+[4] Hammer M. Reengineering Work: Don't Automate, Obliterate. *Harvard Business Review*. 1990 Jul–Aug. **[verified]**
+
+[5] Minto B. *The Pyramid Principle: Logic in Writing, Thinking and Problem Solving*. Pitman; 1987. **[verified]**
+
+[6] Ishikawa K. *Guide to Quality Control*. Asian Productivity Organization; 1968 (Japanese) / 1976 (English). Diagram dates to 1943 at Kawasaki Steel. **[verified]**
+
+[7] Ohno T. *Toyota Production System: Beyond Large-Scale Production*. Productivity Press; 1988. **[secondary]**
+
+[8] Ulwick A. *What Customers Want*. McGraw-Hill; 2005. **[verified]**
+
+[9] Lewis P, Perez E, Piktus A, et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: *NeurIPS*; 2020. arXiv:2005.11401. **[verified]**
+
+[10] ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system*. International Organization for Standardization; 2023. **[verified]**
+
+[11] NIST. *AI Risk Management Framework 1.0* (NIST AI 100-1). National Institute of Standards and Technology; 2023. **[verified]**
+
+[12] Amershi S, Weld D, Vorvoreanu M, et al. Guidelines for Human-AI Interaction. In: *Proc. CHI 2019*. DOI:10.1145/3290605.3300233. **[verified]**
+
+[13] Shneiderman B. *Human-Centered AI*. Oxford University Press; 2022. **[verified]**
