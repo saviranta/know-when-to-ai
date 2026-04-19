@@ -7,7 +7,7 @@ flowchart TD
   subgraph TIER0["TIER 0 &mdash; before any tool is chosen"]
     direction LR
     G1["<b>Technochauvinism check</b><br/><i>Is this actually a technical problem?</i>"]
-    G2["<b>Who signs</b><br/><i>Can a named human carry this outcome?</i>"]
+    G2["<b>Abolition check</b><br/><i>Is this categorically off-limits to automate?</i>"]
   end
 
   TIER0 ==> SPINE
