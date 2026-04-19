@@ -1,0 +1,200 @@
+/* Monochrome house rule — all illustrations use --md-default-fg-color
+   for lines/text and --md-default-bg-color for fill/ground.
+   Emphasis comes from weight, fill, and hatching. */
+
+:root {
+  --ill-fg: var(--md-default-fg-color, #000);
+  --ill-bg: var(--md-default-bg-color, #fff);
+}
+
+/* Mermaid — inflate label padding so boxes breathe.
+   Mermaid renders each label inside foreignObject > div.nodeLabel. */
+.mermaid .node .label foreignObject {
+  overflow: visible;
+}
+.mermaid .node .label foreignObject > div {
+  padding: 8px 14px;
+  line-height: 1.35;
+}
+.mermaid .cluster .label foreignObject > div {
+  padding: 4px 10px;
+}
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .cluster rect {
+  rx: 4;
+  ry: 4;
+}
+
+/* Monochrome enforcement — overrides any stroke/fill Mermaid chose
+   from its base-theme defaults (e.g., amber/yellow accents that
+   leak through because not every theme variable maps cleanly). */
+.mermaid svg .node rect,
+.mermaid svg .node circle,
+.mermaid svg .node ellipse,
+.mermaid svg .node polygon,
+.mermaid svg .node path,
+.mermaid svg .cluster rect {
+  stroke: var(--md-default-fg-color) !important;
+  fill: var(--md-default-bg-color) !important;
+}
+.mermaid svg .edgePath .path,
+.mermaid svg .flowchart-link,
+.mermaid svg .arrowheadPath,
+.mermaid svg marker path {
+  stroke: var(--md-default-fg-color) !important;
+  fill: var(--md-default-fg-color) !important;
+}
+.mermaid svg .edgeLabel,
+.mermaid svg .edgeLabel rect,
+.mermaid svg .edgeLabel foreignObject > div {
+  background-color: var(--md-default-bg-color) !important;
+  color: var(--md-default-fg-color) !important;
+}
+.mermaid svg .nodeLabel,
+.mermaid svg .cluster-label {
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Routing-matrix illustration — Ch 8 */
+.routing-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 1.5rem 0;
+  table-layout: fixed;
+  border: 1.5px solid var(--ill-fg);
+}
+.routing-matrix th,
+.routing-matrix td {
+  border: 1px solid var(--ill-fg);
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: var(--ill-fg);
+  background: var(--ill-bg);
+}
+.routing-matrix thead th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-bottom: 2px solid var(--ill-fg);
+}
+.routing-matrix td.row-label {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.78rem;
+  border-right: 2px solid var(--ill-fg);
+}
+.routing-matrix td.row-label small {
+  display: block;
+  font-weight: 400;
+  opacity: 0.75;
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+/* Four cell types — all monochrome. Emphasis by fill/hatch, not colour. */
+
+/* Fit — solid fill, bold label inverted */
+.cell-fit {
+  background: var(--ill-fg);
+  color: var(--ill-bg);
+  font-weight: 700;
+}
+
+/* Acceptable — 50% dot pattern (radial-gradient dots) on ground */
+.cell-acceptable {
+  background-image: radial-gradient(var(--ill-fg) 1px, transparent 1.2px);
+  background-size: 6px 6px;
+  background-position: 0 0;
+  color: var(--ill-fg);
+  font-weight: 500;
+}
+
+/* Poor — diagonal hatch, lighter density */
+.cell-poor {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 4px,
+    var(--ill-fg) 4px,
+    var(--ill-fg) 4.6px
+  );
+  color: var(--ill-fg);
+  opacity: 0.85;
+}
+
+/* Do-not-route — empty cell with diagonal strike */
+.cell-donot {
+  background: var(--ill-bg);
+  position: relative;
+  color: transparent;
+}
+.cell-donot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    var(--ill-fg) calc(50% - 1px),
+    var(--ill-fg) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+/* Legend */
+.matrix-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--ill-fg);
+}
+.matrix-legend .swatch {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  border: 1px solid var(--ill-fg);
+  background-color: var(--ill-bg);
+}
+.matrix-legend .swatch.cell-fit {
+  background: var(--ill-fg);
+}
+.matrix-legend .swatch.cell-acceptable {
+  background-image: radial-gradient(var(--ill-fg) 1px, transparent 1.2px);
+  background-size: 6px 6px;
+  background-color: var(--ill-bg);
+}
+.matrix-legend .swatch.cell-poor {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 3px,
+    var(--ill-fg) 3px,
+    var(--ill-fg) 3.6px
+  );
+  background-color: var(--ill-bg);
+}
+.matrix-legend .swatch.cell-donot {
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    var(--ill-fg) calc(50% - 1px),
+    var(--ill-fg) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+.matrix-footnote {
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  color: var(--ill-fg);
+}
