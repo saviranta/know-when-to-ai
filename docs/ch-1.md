@@ -8,7 +8,7 @@ Three jobs remain. Frame the problem. Decide when a machine should not be in the
 
 It is organised around one claim: most of the value a person adds sits before any model is chosen. Problem framing, stakeholder routing, the decision about whether to automate at all — these are the places where judgment still earns its fee. The tools in the atlas support those decisions; they do not replace them.
 
-A warning about the stance of this book. Two gates sit above every other decision in the method. The first asks whether we are reaching for a technical answer because the problem is technical, or because technical answers are what we know how to sell. The second asks whether the decision can be calculated, or must be judged. A calculated decision can be delegated to a model. A judged decision cannot, however much pressure there is to pretend otherwise. Skip those two gates and the rest of the method still runs — in service of the wrong goal.
+A warning about the stance of this book. Two gates sit above every other decision in the method. The first asks whether we are reaching for a technical answer because the problem is technical, or because technical answers are what we know how to sell. The second asks whether a human can actually stay on the signature — carry the outcome, close the feedback loop. A signature that dissolves into a vendor, a committee, or a model is a gate failure. Capability is not the issue; accountability is. Skip those two gates and the rest of the method still runs — in service of the wrong goal.
 
 ## 1.2 What actually changed
 
@@ -18,15 +18,15 @@ Tasks that used to absorb an afternoon — drafting a memo, summarising a deposi
 
 What moved. Summary. Synthesis of long documents. Boilerplate generation. First-pass code. First-pass analysis. Translation. Routine drafting. Schedule arithmetic. Comparative research. The kind of work a junior person used to produce so a senior person could react to it. That loop is now mostly inside a model.
 
-What did not move. Three things, in order of how often they are confused for each other.
+What did not move. Two things.
 
 The first is **framing**. Deciding what the problem actually is. Deciding who it is a problem for. Deciding what would count as having solved it. A model given a badly framed problem produces a confident, well-written, wrong answer faster than any human could. Framing is not a bottleneck that better tooling will widen. It is the act that decides what the tooling is pointed at.
 
-The second is **judgment**. Weizenbaum drew this line in 1976 and it has held up better than almost anything else in the AI literature. Some decisions have a right answer that computation could in principle reach — optimal packing, shortest route, tax liability given a clean return. Others do not. What a sentence should be. Whether a parent loses custody. Whether this patient's remaining months are better spent on treatment or on going home. These are decisions about what kind of world to live in. They look like decisions, but they are not calculations, and the category error of treating them as calculations is the single oldest hazard in this field.
+The second is **the signature**. Someone signs. Someone carries the outcome. Models do not. Vendors do not, contractually. Organisations carry reputational risk but not personal risk. The named owner — a human whose career moves with the decision — is how consequence attaches, and it is what keeps the feedback loop closed. When a system fails and no one's name is on the failure, the organisation learns nothing. Another version of the same system gets built next year, by someone who also did not sign.
 
-The third is **accountability**. Someone signs. Someone carries the outcome. Models do not. Vendors do not, contractually. Organisations carry reputational risk but not personal risk. The named owner — a human whose career moves with the decision — is still how consequence attaches. This is not sentimental. It is what keeps the feedback loop closed. When a system fails and no one's name is on the failure, the organisation learns nothing. Another version of the same system will be built next year, by someone who also did not sign.
+This is where Weizenbaum's 1976 line shows up, stripped of its capability claim. His objection was not really that a computer could not weigh a custody decision or pass a sentence — modern models can produce the text, and can produce it well. His objection was that passing one removes the accountability that gave the category its moral weight in the first place. The line is about *who bears the outcome*, not *what the machine can compute*. A signature that dissolves into a vendor, a model, or a committee is an accountability vacuum whether or not the underlying task had a computable answer. The book uses the gate that way. The capability half of the 1976 argument is allowed to age; the accountability half is load-bearing and survives.
 
-A caveat about "what stayed". The three are not fixed job descriptions. They are three acts that keep recurring in every engagement, and they recur at higher density than they used to, because the work between them has collapsed. The framing conversation used to be the opening ten minutes of a three-month project. It is now most of week one. The accountability conversation used to happen at sign-off. It now has to happen at the routing gate, because by sign-off the system has already been running in production for a month.
+A caveat about "what stayed". The two are not fixed job descriptions. They are two acts that keep recurring in every engagement, and they recur at higher density than they used to, because the work between them has collapsed. The framing conversation used to be the opening ten minutes of a three-month project. It is now most of week one. The signature conversation used to happen at sign-off. It now has to happen at the routing gate, because by sign-off the system has already been running in production for a month.
 
 Two footnotes to "what changed", because forecasting is not the business of this book.
 
@@ -42,7 +42,7 @@ Before any of that, two checks. Call them Tier 0. They sit above the method, not
 
 **Gate one. The Technochauvinism Check.** Broussard's term, from *Artificial Unintelligence* (2018) [verified]. The one-sentence test: is this a technical problem, or a social problem being renamed? Build the model anyway and the governance failure is automated at scale.
 
-**Gate two. The Judgment-vs-Calculation Test.** Weizenbaum's distinction, from *Computer Power and Human Reason* (1976) [verified]. The one-sentence test: is there a right answer here that computation could in principle reach? If the decision is about what kind of world to live in, computing it is a category error, not a capability problem. The line does not dissolve with capability.
+**Gate two. Who Signs.** A signature test, descended from Weizenbaum's *Computer Power and Human Reason* (1976) [verified] but stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? If the signature dissolves into a vendor, a committee, or a model, the gate fails — not because the machine cannot compute the answer, but because there is no longer anyone for the answer to fail on. Weizenbaum's moral core survives capability shifts. His empirical claim about what machines cannot do does not, and the method does not rely on it.
 
 A third move, narrower, sits behind these. Dan McQuillan's *Resisting AI* (2022) [verified] argues that for certain decision categories — predictive policing, automated welfare sanctioning, immigration risk scoring — the honest recommendation is abolition, not better governance. The method has to be able to say that out loud. [Chapter 2](ch-2.md) clears that space.
 
@@ -55,7 +55,7 @@ flowchart TD
   subgraph TIER0["TIER 0 &mdash; before any tool is chosen"]
     direction LR
     G1["<b>Technochauvinism check</b><br/><i>Is this actually a technical problem?</i>"]
-    G2["<b>Judgment vs. calculation</b><br/><i>Can this be computed, or must it be judged?</i>"]
+    G2["<b>Who signs</b><br/><i>Can a named human carry this outcome?</i>"]
   end
 
   TIER0 ==> SPINE

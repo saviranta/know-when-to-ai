@@ -13,7 +13,7 @@ flowchart TD
   subgraph TIER0["TIER 0 &mdash; before any tool is chosen"]
     direction LR
     G0A["<b>Technochauvinism check</b><br/><i>Is there a positive reason to use AI here?</i>"]
-    G0B["<b>Judgment vs. calculation</b><br/><i>Is there a right answer computation could reach?</i>"]
+    G0B["<b>Who signs</b><br/><i>Can a named human carry this outcome?</i>"]
   end
 
   TIER0 ==> TIER1
@@ -47,9 +47,9 @@ The illustration shows the whole shape of the method; nothing else is being reve
 
 Two gates stand above the method. They are not refinements of it. They decide whether the method runs at all.
 
-The first gate is the **Technochauvinism Check** (Broussard, 2018) [verified]: is there a positive reason to believe AI helps this problem, independent of the fact that AI is available? The default is *not AI*. The burden is on anyone who wants to leave that default.
+The first gate is the **Technochauvinism Check** (Broussard, 2018) [verified]: is this a technical problem at all, or a social problem renamed? Both answers are valid; the gate forces the question to be asked before a tool is reached for.
 
-The second gate is the **Judgment-vs-Calculation Test** (Weizenbaum, 1976) [verified]: is there a right answer here that computation could reach? Calculations have a truth-of-the-matter reachable in principle by computation; judgments are decisions about what kind of world to live in, and computing them is category error, not a capability problem.
+The second gate is **Who Signs** — a signature test descended from Weizenbaum's *Computer Power and Human Reason* (1976) [verified], stripped of its capability claim. The one-sentence test: can a named human actually carry the outcome of this decision? Weizenbaum's original argument mixed two claims — that machines could not compute certain decisions, and that they should not. The empirical half has not survived the last decade; a modern model can produce sentencing-style reasoning, therapy-style dialogue, custody-style weighing. The moral half has. When a signature dissolves into a vendor, a committee, or a model, the feedback loop breaks and the accountability that gave the category its moral weight disappears. The gate turns on that — not on what the machine can compute.
 
 The effect on the method is simple. Everything else waits. Tier 1 does not open until both gates have been answered, and the two gates produce four outcomes: abolish the automation category entirely (rare, documented in McQuillan 2022 [verified]); redirect to a non-technical fix; retain the human and use AI in an advisory role only; or proceed. Only the last opens the door to Tier 1.
 

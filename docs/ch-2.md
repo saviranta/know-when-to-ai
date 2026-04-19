@@ -4,24 +4,24 @@ One question sits under the whole book. *Is this an AI problem?*
 
 Most AI books answer a different question — *how do I build this* — and presume the first question is already settled. This one doesn't. The reader shows up with a brief. The brief contains a name — a chatbot, an agent, a copilot, a retrieval system, a classifier — and an expectation that the name is the answer. The first move is to refuse the shortcut and ask what the problem actually is.
 
-## The default is *probably not*
+## Match the problem to the rung
 
-The honest first answer to *should we use AI here?* is *probably not — show cause*.
+The honest first answer to *should we use AI here?* is *which rung, and is any rung the right move?*
 
-That inversion is the hardest piece of discipline in the method. It is also the piece that saves the most engagements. The cost of a correctly refused project is a week of framing; the cost of a wrongly accepted one is a year and a reputation.
+The method's job is placement. The rungs include *not AI at all*, and they include *multi-agent* at the far end, and several others in between. Some problems are nails. Some are screws. Some are social problems wearing technical costumes. A few are accountability questions with no machine answer. The method has to produce each of those answers cleanly, and none of them is the presumption.
 
-The inversion runs against most of the literature. A strategy deck is pre-committed to *yes*; its commercial logic requires it. A vendor-comparison guide assumes the decision to buy is already made; the question left is *which*. A manifesto, for or against, tells you what to feel about AI rather than what to decide about a specific problem on a specific Tuesday.
+That discipline runs against most of the literature. A strategy deck is pre-committed to *yes*; its commercial logic requires it. A vendor-comparison guide assumes the decision to buy is already made; the question left is *which*. A manifesto, for or against, tells you what to feel about AI rather than what to decide about a specific problem on a specific Tuesday.
 
-A method that cannot produce *no* cleanly is not a method. It is a sales funnel wearing a method's clothes. The one in this book can produce *no*, and does so often.
+A wrongly accepted project costs a year and a reputation. A wrongly refused one costs an opportunity. A method that can only produce *yes* is a sales funnel; a method that can only produce *no* is a manifesto; a method that produces the right answer for the problem in front of it is a method. The one in this book is trying to be the third thing.
 
 ## Four answers, not one
 
-Above the method sit two gates — questions, not classifiers. The first is the Technochauvinism Check (Broussard, 2018) [verified]: is this a technical problem at all, or a social problem wearing a technical costume? The second is the Judgment-vs-Calculation Test (Weizenbaum, 1976) [verified]: is there a right answer computation could reach, or is the decision about what kind of world to live in? [Chapter 4](ch-4.md) teaches them in full.
+Above the method sit two gates — questions, not classifiers. The first is the Technochauvinism Check (Broussard, 2018) [verified]: is this a technical problem at all, or a social problem wearing a technical costume? The second is **Who Signs** — a signature test descended from Weizenbaum (1976) [verified]: can a named human actually carry the outcome of this decision, or does the signature dissolve into a vendor, a committee, or a model? Weizenbaum's 1976 argument mixed two claims — that machines *could not* compute certain decisions, and that they *should not*. The empirical half has not survived the last decade. The moral half has, and the gate rests on that half only. [Chapter 4](ch-4.md) teaches them in full.
 
 Together, the two gates produce four outcomes:
 
 - **Abolish.** The category of decision should not be made by machine, now or later. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing — McQuillan (2022) [verified] names this list. The method exposes abolition as an available recommendation, not as an outlier.
-- **Judge.** The decision belongs to a human because it cannot be calculated. The method can still *support* the human — retrieval, summarisation, option generation — but the signature stays with a person whose career moves with the outcome.
+- **Judge.** The decision belongs to a human because the signature has to stay with one — with a person whose career moves with the outcome. The method can still *support* the human — retrieval, summarisation, option generation — but the name on the decision is human. The test is not what the model can compute; it is what happens to accountability if the model decides.
 - **Redirect.** The problem is not technical. The right answer is a policy change, a process fix, a different conversation, or a better manager. Tools would make the wrong thing faster.
 - **Proceed.** The gates pass. The method opens. Then the next question is *at which rung*.
 
