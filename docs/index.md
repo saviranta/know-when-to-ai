@@ -1,18 +1,23 @@
-# Illustration rendering demo
+# Know When to AI
 
-Three techniques, three representative illustrations from the manuscript.
+*A field guide to find nails that can be hammered with AI.*
 
-- **Illustration 1.1 — Mermaid flowchart.** Two gates above a six-stage method. Fits Mermaid's model cleanly: boxes, arrows, a subgraph for the Tier-0 band.
-- **Illustration 2.1 — Inline SVG.** Four columns, three struck, one kept. Mermaid has no strike-through primitive, so this is written as hand-authored SVG with the palette and typography called for in the spec.
-- **Illustration 8.1 — CSS matrix.** The 8×8 routing matrix, as a semantic HTML table with four cell classes (Fit / Acceptable / Poor / Do-not-route) styled in CSS. Keeps the data in source, keeps the visual hierarchy in stylesheet.
+---
 
-Each technique has a tradeoff. Use the nav on the left to step through them.
+This site renders the book in progress. Chapters appear here as they move from manuscript into final form.
 
-## How this site was built
+## Currently published
 
-- **MkDocs Material** — static site generator, single `mkdocs.yml` config, renders the directory tree.
-- **mermaid.js** loaded from a CDN, initialised per-page.
-- **Search** — built-in Lunr, indexes all pages client-side. Try the search box above.
-- **Dark mode toggle** — top right. Mermaid re-renders in the right theme.
+- **[Chapter 2 — What this book is not](ch-2.md)** — the three genres this book refuses to be: strategy deck, vendor guide, manifesto.
 
-To run locally: `python3 -m mkdocs serve` from this directory. To publish: `python3 -m mkdocs build` produces a `site/` dir; push to Cloudflare Pages or GitHub Pages.
+## Rendering demos
+
+Three representative illustrations, shown as standalone pages so you can see how each technique behaves in light and dark mode:
+
+- [Illustration 1.1 — Mermaid flowchart](illustration-1-1.md)
+- [Illustration 2.1 — Inline SVG](illustration-2-1.md)
+- [Illustration 8.1 — CSS matrix](illustration-8-1.md)
+
+## House rule
+
+Monochrome. Black lines, borders, and text on white ground; the inverse in dark mode. Emphasis is carried by weight, fill, hatching, and strike marks — not by hue. Toggle dark mode (top right) on any illustration to see the rule hold.

@@ -1,5 +1,5 @@
-site_name: "A Toolbox for the Agentic Shift — demo"
-site_description: "Demo: 3 illustration rendering techniques"
+site_name: "Know When to AI"
+site_description: "A field guide to find nails that can be hammered with AI"
 
 theme:
   name: material
@@ -59,6 +59,9 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - "Illustration 1.1 — Mermaid": illustration-1-1.md
-  - "Illustration 2.1 — Inline SVG": illustration-2-1.md
-  - "Illustration 8.1 — CSS matrix": illustration-8-1.md
+  - Chapters:
+      - "2 — What this book is not": ch-2.md
+  - Illustrations:
+      - "1.1 — Two gates (Mermaid)": illustration-1-1.md
+      - "2.1 — Genres refused (SVG)": illustration-2-1.md
+      - "8.1 — Routing matrix (CSS)": illustration-8-1.md
