@@ -87,7 +87,25 @@ The fifth mode breaks that loop. A triage queue running on a model routes real c
 
 That asymmetry is why the book's scaffolding exists. The Tier 0 gates, the routing discipline, the controls overlay, the named owner at G5 — all of them are answers to the question *what has to be true for one person to use a machine to shape another person's day?* In the first four modes, that question barely arises; a prompt and a moment of taste will do. The book is written for the harder case.
 
-## 2.3 When the four come back at G3
+## 2.3 And the tool itself misbehaves
+
+There is a second reason the fifth mode needs a method, and it has nothing to do with organisational asymmetry. The tool is not deterministic.
+
+Classical software has bugs; AI does not behave. A rule given the same input returns the same output every time — that is what makes it a rule. A language model, by design, does not. The same prompt sent twice can return different answers. The shape is stable, the particulars drift: a summary written Tuesday phrases things the Wednesday summary does not; a classifier that scored a borderline case as *refer* yesterday scores it *approve* today; an extraction pulls four fields the first time and five the second. Even at temperature zero, determinism is a best-effort property — floating-point order, batch boundaries, prompt-cache state, and model-version changes all introduce variance the calling code cannot control.
+
+This is not a defect. It is constitutive. Probabilistic generation is why the models can cover the long tail of language, image and code that deterministic systems cannot reach. Remove the variance and you remove the coverage. The right question is not *how do I make the AI behave*; it is *which problems tolerate this variance and which do not*.
+
+Two classes sit on opposite sides of the line.
+
+**Problems AI fits.** Median-good-enough work — summaries, drafts, classifications with a confidence score, option generation, extraction from messy inputs, first-pass routing. A second run returning a slightly different answer is not a failure, and the human in the loop or the downstream check catches the occasional bad draw. Most of the solo modes live here: the consumer is the chooser; a bad output is thrown away and another is requested.
+
+**Problems AI fits badly.** Exact-repeatability work — decisions that must match a pinned template, calculations defined by matching a reference, auditable determinations a regulator expects to be reproducible. Worst-case-matters work — safety-critical decisions, dosing, operations where one rare bad output is not amortised by a thousand good ones. Adversarial work, where an attacker will find the variance the median user did not. These become AI problems only if a deterministic wrapper is built around the model to absorb the variance, and that wrapper is where most of the engineering lives.
+
+This is why every gate downstream looks the way it does. G3 Route defaults to the *lowest adequate level* because a rule that returns the same answer twice beats a model that returns almost-the-same-answer twice — unless the problem needs coverage the rule cannot give. G4 Sequence demands reversibility because variance means some draws will be wrong, and a system that cannot undo a wrong draw compounds harm. G5 Commit demands a named owner and rollback triggers because no amount of ex-ante review substitutes for someone watching the variance land on real people in real time. The Abolition check, at the other end, is partly a response to the same fact: some decisions should not ride on a probabilistic tool regardless of how narrow the variance gets, because *the possibility of variance on this decision is itself the harm*.
+
+A method that treats AI as deterministic software will under-scaffold its placements and be surprised by the first drift. A method that treats AI as an unmanageable oracle will over-scaffold its placements and ship nothing. The book's method does neither: it places variance where variance can be absorbed, and refuses placements where it cannot.
+
+## 2.4 When the four come back at G3
 
 The four modes do not disappear when the method runs. They reappear at G3 Route as the capability palette the method picks from. When G3 places a sub-problem against an AI level — an LLM feature, retrieval-augmented generation, a single agent, a tool-using agent — it is choosing *which of the four capabilities* the AI will perform inside the larger system:
 
@@ -98,10 +116,10 @@ The four modes do not disappear when the method runs. They reappear at G3 Route 
 
 The capability is the same; the scaffolding around it is different. A generative placement inside a regulated decision (producing the loan denial letter) carries obligations a standalone generative use (drafting marketing copy) does not. The method is what tells you what those obligations are, where in the system they sit, and who owns them.
 
-## 2.4 Why this chapter earns its space
+## 2.5 Why this chapter earns its space
 
 Most AI books collapse the five modes and try to sell one framework for all of them. The result is an uncomfortable fit in both directions. A reader who wants better marketing copy gets dragged through governance theatre that does not apply to them. A reader who needs to deploy a triage model gets advice about prompt styling for creative use. Neither is served.
 
-So the book draws the line here, in the second chapter, before the method runs. The first four modes are legitimate. They do not need this method, and this method is not written for them. The fifth mode — problem-solving inside an organisation, where the operator and the affected party are different people — is where every page from [Chapter 3](ch-3.md) onwards is aimed. If the problem in front of you is a mode-one-to-four problem, the book's second-best offering is this: enjoy the tool, skip to [the atlas](ch-8.md), pick what fits, and get on with it.
+So the book draws the line here, in the second chapter, before the method runs. The first four modes are legitimate. They do not need this method, and this method is not written for them. The fifth mode — problem-solving inside an organisation, where the operator and the affected party are different people, and where the tool itself does not behave deterministically — is where every page from [Chapter 3](ch-3.md) onwards is aimed. If the problem in front of you is a mode-one-to-four problem, the book's second-best offering is this: enjoy the tool, skip to [the atlas](ch-8.md), pick what fits, and get on with it.
 
 Next: the method.
