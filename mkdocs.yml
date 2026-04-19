@@ -61,7 +61,8 @@ nav:
   - Home: index.md
   - Chapters:
       - "1 — What this book is": ch-1.md
-      - "2 — The method at a glance": ch-2.md
+      - "2 — Five modes of AI use": ch-2.md
+      - "3 — The method at a glance": ch-3.md
   - Rendering demos:
       - "Mermaid — method spine": illustration-1-1.md
       - "SVG — four answers": illustration-2-1.md

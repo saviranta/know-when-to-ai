@@ -9,7 +9,8 @@ This site renders the book in progress. Chapters appear here as they move from m
 ## Currently published
 
 - **[Chapter 1 — What this book is](ch-1.md)** — two acts that keep needing a human, and the four answers the method can produce.
-- **[Chapter 2 — The method at a glance](ch-2.md)** — two gates above, five triage gates inside, the atlas below.
+- **[Chapter 2 — Five modes of AI use](ch-2.md)** — generative, conversation, building, augmentation, and the fifth: AI deployed inside an organisation.
+- **[Chapter 3 — The method at a glance](ch-3.md)** — two gates above, five triage gates inside, the atlas below.
 
 ## Rendering demos
 

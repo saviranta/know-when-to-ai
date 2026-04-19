@@ -14,6 +14,8 @@ The book is a method for doing that. Six stages, two gates above them, a toolbox
 
 A method for deciding whether — and how — to use AI on a specific problem.
 
+The method is built for one kind of AI use — AI deployed inside an organisation, where the operator of the system and the person affected by its output are not the same. [Chapter 2](ch-2.md) names four other modes of AI use — generative work, conversation and reflection, building, augmentation — where this method is not needed. Everything from [Chapter 3](ch-3.md) onwards is aimed at the deployed case.
+
 The method can produce four different answers for any engagement, each named and defensible, each reached at a specific point in the work:
 
 - **Off-limits to AI.** Some problems arrive as decisions that should not be handed to a machine at all, regardless of capability. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing. For categories like these, the honest recommendation is to leave them un-automated, now and later. The method makes that recommendation available, not hidden.
@@ -92,7 +94,7 @@ Every cited source carries a provenance tag in the reference list at the end of 
 
 A method that cannot be wrong about a specific engagement is not a method; it is a style. The one in this book can be wrong, at named gates, in named ways. The chapters that follow show where.
 
-Next: the method.
+Next: the five modes of AI use, and which one this book is about.
 
 ## Sources
 
