@@ -8,7 +8,7 @@ The second is **deciding what a machine should and should not decide**. Some dec
 
 So the real question isn't *whether* to use AI. It is *is this an AI problem — and if so, where should a machine fit in the decision?* Most AI books answer a different question, *how do I build this*, and presume the first one is already settled. This one doesn't. The reader shows up with a brief. The brief contains a name — a chatbot, an agent, a copilot, a retrieval system, a classifier — and an expectation that the name is the answer. The first move is to refuse that shortcut and ask what the problem actually is.
 
-The book is a method for doing that. Six stages, two gates above them, a toolbox of twenty-six entries below. The method produces one of four honest answers for any given problem. It does not pre-commit to "yes, use AI." It also does not pre-commit to "no." It tries to produce the right answer for the problem in front of it, and it shows its working.
+The book is a method for doing that. Five gates, two checks above them, a toolbox of twenty-six entries spread across them. The method produces one of four honest answers for any given problem. It does not pre-commit to "yes, use AI." It also does not pre-commit to "no." It tries to produce the right answer for the problem in front of it, and it shows its working.
 
 ## 1.2 What you get from reading it
 

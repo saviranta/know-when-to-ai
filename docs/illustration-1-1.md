@@ -12,18 +12,18 @@ flowchart TD
 
   TIER0 ==> SPINE
 
-  subgraph SPINE["TIER 1 &mdash; the method"]
+  subgraph SPINE["TIER 1 &mdash; five triage gates"]
     direction LR
-    S1[Frame] --> S2[Diagnose] --> S3[Decompose] --> S4[Route] --> S5[Sequence] --> S6[Commit]
+    S1[G1 Observe] --> S2[G2 Decompose] --> S3[G3 Route] --> S4[G4 Sequence] --> S5[G5 Commit]
   end
 
-  SPINE -.-> ATLAS[["Atlas &mdash; tools invoked at each stage"]]
+  SPINE -.-> ATLAS[["Atlas &mdash; tools invoked at each gate"]]
 
   classDef tier0Gate stroke-width:3px,font-weight:bold;
   classDef tier1Stage stroke-width:1.5px;
   classDef atlasNote stroke-dasharray:4 4,stroke-width:1px,font-style:italic;
   class G1,G2 tier0Gate;
-  class S1,S2,S3,S4,S5,S6 tier1Stage;
+  class S1,S2,S3,S4,S5 tier1Stage;
   class ATLAS atlasNote;
 ```
 
