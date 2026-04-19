@@ -60,8 +60,10 @@ extra_javascript:
 nav:
   - Home: index.md
   - Chapters:
-      - "2 — What this book is not": ch-2.md
+      - "1 — The agentic shift": ch-1.md
+      - "2 — What this book is about": ch-2.md
+      - "3 — The method at a glance": ch-3.md
   - Illustrations:
       - "1.1 — Two gates (Mermaid)": illustration-1-1.md
-      - "2.1 — Genres refused (SVG)": illustration-2-1.md
+      - "2.1 — Four outcomes (SVG)": illustration-2-1.md
       - "8.1 — Routing matrix (CSS)": illustration-8-1.md
