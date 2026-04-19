@@ -89,7 +89,7 @@ That asymmetry is why the book's scaffolding exists. The Tier 0 gates, the routi
 
 ## 2.3 When the four come back at G3
 
-The four modes do not disappear when the method runs. They reappear at G3 Route as the capability palette the method picks from. When G3 places a sub-problem against an AI rung — an LLM feature, retrieval-augmented generation, a single agent, a tool-using agent — it is choosing *which of the four capabilities* the AI will perform inside the larger system:
+The four modes do not disappear when the method runs. They reappear at G3 Route as the capability palette the method picks from. When G3 places a sub-problem against an AI level — an LLM feature, retrieval-augmented generation, a single agent, a tool-using agent — it is choosing *which of the four capabilities* the AI will perform inside the larger system:
 
 - A drafting step in a legal workflow is a **generative** placement.
 - A retrieval-and-summarisation step in a clinician's cockpit is a **conversation-and-reflection** placement — the clinician is doing the thinking, and the system is lowering the cost of asking good questions.
