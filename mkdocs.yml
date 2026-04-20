@@ -72,10 +72,16 @@ nav:
       - "10 — Access indices": ch-10.md
       - "11 — Overlays": ch-11.md
   - Toolkit:
-      - "Bow-tie analysis": tool-bow-tie-analysis.md
-      - "STPA": tool-stpa.md
-      - "Blast-radius estimation": tool-blast-radius-estimation.md
-      - "Rollback-trigger design": tool-rollback-trigger-design.md
+      - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
+      - "G4 — Reversibility classes": tool-reversibility-classes.md
+      - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
+      - "G4 — Three-stage rollout": tool-three-stage-rollout.md
+      - "G5 — Rollback-trigger design": tool-rollback-trigger-design.md
+      - "G5 — Named-owner discipline": tool-named-owner-discipline.md
+      - "G5 — Review-cadence matrix": tool-review-cadence-matrix.md
+      - "G5 — Sunset criteria worksheet": tool-sunset-criteria-worksheet.md
+      - "Cross-gate — Bow-tie analysis": tool-bow-tie-analysis.md
+      - "Cross-gate — STPA": tool-stpa.md
   - Rendering demos:
       - "Mermaid — method spine": illustration-1-1.md
       - "SVG — four answers": illustration-2-1.md
