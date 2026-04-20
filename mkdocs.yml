@@ -93,6 +93,13 @@ nav:
       - "G3 — Cynefin framework": tool-cynefin.md
       - "G3 — Pre-mortem": tool-pre-mortem.md
       - "G3 — Pair worksheet": tool-pair-worksheet.md
+      - "G3 — Shadow deployment": tool-shadow-deployment.md
+      - "G3 — Offline evaluation": tool-offline-evaluation.md
+      - "G3 — Controlled A/B": tool-controlled-ab.md
+      - "G3 — Adaptation decision tree": tool-adaptation-decision-tree.md
+      - "G3 — Label budget calculation": tool-label-budget-calculation.md
+      - "G3 — Retrievable quality test": tool-retrievable-quality-test.md
+      - "G3 — TCO ladder": tool-total-cost-of-ownership-ladder.md
       - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
       - "G4 — Reversibility classes": tool-reversibility-classes.md
       - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
