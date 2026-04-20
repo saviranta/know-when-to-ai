@@ -150,25 +150,128 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
 
 **Autonomous AI.** An AI level fits the piece *and* can be operated under controls fitting the decision's reversibility, blast radius, and consequence time. The AI makes the call. In freight, yard-slot allocation twenty-four hours out is a candidate: a model predicts trailer volume per hour and reserves slots without a human in the loop, a named owner watches weekly accuracy, every allocation is logged with its features, allocations older than four hours can be swapped manually, and the system sunsets if accuracy drops below the published carrier baseline for two consecutive weeks. The route reads: *Autonomous AI. Substrate: gradient-boosted predictor with a thin LLM carrier-communication layer. Controls: weekly accuracy dashboard, override log, rollback to rules at eighty per cent of baseline, sunset at sixty per cent. Justification: decision is reversible within four hours, baseline is published, rollback substrate exists, owner is named.*
 
-Two quiet rules on the four outcomes. The first: **every outcome carries a controls burden**, including the non-AI outcomes. Human-operated needs training and an escalation path. Non-AI automation needs a fitness review and an explicit audit trail. Assistant and autonomous need progressively more. The burden is not zero anywhere, and it rises with AI autonomy and with the decision's stakes. The second: **when in doubt, drop a column**. A piece whose case for *Autonomous AI* is half-drawn gets routed to *AI as assistant* until the case is whole; a piece whose case for *AI as assistant* is half-drawn gets routed to *Non-AI automation* or *Human-operated*. Conservative routing is the intended failure mode of the gate.
+Two quiet rules on the four outcomes. The first: **every outcome carries a controls burden**, including the non-AI outcomes. Human-operated needs training and an escalation path. Non-AI automation needs a fitness review and an explicit audit trail. Assistant and autonomous need progressively more. The burden is not zero anywhere, and it rises with AI autonomy and with the decision's stakes. The second: **when in doubt, step back one outcome**. A piece whose case for *Autonomous AI* is half-drawn gets routed to *AI as assistant* until the case is whole; a piece whose case for *AI as assistant* is half-drawn gets routed to *Non-AI automation* or *Human-operated*. Conservative routing is the intended failure mode of the gate.
 
 ## 7.4 Tools at G3
 
-Each of the three questions in Illustration 7.1 has a small toolkit of frames and artefacts. None are invented here — they are borrowed from the analytical traditions the gate inherits from. Naming them keeps the work assessable rather than vibes-based.
+Each question in the routing flow has a small toolkit — frames and artefacts the gatekeeper can point to when asked *why this outcome?*. None of the tools are invented here; they are borrowed from analytical traditions the gate inherits from. Naming them, and picking them deliberately, keeps the routing assessable rather than vibes-based. A routing map whose justifications cite specific tools by name — *"operator shadowing for Q1; DMN for Q2; Model Cards and SMACTR for controls"* — is a map the next engagement can challenge on its own terms. A map whose justifications read *"team judgement"* is a map that cannot be reviewed.
 
-**Q1 — Does any automation earn its place?** Three analytical tools answer this without any AI-specific apparatus. *Operator shadowing*, picked up from G1 Observe, is the simplest: sit with the person doing the work for a full shift and write down what they actually do. *Time-and-motion records* — the classical industrial-engineering artefact — count the distribution of activity across a week and surface the places where repetition is genuine. *Value-stream mapping* from Lean production reads the flow end-to-end, flagging the steps where automation would merely displace a bottleneck one position downstream. If the three together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*; the gate does not use "we could probably automate this" as an input.
+### Q1 — Does any automation earn its place?
 
-**Q2 — Does a rule, script, or classical ML fit?** The test here is whether the decision surface is explicit and stable. *Decision tables* — rows of conditions, columns of outcomes — are the fastest way to draw the surface on paper; if every row terminates cleanly, the piece is a rule. The *Decision Model and Notation* standard [9] is the industrial version of the same idea, pairing a decision-requirements diagram with executable decision tables. For classical ML, the test shifts to whether a stable label set and a maintainable labelling pipeline exist; without those, the problem shape fits but the enabling conditions do not (see routing error 4 in section 7.7).
+This question is not *could we automate this?* — almost any step could, given enough investment. It is *is the work shaped such that automation pays back?*. A step done once a month, or done fifty times a day but with heavy judgement on each call, or sitting downstream of a bottleneck that would simply move one position after automation, does not earn automation. The question asks the gatekeeper to look at the shape of the work, not at the appeal of the technology.
 
-**Q3 — Can AI hold this decision under fitting controls?** The question has two parts, and each part has a different toolkit.
+Three tools answer this without any AI-specific apparatus. Use them in that order: shadowing first, because it produces the raw observations; time-and-motion records second, because they aggregate the observations into a distribution; VSM third, because it places the aggregate inside the end-to-end flow. Stop at the earliest one that settles the question.
 
-For *does AI work here?*, the tools are mostly empirical. Shadow deployment — the AI runs on live inputs but its outputs are not actioned — produces the first honest read. Offline evaluation on held-out operator decisions produces the second. A third, more expensive, is a controlled A/B against the current substrate, which some decisions (the ones with a blast radius larger than a small cohort) will not support; that constraint itself informs the routing.
+??? note "Operator shadowing"
+    Sit with the person doing the work for a full shift and write down what they actually do, minute by minute. Best tool when the stated process and the observed process diverge. Weakest when the work is already well-documented or when the observed shift is not representative.
 
-For *can fitting controls be drawn?*, the tools are drawn from the governance and audit literature. The *NIST AI Risk Management Framework* [4] and *ISO/IEC 42001* [3] supply the vocabulary for risk identification, measurement, and management at the decision level. The *SMACTR* internal-audit protocol [7] — scoping, mapping, artefact collection, testing, reflection — supplies a reproducible procedure for drawing the audit trail and the rollback trigger before the system is built. *Model Cards* [8] document the model's training provenance, its performance slices, and its intended-use boundary on a single page the owner can hand to an auditor. Shneiderman's two-dimensional human-centred AI frame [6] — automation level on one axis, human control on the other — is the simplest way to sanity-check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate.
+    *Atlas entry: Part 4 (pending).*
 
-**Picking a level within the AI range.** Once the route is *AI as assistant* or *Autonomous AI*, four supporting tools govern level choice. The *adaptation decision tree* (Chapter 10 overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. The *label-budget calculation* estimates labeller-hours per month and disagreement-resolution cost, and is non-optional for classical-ML and fine-tuned routes. The *retrievable-quality test* asks whether the corpus is chunked, current, and indexed against the questions actually asked — the RAG precondition. The *total-cost-of-ownership ladder* (Chapter 10 overlay) attaches a per-call cost band to each atlas level, so that the cost implication of climbing is visible at the routing table, not at deployment.
+??? note "Time-and-motion records"
+    The classical industrial-engineering artefact: count the distribution of activity across a representative week and surface the steps where repetition is genuine. Best when the work is high-volume and repetitive enough to aggregate meaningfully. Weakest for low-frequency or creative work.
 
-None of these tools is a replacement for the gatekeeper's judgment. Each is a lens that makes a specific facet of the decision examinable. A routing map whose justifications cite the lenses by name ("we used operator shadowing to confirm Q1; DMN to draw the Q2 decision surface; Model Cards and SMACTR for the controls sketch") is a map the next engagement can challenge on its own terms. A routing map whose justifications read "team judgment" is a map that cannot be reviewed.
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Value-stream mapping (VSM)"
+    From Lean production: draw the end-to-end flow and mark where each step adds value, where it waits, where it is reworked. Best when the question is *would automation here actually reduce cycle time?*. Weakest when the flow is too unstable to map.
+
+    *Atlas entry: Part 4 (pending).*
+
+If the three together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
+
+### Q2 — Does a rule, script, or classical ML fit?
+
+This question asks whether the decision surface is *explicit and stable*. Explicit means the conditions that determine the outcome can be written down; stable means they do not shift week to week as exceptions accumulate. Where both hold, a rule or classical-ML model carries the decision more cheaply, more auditably, and more reliably than any AI substrate would. The question is not about sophistication; it is about whether the decision can be reduced to an enumerable set of conditions.
+
+Two tools draw the surface; the rule-versus-ML split then follows automatically. Draw the decision table first. If every row terminates cleanly in an outcome, the piece is a rule and the table is the specification. If the rows need an adjudicator — a classifier, a scorer — to handle distributions the table cannot enumerate, the piece is classical ML, conditional on the enabling conditions below.
+
+??? note "Decision tables"
+    Rows of conditions, columns of outcomes, cells marked yes / no / —. The fastest way to draw the decision surface on paper. If every row terminates cleanly, the piece is a rule and the table is the specification.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Decision Model and Notation (DMN)"
+    The industrial version of the decision table, standardised by OMG [9]. Pairs a decision-requirements diagram with executable decision tables. Use when the rule surface has dependencies — decision A depends on decision B depends on decision C — and a flat table is no longer enough.
+
+    *Atlas entry: Part 4 (pending).*
+
+For classical ML, the test shifts to the enabling conditions: is there a stable label set, a maintainable labelling pipeline, and a budget for both? Without those, the problem shape fits but the preconditions do not (see routing error 4 in section 7.7). The label-budget calculation, listed below under AI-range tools, is the right instrument.
+
+### Q3 — Can AI hold this decision under fitting controls?
+
+This is the most dangerous question in the gate, because it is two questions wearing one label. The first is *does AI work here?* — an empirical question about the model's performance on the real decision distribution, not on training data. The second is *can fitting controls be drawn?* — a design question about whether the audit, rollback, review, and sunset machinery can be sketched with enough specificity that a named owner can be handed responsibility. A *yes* to one is not a *yes* to both, and conflating the two is how *Autonomous AI* routes survive G3 and fail at G5.
+
+Work the two parts in order. Establish empirical fitness first; if the model does not work, the controls discussion is moot. Then work controls. If controls cannot be drawn for the decision the model would make, the piece is routed to *AI as assistant* regardless of how well the model performs — the controls design is the gating condition, not the performance number.
+
+**Does AI work here?** Pick by how the decision's blast radius constrains the experiment. Shadow deployment is the cheapest and safest, because the outputs are not actioned. Offline evaluation uses the richest data (historical operator decisions) but can only measure against past distributions. A controlled A/B is the only test that measures against the current substrate under live conditions, but a decision with a blast radius larger than a small cohort will not admit an A/B at all — a constraint that itself informs the routing.
+
+??? note "Shadow deployment"
+    The AI runs on live inputs but its outputs are not actioned; outputs are logged and compared to the substrate in production. Best as the first empirical read. Weakest on decisions where the AI's output would have changed the input distribution the next step sees.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Offline evaluation"
+    Run the AI over a held-out set of historical operator decisions and compare. Best when the historical distribution is representative. Weakest when the decision distribution drifts fast, or when the historical labels are themselves noisy (see routing error 2).
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Controlled A/B against the current substrate"
+    Route a slice of live traffic to the AI substrate, the rest to the current one, compare outcomes over a pre-declared window. Best when the blast radius admits a small cohort. Not available for decisions with large or concentrated blast radius.
+
+    *Atlas entry: Part 4 (pending).*
+
+**Can fitting controls be drawn?** The tools here are drawn from the governance and audit literature. Pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR and Model Cards supply per-system artefacts; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
+
+??? note "NIST AI Risk Management Framework"
+    Voluntary framework for risk identification, measurement, and management at the system level [4]. Use as the organisation-level vocabulary when drawing risk categories and management functions; it names the pieces a controls sketch must address.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "ISO/IEC 42001"
+    International management-system standard for AI [3]. Use where the organisation is seeking third-party certification or has contractual obligations that reference ISO standards. Sets the process discipline around the controls design rather than the design itself.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "SMACTR internal-audit protocol"
+    Scoping, Mapping, Artefact collection, Testing, Reflection [7]. A reproducible procedure for drawing the audit trail and the rollback trigger *before* the system is built. Use to turn *"we will have controls"* into a named set of artefacts with owners against them.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Model Cards"
+    A single-page document of a model's training provenance, performance slices, and intended-use boundary [8]. Use as the owner-facing artefact the controls set is anchored on; particularly strong for classical-ML and fine-tuned routes, where provenance and slice performance are load-bearing.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Shneiderman two-axis frame"
+    Automation level on one axis, human control on the other [6]. Use as a sanity check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate. Quick to apply at the line between assistant and autonomous.
+
+    *Atlas entry: Part 4 (pending).*
+
+### Picking a level within the AI range
+
+Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choice follows: which level in the capability atlas? The atlas itself is in section 7.6; the question here is which tools help make the choice. Four tools do most of the work. Run them in order. The adaptation decision tree picks between prompt, retrieval, fine-tune, and agent. The precondition tests follow — a label budget if the tree arrives at fine-tune or classical ML, a retrievable-quality test if it arrives at RAG. The total-cost-of-ownership ladder then sanity-checks the choice against the cost the owning team can actually carry, indefinitely.
+
+??? note "Adaptation decision tree"
+    Chapter 10 overlay. Runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Use as the top-of-tree choice between levels; each step past *prompt* must be earned by a case the previous step cannot carry (see heuristic 2 in Illustration 7.2).
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Label-budget calculation"
+    Labeller-hours per month, plus the cost of resolving disagreements between labellers. Non-optional for classical-ML and fine-tuned routes. A route without a label budget is a wish, not a plan (see routing error 4 in section 7.7).
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Retrievable-quality test"
+    Is the corpus chunked sensibly, current, and indexed against the questions actually asked? The RAG precondition. A corpus that fails the test is not a RAG substrate; it is a human-side reference (see routing error 5).
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Total-cost-of-ownership ladder"
+    Chapter 10 overlay. Attaches a per-call cost band to each atlas level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
+
+    *Atlas entry: Part 4 (pending).*
+
+None of these tools replaces the gatekeeper's judgement. Each is a lens that makes a specific facet of the decision examinable. Together they let G3 be defended in a way no single overall heuristic could — and, on the way back from a failed engagement, debugged in a way no post-hoc story could.
 
 ## 7.5 Controls for an AI route
 
@@ -190,7 +293,7 @@ Three tests decide which parts a decision needs, and at what grain. *Reversibili
 
 At G3, the controls are not yet *built*; they are *drawn*. A credible sketch on a named owner's desk is the condition for an *Autonomous AI* route; the build comes at G4 Sequence and lives at G5 Commit. The sketch is not a score and not a promise. It does not convert controls-quality into a number and threshold against it; and it does not require that the controls are in place on day one. It requires that the controls are plausibly buildable by the team that will own them, and that the team has written them down with enough specificity that a sceptical reader can tell whether they were built when the next review comes around.
 
-When in doubt, the route drops a column. A piece whose controls design is half-finished on the page is routed to *AI as assistant* until the design is whole. This is the conservative rule, and it means that some problems the technology could handle well are held at assistant-level longer than they need to be. That is the intended failure mode of the gate.
+When in doubt, the route steps back one outcome. A piece whose controls design is half-finished on the page is routed to *AI as assistant* until the design is whole. This is the conservative rule, and it means that some problems the technology could handle well are held at assistant-level longer than they need to be. That is the intended failure mode of the gate.
 
 ## 7.6 The AI capability atlas — choosing a level
 
@@ -226,40 +329,40 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 
   <line class="ch7a-divider" x1="213" y1="54" x2="213" y2="230" />
 
-  <rect class="ch7a-rect ch7a-rect-1" x="20" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-1" x="20" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="65" y="92">Rule</text>
   <text class="ch7a-sub" x="65" y="112">if/then,</text>
   <text class="ch7a-sub" x="65" y="124">lookup</text>
 
-  <rect class="ch7a-rect ch7a-rect-2" x="116" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-2" x="116" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="161" y="88">Classical</text>
   <text class="ch7a-label" x="161" y="102">ML</text>
   <text class="ch7a-sub" x="161" y="120">GBT, LR,</text>
   <text class="ch7a-sub" x="161" y="131">SVM</text>
 
-  <rect class="ch7a-rect ch7a-rect-3" x="220" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-3" x="220" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="265" y="92">LLM</text>
   <text class="ch7a-sub" x="265" y="112">single call,</text>
   <text class="ch7a-sub" x="265" y="124">no tools</text>
 
-  <rect class="ch7a-rect ch7a-rect-4" x="316" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-4" x="316" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="361" y="92">RAG</text>
   <text class="ch7a-sub" x="361" y="112">LLM +</text>
   <text class="ch7a-sub" x="361" y="124">retriever</text>
 
-  <rect class="ch7a-rect ch7a-rect-5" x="412" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-5" x="412" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="457" y="88">Single</text>
   <text class="ch7a-label" x="457" y="102">agent</text>
   <text class="ch7a-sub" x="457" y="120">one task,</text>
   <text class="ch7a-sub" x="457" y="131">few steps</text>
 
-  <rect class="ch7a-rect ch7a-rect-6" x="508" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-6" x="508" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="553" y="88">Tool-using</text>
   <text class="ch7a-label" x="553" y="102">agent</text>
   <text class="ch7a-sub" x="553" y="120">many tools,</text>
   <text class="ch7a-sub" x="553" y="131">branching</text>
 
-  <rect class="ch7a-rect ch7a-rect-7" x="604" y="60" width="90" height="70" rx="3" />
+  <rect class="ch7a-rect ch7a-rect-7" x="604" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="649" y="88">Multi-</text>
   <text class="ch7a-label" x="649" y="102">agent</text>
   <text class="ch7a-sub" x="649" y="120">coordinator</text>
