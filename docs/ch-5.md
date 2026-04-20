@@ -1,8 +1,8 @@
 # Chapter 5 — G1 Observe
 
-G1 is the first Tier-1 gate. It closes on one artefact — the **situation statement**, a paragraph that names what is actually happening, to whom, since when, and with what second-order effects. The gate runs side by side with the Tier-0 checks, not after them: in most engagements, the three moves — framing conversation, Technochauvinism check, Abolition check — are woven into the same handful of hours with the sponsor, the operator, and a stakeholder with visibility on the affected party.
+G1 is the first Tier-1 gate. It closes when the team shares a confident, tested understanding of the situation: what is actually happening, to whom, since when, and with what second-order effects. The **situation statement** is the artefact that records that understanding — a paragraph tight enough to be read, challenged, and carried into the next gate. The gate runs side by side with the Tier-0 checks, not after them: in most engagements, the three conversations — framing, Technochauvinism check, Abolition check — are woven into the same handful of hours with the sponsor, the operator, and a stakeholder with visibility on the affected party.
 
-The gate contains two distinct moves, and this chapter keeps them visibly separate. **Framing** states the problem in the world, not the problem in the brief. **Diagnosis** finds the system the symptom lives in. The moves are different crafts — framing is reflective and stakeholder-facing; diagnosis is observational and operator-facing — and confusing them produces two characteristic failures. Skip framing and you diagnose the wrong system with great care. Skip diagnosis and you frame the right problem in words the operator would not recognise. The two moves share one output — the situation statement — because the gate is one gate; splitting the artefact would produce two documents that have to be reconciled later. Part A of this chapter treats framing. Part B treats diagnosis. §5.7 is the shared artefact both parts produce.
+The gate contains two distinct disciplines, and this chapter keeps them visibly separate. **Framing** states the problem in the world, not the problem in the brief. **Diagnosis** finds the system the symptom lives in. They are different crafts — framing is reflective and stakeholder-facing; diagnosis is observational and operator-facing — and confusing them produces two characteristic failures. Skip framing and you diagnose the wrong system with great care. Skip diagnosis and you frame the right problem in words the operator would not recognise. The two converge on one shared understanding — recorded in one shared artefact, the situation statement — because the gate is one gate; splitting the understanding would produce two documents that have to be reconciled later. Part A of this chapter treats framing. Part B treats diagnosis. Section 5.7 is where the shared understanding is written down.
 
 Most engagements fail G1 in one of two ways. Either the brief is accepted as written — its naming of the problem, its proposed solution, its bounded scope — and the rest of the method optimises an irrelevance. Or the gate is treated as procedural — a kick-off workshop, a stakeholder deck, a pre-mortem template — and the work never leaves the meeting room long enough to meet the operator, the customer, or the downstream team. In both failures, the artefact that eventually lands in G2 is not the situation statement; it is a restatement of the brief.
 
@@ -10,7 +10,7 @@ This chapter is the craft of avoiding that.
 
 ## Part A — Framing
 
-Framing is the move that states what the work is, what success means, and who the success is for. It is done with the sponsor, the principal, and any party whose interests are load-bearing on the engagement. Its outputs — a framed problem and a stakeholder map — feed directly into the situation statement and also into the Tier-0 checks running alongside.
+Framing states what the work is, what success means, and who the success is for. It is done with the sponsor, the principal, and any party whose interests are load-bearing on the engagement. Part A builds a shared understanding of the frame and the stakeholder field; the framed-problem paragraph and the stakeholder map are the two artefacts that record it. Both feed directly into the situation statement and also into the Tier-0 checks running alongside.
 
 ### 5.1 Framing is what the work is
 
@@ -22,7 +22,7 @@ Framing is the act of stating three things out loud before any tool is reached f
 
 Each is harder than it sounds. *What the work is* drifts the moment a tool is mentioned — the work becomes *building the tool* rather than *solving the problem the tool was supposed to address*. *What success means* collapses into a metric, because metrics are measurable and judgments are not, and a measurable wrong answer beats an unmeasurable right one in most organisations. *Who the success is for* is almost always left implicit, because making it explicit exposes whose interests are not being served.
 
-Schön called this move *problem setting*: the reflection-in-action discipline that precedes any problem solving [1]. The received brief is almost never the problem. The framing move is what turns the one into the other. It is the first design decision. It is the one most often skipped.
+Schön called this *problem setting*: the reflection-in-action discipline that precedes any problem solving [1]. The received brief is almost never the problem. Framing is what turns the one into the other. It is the first design decision. It is the one most often skipped.
 
 Framing is reflective rather than procedural. You talk to the problem. You try a framing; you watch what it makes visible and what it hides; you try another; you compare. The paragraph that ends up on the page is not the first one you wrote. If it is, the framing has not been tested against the situation — only asserted over it.
 
@@ -44,11 +44,11 @@ A retail-pricing example makes the columns concrete. A pricing team proposes a d
 
 The stakeholder map is also an input to the Tier-0 checks. When the *affected* column surfaces a category — a benefits-eligibility decision, an immigration-risk use, an automated-sanction path — the Abolition check in [Chapter 4](ch-4.md) fires categorically. When the *absent* column surfaces non-technical alternatives that were never considered, the Technochauvinism check fires. G1's framing conversation and Tier 0 share this artefact.
 
-Part A produces two outputs: a framed problem (§5.1) and a stakeholder map (§5.2). Neither is the situation statement yet. Both feed into Part B, where the frame is tested against what the system actually does.
+By the end of Part A, the framing conversation has produced a shared understanding of the problem in the world and the stakeholder field it touches — captured in two artefacts, the framed-problem paragraph (Section 5.1) and the stakeholder map (Section 5.2). Neither is the situation statement yet. Both feed into Part B, where the frame is tested against what the system actually does.
 
 ## Part B — Diagnosis
 
-Diagnosis is the move that tests the frame against the system the symptom lives in. It is done with operators, customers, and the work itself — not with decks. Its output is a description of the system precise enough that the framed problem can be located inside it, or found to have been misplaced.
+Diagnosis tests the frame against the system the symptom lives in. It is done with operators, customers, and the work itself — not with decks. Part B builds a tested understanding of that system — precise enough that the framed problem can be located inside it, or found to have been misplaced — and records it in a system description.
 
 ### 5.3 Symptom versus system
 
@@ -66,7 +66,7 @@ An airline boarding example makes the split visible. The brief reads: *boarding 
 
 To see the system, you need to hear how its best operator decides. The mature technique for this is the Critical Decision Method.
 
-Hoffman, Crandall, and Shadbolt's 1998 paper in *Human Factors* [4] is the reference account — a case study that turned CDM from aviation and emergency-response practice into a documented methodology for cognitive task analysis. The move CDM makes is simple and strict. You do not interview an expert about the job in general. You pick one specific, recent, non-routine case — one the expert remembers because something about it was hard — and you walk through it four times. Each pass asks different probes of the same incident.
+Hoffman, Crandall, and Shadbolt's 1998 paper in *Human Factors* [4] is the reference account — a case study that turned CDM from aviation and emergency-response practice into a documented methodology for cognitive task analysis. The method is simple and strict. You do not interview an expert about the job in general. You pick one specific, recent, non-routine case — one the expert remembers because something about it was hard — and you walk through it four times. Each pass asks different probes of the same incident.
 
 The first pass reconstructs the timeline: what happened, in what order, who was present, what the instruments and the room looked like. The second pass identifies decision points — the moments where the expert could have gone a different way — and deepens them. What cues were picked up? What were you expecting? What would a less-experienced operator have missed? The third pass runs counterfactuals. What would have changed if a specific cue had been absent? What if a junior had made the call? The fourth pass steps back: what made this case hard, how does it differ from routine cases, what would you want a replacement to know?
 
@@ -154,11 +154,11 @@ See Illustration 5.1.
 
 Observation that does not loop is note-taking. The loop is what turns notes into a diagnosis.
 
-Part B produces a system description: the symptom located inside the system that generates it, with the cues, operators, and distributed arrangements that keep it running named. The frame from Part A is now tested against that description. Where the two agree, the situation statement writes itself. Where they disagree, one of them moves — and the looped observation in §5.6 is what forces the disagreement to the surface before the gate closes.
+By the end of Part B, the team has a tested understanding of the system the symptom lives in — the symptom located inside the system that generates it, with the cues, operators, and distributed arrangements that keep it running named — recorded in a system description. The frame from Part A is now tested against that description. Where the two agree, the situation statement writes itself. Where they disagree, one of them has to give — and the looped observation in Section 5.6 is what forces the disagreement to the surface before the gate closes.
 
 ## 5.7 The situation statement
 
-G1 closes on one artefact. A paragraph. It is not a deck, not a matrix, not a hypothesis register. A paragraph, because a paragraph forces the coherence that longer forms hide — and because two moves (framing and diagnosis) converging on one paragraph is how the gate resolves whatever disagreement survived the observation loop. If the paragraph cannot be written, the frame and the system description have not yet been reconciled, and the gate is not yet closed.
+G1 closes on a shared understanding of the situation — confident enough to act on, falsifiable enough to be tested, named in language the operator recognises. The situation statement is the artefact that captures that understanding. A paragraph. Not a deck, not a matrix, not a hypothesis register. A paragraph, because a paragraph forces the coherence that longer forms hide — and because framing and diagnosis converging on one paragraph is how the gate resolves whatever disagreement survived the observation loop. If the paragraph cannot be written, the frame and the system description have not yet been reconciled, and the gate is not yet closed.
 
 Five things belong in it, in this order:
 
@@ -176,7 +176,7 @@ A worked example, freight logistics:
 
 That paragraph does four things the brief does not. It names the actual event (release delay on dual-hold days). It names who wears the cost (the carrier). It names a second-order effect (re-routing) the brief did not see. And it names what would have to be true for the brief's diagnosis to survive — dispatch order as the constraint — and shows the data does not support it. Whatever is routed next, it will not be routed against a fiction.
 
-The statement is not the end of diagnosis. It is the deliverable of the gate. Decomposition and routing both read from it; if they read something else, they are solving a different problem.
+The statement is not the end of diagnosis. It is how the gate records what the team now knows. Decomposition and routing both read from it; if they read something else, they are solving a different problem.
 
 ## 5.8 Common failures
 
@@ -190,7 +190,7 @@ Four patterns turn up often enough to name. Two are framing failures; two are di
 
 *The lone-expert trap (diagnostic failure).* One interview with the one person who *knows how it really works* produces a diagnosis that matches that person's seat. It misses the second-order effects, the affected parties, and — often — the workarounds that keep the system running despite the lone expert's model. The Dreyfus ladder is a tell here: if the lone expert is the only proficient-or-above operator in a system that runs day-to-day, most of the work is being done by a distributed cognitive system the lone expert does not see from their seat. The countermeasure is at minimum one CDM interview plus one second-seat interview plus direct observation; ideally, a ShadowBox-scale scenario across the full population of operators.
 
-A fifth failure cuts across both moves: *observation without a return pass*. Whatever was seen first becomes the diagnosis, because nothing was seen second. The loop in Illustration 5.1 exists to prevent exactly that.
+A fifth failure cuts across both parts: *observation without a return pass*. Whatever was seen first becomes the diagnosis, because nothing was seen second. The loop in Illustration 5.1 exists to prevent exactly that.
 
 Next: G2 Decompose takes the situation statement and breaks it into pieces that can be routed separately.
 
