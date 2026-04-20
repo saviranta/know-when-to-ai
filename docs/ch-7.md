@@ -1,4 +1,4 @@
-# Chapter 7 — G4 Sequence and G5 Commit
+# Chapter 7 — G3 Route
 
 *Chapter in progress.*
 

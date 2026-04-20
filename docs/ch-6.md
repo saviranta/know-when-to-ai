@@ -1,4 +1,4 @@
-# Chapter 6 — G3 Route
+# Chapter 6 — G2 Decompose
 
 *Chapter in progress.*
 

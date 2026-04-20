@@ -1,4 +1,4 @@
-# Chapter 5 — G2 Decompose
+# Chapter 5 — G1 Observe
 
 *Chapter in progress.*
 

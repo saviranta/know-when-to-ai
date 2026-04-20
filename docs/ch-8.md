@@ -1,4 +1,4 @@
-# Chapter 8 — Access indices
+# Chapter 8 — G4 Sequence and G5 Commit
 
 *Chapter in progress.*
 

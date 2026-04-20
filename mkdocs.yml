@@ -63,12 +63,13 @@ nav:
       - "1 — What this book is": ch-1.md
       - "2 — Five modes of AI use": ch-2.md
       - "3 — The method at a glance": ch-3.md
-      - "4 — G1 Observe": ch-4.md
-      - "5 — G2 Decompose": ch-5.md
-      - "6 — G3 Route": ch-6.md
-      - "7 — G4 Sequence and G5 Commit": ch-7.md
-      - "8 — Access indices": ch-8.md
-      - "9 — Overlays": ch-9.md
+      - "4 — Tier 0 checks": ch-4.md
+      - "5 — G1 Observe": ch-5.md
+      - "6 — G2 Decompose": ch-6.md
+      - "7 — G3 Route": ch-7.md
+      - "8 — G4 Sequence and G5 Commit": ch-8.md
+      - "9 — Access indices": ch-9.md
+      - "10 — Overlays": ch-10.md
   - Rendering demos:
       - "Mermaid — method spine": illustration-1-1.md
       - "SVG — four answers": illustration-2-1.md
