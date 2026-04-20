@@ -253,7 +253,11 @@ Then the empirical phase. Pick by how the decision's blast radius constrains the
 
     *Toolkit entry: Part 4 (pending).*
 
-**Can fitting controls be drawn?** The tools here are drawn from the governance and audit literature. Pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR, Model Cards, and Datasheets for Datasets supply per-system and per-dataset artefacts; the HAX Workbook sits alongside Amershi's Human-AI Interaction guidelines for user-facing systems; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
+**Can fitting controls be drawn?** Two families of tools help, and the distinction matters. One family *derives* the controls — it starts from the decision's failure modes and works outward to the barriers and constraints the controls sketch must contain. The other family *documents* them — it takes a derived set and writes it down in a shape the organisation, the auditor, and the next reviewer can read.
+
+The derivation tools come first. *Bow-tie analysis* draws the controls set visually around a central hazard: prevention barriers on the left (what stops the hazard from occurring), mitigation barriers on the right (what limits the harm once it does). Each barrier becomes a named control with an owner. *STPA* (Systems-Theoretic Process Analysis) models the piece as a control structure, enumerates the unsafe control actions the structure can produce, and derives safety constraints — each of which is a control, stated as *what must not happen*. Bow-tie is faster and more visual; STPA is more systematic and scales to sociotechnical systems where feedback loops, not component failures, are the hazard. Both produce controls as outputs; the documentation tools below inherit those outputs and give them a shape the organisation can audit.
+
+The documentation tools then pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR, Model Cards, and Datasheets for Datasets supply per-system and per-dataset artefacts; the HAX Workbook sits alongside Amershi's Human-AI Interaction guidelines for user-facing systems; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
 
 ??? note "NIST AI Risk Management Framework"
     Voluntary framework for risk identification, measurement, and management at the system level [4]. Use as the organisation-level vocabulary when drawing risk categories and management functions; it names the pieces a controls sketch must address.
@@ -287,6 +291,16 @@ Then the empirical phase. Pick by how the decision's blast radius constrains the
 
 ??? note "Shneiderman two-axis frame"
     Automation level on one axis, human control on the other [6]. Use as a sanity check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate. Quick to apply at the line between assistant and autonomous.
+
+    *Toolkit entry: Part 4 (pending).*
+
+??? note "Bow-tie analysis"
+    A diagram with one central hazard, prevention barriers on the left, mitigation barriers on the right [19]. Each barrier is a named control with an owner, a defeat-mode, and an effectiveness claim. Outputs feed the controls sketch directly: prevention barriers become *audit* and *review* entries (they catch the hazard before it lands); mitigation barriers become *rollback* entries (they act after it lands). The barrier defeat-modes — "this control fails if…" — become candidate rollback-trigger conditions at G5. Use when a decision has an identifiable central hazard and the reviewer needs the controls set on one page.
+
+    *Toolkit entry: Part 4 (pending).*
+
+??? note "STPA — Systems-Theoretic Process Analysis"
+    Models the piece as a control hierarchy — controllers issuing control actions, controlled processes providing feedback — then enumerates unsafe control actions (UCAs) per control action and derives loss scenarios and safety constraints [20]. Each safety constraint is a control stated as *what must not happen*. UCAs become trigger metrics (the observable condition that indicates the unsafe action has occurred); safety constraints become entries in the controls sketch; loss scenarios become sunset criteria (the long-horizon conditions under which the piece must be retired). Use when the hazard is produced by feedback or coordination between components rather than by a single failing part — common for AI routes where the model interacts with operators and downstream systems.
 
     *Toolkit entry: Part 4 (pending).*
 
@@ -540,3 +554,7 @@ The next chapter, [Chapter 8](ch-8.md), picks up the routing map and runs it thr
 [17] Gebru T, Morgenstern J, Vecchione B, et al. Datasheets for Datasets. *Commun. ACM* 2021;64(12):86–92. (arXiv:1803.09010, 2018). **[verified]**
 
 [18] Microsoft Research. *HAX Toolkit — Workbook*. Microsoft; 2021–. Available at: microsoft.com/en-us/haxtoolkit. **[verified]**
+
+[19] Center for Chemical Process Safety (CCPS). *Bow Ties in Risk Management: A Concept Book for Process Safety*. Wiley / AIChE; 2018. **[verified]**
+
+[20] Leveson NG, Thomas JP. *STPA Handbook*. MIT Partnership for Systems Approaches to Safety and Security (PSASS); 2018. **[verified]**

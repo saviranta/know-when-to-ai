@@ -72,6 +72,8 @@ nav:
       - "10 — Access indices": ch-10.md
       - "11 — Overlays": ch-11.md
   - Toolkit:
+      - "Bow-tie analysis": tool-bow-tie-analysis.md
+      - "STPA": tool-stpa.md
       - "Blast-radius estimation": tool-blast-radius-estimation.md
       - "Rollback-trigger design": tool-rollback-trigger-design.md
   - Rendering demos:

@@ -2,9 +2,69 @@
 
 *Gate: G5 Commit. Category: controls artefact.*
 
-## Purpose
+## What problem it solves
 
-Draft rollback triggers that fire without a meeting. A trigger is a pre-declared condition that, when met, causes a routed piece to revert to a prior substrate. The tool's job is to turn *we will roll back if it goes wrong* — a sentence that has never fired — into numeric, time-bound, testable conditions that a junior engineer can execute at 3 a.m. without calling anyone.
+*"We will roll back if it goes wrong"* is a sentence that has never fired. At G5, the commitment page needs rollback conditions a junior engineer can execute alone at 3 a.m. — not judgement calls that assume a senior is reachable. Rollback-trigger design converts an intent into numeric, time-bound, testable conditions attached to observable metrics, each with a pre-written action.
+
+## How it is used
+
+A **30–60 minute drafting session** with the named owner plus one on-call engineer. Each trigger is written as a single line on the commitment page. **Every trigger is then tested at least once in staging** before the piece ships — the simulation is the only evidence the trigger is a control rather than a note. In operations, triggers are re-examined at each review cadence; post-launch threshold adjustments require a loopback, not a silent edit.
+
+## Inputs
+
+- The piece's blast-radius paragraph (bounds the **window** — a trigger cannot wait longer than the piece's consequence time).
+- The owner's default metrics dashboard (bounds the **metric** — a trigger must watch something the owner already sees).
+- The rollback substrate the action reverts *to* (a prior rules baseline, a classical model, a human-operated workflow).
+- The piece's baseline performance — pre-launch, not post-hoc — against which thresholds are chosen.
+- Candidate failure modes from bow-tie mitigation-barrier defeat-modes, or STPA unsafe control actions (if those tools were used at G3).
+
+## Outputs
+
+- **Three to five one-line triggers** on the commitment page, each of the shape *metric M below threshold T for window W → action A*.
+- For each trigger: a named metric, a numeric threshold, a duration window, and a one-sentence action executable by the on-call.
+- A **staging verification log** showing each trigger has fired once in simulation and the action pathway ran to completion.
+
+## Visualisation
+
+<div style="max-width: 900px; margin: 2rem auto;">
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rt-title">
+  <title id="rt-title">Rollback trigger timeline: metric crosses threshold, holds out for window, fires action</title>
+  <style>
+    .rt-axis { stroke: var(--md-default-fg-color, #000); stroke-width: 1.2; fill: none; }
+    .rt-threshold { stroke: var(--md-default-fg-color, #000); stroke-width: 1.2; fill: none; stroke-dasharray: 6,3; }
+    .rt-metric { stroke: var(--md-default-fg-color, #000); stroke-width: 2.2; fill: none; }
+    .rt-window { fill: var(--md-default-fg-color, #000); opacity: 0.08; stroke: var(--md-default-fg-color, #000); stroke-width: 1; stroke-dasharray: 3,2; }
+    .rt-fire-line { stroke: var(--md-default-fg-color, #000); stroke-width: 1.8; fill: none; }
+    .rt-arrow { fill: var(--md-default-fg-color, #000); }
+    .rt-label { font: 700 12px -apple-system, BlinkMacSystemFont, sans-serif; fill: var(--md-default-fg-color, #000); }
+    .rt-sub { font: 400 11px -apple-system, sans-serif; fill: var(--md-default-fg-color, #000); }
+    .rt-tag { font: italic 10px -apple-system, sans-serif; fill: var(--md-default-fg-color, #000); opacity: 0.85; }
+  </style>
+  <defs>
+    <marker id="rt-arrow-head" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 z" class="rt-arrow"/>
+    </marker>
+  </defs>
+  <line class="rt-axis" x1="60" y1="250" x2="750" y2="250" marker-end="url(#rt-arrow-head)" />
+  <line class="rt-axis" x1="60" y1="250" x2="60" y2="40" marker-end="url(#rt-arrow-head)" />
+  <text class="rt-sub" x="720" y="268">time</text>
+  <text class="rt-sub" x="10" y="50">metric M</text>
+  <line class="rt-threshold" x1="60" y1="160" x2="740" y2="160" />
+  <text class="rt-tag" x="670" y="154">threshold T</text>
+  <rect class="rt-window" x="290" y="40" width="230" height="210" />
+  <text class="rt-tag" x="405" y="62" text-anchor="middle">window W</text>
+  <text class="rt-tag" x="405" y="78" text-anchor="middle">metric must hold below T</text>
+  <path class="rt-metric" d="M 60,110 L 200,100 L 260,130 L 300,195 L 500,210 L 560,200 L 620,175" />
+  <line class="rt-fire-line" x1="520" y1="40" x2="520" y2="250" marker-end="url(#rt-arrow-head)" />
+  <text class="rt-label" x="528" y="100">FIRE</text>
+  <text class="rt-sub" x="528" y="118">action A</text>
+  <text class="rt-tag" x="528" y="134">executable at 3 a.m.</text>
+  <text class="rt-tag" x="528" y="148">by on-call alone</text>
+  <text class="rt-label" x="400" y="298" text-anchor="middle">Metric M below threshold T for window W → action A</text>
+</svg>
+</div>
+
+*The window filters two failure modes at once: noise (a single-sample excursion above the line) and recovery (a brief dip that self-corrects). The action fires only when the metric has held out of range for the full window — long enough to be real, short enough to beat the piece's consequence time.*
 
 ## Anatomy
 
@@ -22,17 +82,36 @@ The trigger's written form on the commitment page is one line: *Metric M below t
 
 ## Example
 
-Freight yard, [Chapter 9](ch-9.md), yard-slot allocator piece. Three triggers on the commitment page.
+??? example "Paper trail — drafting and testing the allocator's rollback triggers"
+    *Freight yard, [Chapter 9](ch-9.md), yard-slot allocator piece. Two sessions: a 55-minute drafting session, followed a week later by a 3-hour staging-verification session. Drafting participants: Priya Chen (owner); Kai Alvarez (on-call SRE); Mei Sato (safety). Staging-verification: Kai plus one junior SRE (Jordan Ng) who will inherit the on-call rotation. Output: three triggers on the commitment page, each with a staging-fired timestamp.*
 
-**Trigger 1.** Metric: allocation accuracy against the published carrier-volume baseline. Threshold: below 80% of baseline. Window: two consecutive weeks. Action: *revert autonomous allocations to the rules baseline for all affected regions; freeze the allocator; on-call notified; post-mortem within one business week.*
+    **Drafting session (55 minutes).**
 
-**Trigger 2.** Metric: P95 allocation latency on the operator-facing queue. Threshold: above 45 seconds. Window: 48 hours. Action: *revert to rules baseline for the region experiencing the latency; investigation before progressive expansion resumes.*
+    *T+0 — read the blast-radius paragraph first.* Priya reads the paragraph aloud: *"large blast, 24-hour operational time, hard-irreversible for dispatched drivers."* Kai: *"so no trigger window longer than, say, half the operational time — 12 hours, maybe less. Except drift triggers, which can afford weeks because they catch a different failure mode."*
 
-**Trigger 3.** Metric: operator override rate on allocator outputs. Threshold: above 20% of a region's shift total. Window: one shift. Action: *pause progressive expansion for the affected region; investigate the override reason-codes before resuming.*
+    *T+10 — trigger 1 draft.* Priya: *"metric: allocation accuracy vs. the published carrier-volume baseline. Threshold: below 80% of baseline. Window: two consecutive weeks. Action: revert autonomous allocations to the rules baseline for all affected regions, freeze the allocator, on-call notified, post-mortem within one business week."* Mei: *"two weeks is too long for the 24-hour blast time."* Priya: *"this trigger is for drift, not acute failure. Drift at 80% over 2 weeks is real and actionable; acute failures need triggers 2 and 3."* Agreed — kept.
 
-The three triggers catch three distinct failure modes: model drift (Trigger 1), infrastructure degradation (Trigger 2), and operator-visible quality loss that the accuracy metric misses because operator override corrects it before the comparison metric can see it (Trigger 3). The third trigger is the one most commonly missed — accuracy metrics look clean while operators are doing the allocator's job behind its back.
+    *T+25 — trigger 2 draft.* Kai: *"metric: P95 allocation latency on the operator-facing queue. Threshold: above 45 seconds. Window: 48 hours. Action: revert to rules baseline for the region experiencing the latency; investigation before progressive expansion resumes."* Priya: *"48 hours is still long."* Kai: *"latency above 45s for 48h is either a real infrastructure problem or a deploy that broke caching. Either way, 48h of degraded latency at operator scale is painful but not driver-harmful — the allocator is still issuing valid assignments, just slowly. We can afford to observe."* Kept.
 
-A useful diagnostic for each trigger: *has this trigger ever fired, even in staging?* A trigger that has never fired is untested. The SMACTR audit protocol [1] recommends simulating the trigger's failure mode and watching the action execute; the simulation is the only evidence the trigger is a control rather than a note.
+    *T+38 — trigger 3 draft.* Mei introduces the operator-override trigger from the bow-tie session: *"metric: operator override rate. Threshold: above 20% per region per shift. Window: one shift. Action: pause progressive expansion for the affected region; investigate the override reason-codes before resuming."* Priya: *"this is the one we would have missed. Accuracy metrics look clean while operators are doing the allocator's job behind its back — the override rate is the only metric that sees that."* Mei: *"short window because the shift is the natural unit — an operator shift is 8 hours, which is shorter than the 24-hour blast time, so the trigger fires before harm lands for a full horizon."* Kept.
+
+    *T+50 — sanity pass.* Mei reads each trigger aloud with the junior-engineer test: *"could Jordan execute this action at 3 a.m. alone?"* Trigger 1 action is fine — there is a documented rollback script. Trigger 2 action passes. Trigger 3 action passes (it is a pause, not a revert). Three triggers on the commitment page. Draft handed to Kai for staging verification.
+
+    **Staging-verification session, one week later (3 hours).**
+
+    *T+0 — trigger 1.* Kai writes a staging script that drives the accuracy metric down to 75% for 14 consecutive simulated days. The trigger fires. The action script runs. The rollback to rules-baseline completes. The on-call page reaches Jordan's phone. **Pass.**
+
+    *T+45 — trigger 2.* Kai simulates P95 latency at 60s for 48h. The trigger fires. The action script runs. And **fails**: the rollback command references a rules-baseline service path that was deprecated and renamed six months ago during an infrastructure consolidation. Jordan pages himself with the error. Kai writes a ticket and a fix. The commitment page does not ship until the fix is verified. Mei writes a note on the commitment page: *"trigger 2 staging-verified only after rollback-path fix 2026-03-29."*
+
+    *T+120 — trigger 3.* Kai simulates operator override rate at 25% across one shift. The trigger fires. The action — pause progressive expansion — runs. The region's rollout flag flips to "paused". Jordan is notified. **Pass.**
+
+    *T+160 — re-verify trigger 2 after fix.* Same script. This time the action completes correctly. **Pass.**
+
+    *T+180 — close.* All three triggers have fired in staging. Each has a staging-timestamp on the commitment page. Jordan signs off as the junior engineer capable of executing the actions at 3 a.m. without escalation. The piece is cleared for its canary stage.
+
+    **What the commitment page looks like at launch.** Three one-line triggers at the top of the page, followed by the staging-verification log entries and owner names. This is the audit trail a future reviewer can defend: each trigger has been tested once and the action pathway is verified to work. The fourth failure mode — *"trigger fires, action does not run"* — is the one that the first live firing usually finds. The staging session is the only defence.
+
+    **Follow-up at month 3.** A minor threshold adjustment is proposed: accuracy threshold from 80% to 78%, because the baseline has been re-computed after a data correction. The team treats this as a loopback — the adjustment requires a fresh staging verification, not a silent edit. A new staging timestamp is written to the commitment page.
 
 ## Pitfalls
 
