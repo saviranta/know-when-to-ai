@@ -81,8 +81,7 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
   <text class="ch7r-branch" x="420" y="184">Yes</text>
 
   <rect class="ch7r-rect-q" x="285" y="212" width="230" height="52" rx="4" />
-  <text class="ch7r-label-q" x="400" y="232">Does a rule, script, or</text>
-  <text class="ch7r-label-q" x="400" y="250">classical ML fit?</text>
+  <text class="ch7r-label-q" x="400" y="241">Does a rule or script fit?</text>
 
   <line class="ch7r-arrow" x1="515" y1="238" x2="625" y2="238" />
   <polygon class="ch7r-head" points="625,232 625,244 636,238" />
@@ -144,7 +143,7 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
 
 **Human-operated.** The piece stays with a person. No automation earns its place here — not because automation is forbidden, but because the positive case for it has not been made. The person's workflow may get AI support at *build* time (training material, lookup aids, onboarding tools) without any of that appearing in the runtime substrate. In freight, an experienced yard manager negotiating with a driver after two missed windows fits here: the exception handling is improvised, relational, and depends on accumulated knowledge that is hard to specify. The route reads: *Human-operated. Substrate: yard manager. No system built at this point. Controls: operator training and escalation template. Justification: exception categories are open-ended; cost of an automated wrong call exceeds the cost of a human one.*
 
-**Non-AI automation.** The piece is carried by a rule, a script, or a classical machine-learning model — a fixed substrate with a simple audit trail. Classical ML is included here because a trained gradient-boosted tree or a logistic regression is fixed once deployed: the same input produces the same output, the feature set is explicit, and the audit path runs through the training notebook. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Controls: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.*
+**Non-AI automation.** The piece is carried by a rule, a script, a constraint solver, or another deterministic substrate — nothing that learns from data. The behaviour is repeatable, the logic is inspectable, and the audit path is the code itself. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Controls: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.* Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — sits on the AI side of the atlas, not here. A piece that fits classical ML is an AI candidate, routed through Q3 to *AI as assistant* or *Autonomous AI*.
 
 **AI as assistant.** An AI level fits the piece, but no level is defensible as AI-held under the controls the decision needs. A human holds the decision; the AI supports with retrieval, drafts, summaries, or option generation. The interaction pattern is drawn from the Human-AI Interaction guidelines [5] — drafts presented, easy to dismiss, easy to correct, reasoning exposed on request. In freight, carrier-ETA exception triage fits here: a model surfaces the three late trailers whose risk profiles most resemble next week's likely bottleneck and drafts an outreach message for each, but the yard coordinator reads, adjusts, and sends. The route reads: *AI as assistant. Substrate: LLM with retrieval against the carrier-performance log. Controls: drafts always reviewed, send log, operator override one click away. Justification: the escalation decision is judgment-heavy, but model-suggested options reduce time-to-outreach measurably.*
 
@@ -184,11 +183,11 @@ Four tools answer this without any AI-specific apparatus. Use them in that order
 
 If the four together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
 
-### Q2 — Does a rule, script, or classical ML fit?
+### Q2 — Does a rule or script fit?
 
-This question asks whether the decision surface is *explicit and stable*. Explicit means the conditions that determine the outcome can be written down; stable means they do not shift week to week as exceptions accumulate. Where both hold, a rule or classical-ML model carries the decision more cheaply, more auditably, and more reliably than any AI substrate would. The question is not about sophistication; it is about whether the decision can be reduced to an enumerable set of conditions.
+This question asks whether the decision surface is *explicit and stable enough to write down*. Explicit means the conditions that determine the outcome can be enumerated; stable means they do not shift week to week as exceptions accumulate. Where both hold, a rule, script, or constraint solver carries the decision more cheaply, more auditably, and more reliably than anything that learns from data would. The question is not about sophistication; it is about whether the decision can be reduced to an enumerable set of conditions without learning from examples.
 
-Two tools draw the surface; the rule-versus-ML split then follows automatically. Draw the decision table first. If every row terminates cleanly in an outcome, the piece is a rule and the table is the specification. If the rows need an adjudicator — a classifier, a scorer — to handle distributions the table cannot enumerate, the piece is classical ML, conditional on the enabling conditions below.
+Two tools draw the surface. Draw the decision table first. If every row terminates cleanly in an outcome, the piece is a rule and the table is the specification. If the rows need an adjudicator — a classifier, a scorer, a learned weighting — to handle distributions the table cannot enumerate, the piece is not a rule; it is an AI candidate, and it moves to Q3 to be weighed against the controls question.
 
 ??? note "Decision tables"
     Rows of conditions, columns of outcomes, cells marked yes / no / —. The fastest way to draw the decision surface on paper. If every row terminates cleanly, the piece is a rule and the table is the specification.
@@ -200,7 +199,7 @@ Two tools draw the surface; the rule-versus-ML split then follows automatically.
 
     *Atlas entry: Part 4 (pending).*
 
-For classical ML, the test shifts to the enabling conditions: is there a stable label set, a maintainable labelling pipeline, and a budget for both? Without those, the problem shape fits but the preconditions do not (see routing error 4 in section 7.7). The label-budget calculation, listed below under AI-range tools, is the right instrument.
+Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — is an AI substrate, not a Q2 outcome. A piece that cannot be written as an enumerable decision surface but whose outcome space is small, well-labelled, and stable fits classical ML; the test then shifts to the AI-range precondition: is there a stable label set, a maintainable labelling pipeline, and a budget for both (see routing error 4 in section 7.7)? The label-budget calculation, listed under Q3's AI-range tools, is the right instrument.
 
 ### Q3 — Can AI hold this decision under fitting controls?
 
@@ -368,10 +367,10 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 
   <text class="ch7a-band" x="400" y="18">The AI capability atlas &mdash; seven levels, simpler to more capable</text>
 
-  <text class="ch7a-range-label" x="135" y="44">Non-AI levels</text>
-  <text class="ch7a-range-label" x="520" y="44">AI levels</text>
+  <text class="ch7a-range-label" x="65" y="44">Non-AI</text>
+  <text class="ch7a-range-label" x="405" y="44">AI levels</text>
 
-  <line class="ch7a-divider" x1="213" y1="54" x2="213" y2="230" />
+  <line class="ch7a-divider" x1="113" y1="54" x2="113" y2="230" />
 
   <rect class="ch7a-rect ch7a-rect-1" x="20" y="60" width="90" height="85" rx="3" />
   <text class="ch7a-label" x="65" y="92">Rule</text>
@@ -437,21 +436,23 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 </svg>
 </div>
 
-*Illustration 7.2 — The AI capability atlas. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI/AI boundary sits between classical ML and the LLM.*
+*Illustration 7.2 — The AI capability atlas. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI / AI boundary sits between rule and classical ML: the moment a substrate learns from data, it is AI.*
 
-**Rule.** A deterministic if/then or lookup. Included at the edge of the atlas because the AI range borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
+A note before the levels. At every level above *Rule*, the substrate has two layers: a *model* that produces predictions or generations, and a *wrapper* that decides what goes in, what comes out, how the model is called, how its outputs are measured, and what happens when the model fails. For classical machine learning, the team typically owns both layers — labels, features, training pipeline, scorer, monitoring. From LLM upward, the model is almost always rented from a provider (Anthropic, OpenAI, Google) or self-hosted from open weights; the team owns the wrapper — the prompt, the retriever, the tools, the orchestration, the evaluation harness, the logs, and the controls. For most AI routes today, the engineering cost and the failure surface live in the wrapper, not in the model. The levels below are shapes of system, not shapes of model; at each level, what the team owns is named.
 
-**Classical machine learning.** Gradient-boosted trees, logistic regression, random forests, support-vector machines. Fixed after training; explicit feature set; audit path runs through the training notebook. Claimable where the label set is stable and the features are explainable to a non-specialist.
+**Rule.** A deterministic if/then, lookup, or constraint solver. No model; the rule surface itself is the substrate, and the code is its own audit path. Included at the edge of the atlas because the AI range borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
 
-**LLM feature.** A single call to a large language model, prompt-engineered, no retrieval, no tools. Used where the work is language-shaped — summarisation, classification, drafting — and the context fits in the prompt window.
+**Classical machine learning.** Gradient-boosted trees, logistic regression, random forests, support-vector machines. The simplest AI level: the team typically *owns the model* — labels, features, training pipeline, retraining cadence — wrapped by a thin scorer and a monitoring job. The audit path runs through the training notebook and the feature store. Claimable where the label set is stable, the features are explainable to a non-specialist, and the team has a labelling budget it can carry for the life of the system.
 
-**Retrieval-augmented generation.** An LLM with a retriever over a knowledge base [2]. Used where the LLM needs grounding in a specific, refreshable corpus. Requires the knowledge base to be retrievable-quality: chunked sensibly, kept current, indexed against the questions actually asked.
+**LLM feature.** A single call to a large language model, prompt-engineered, no retrieval, no tools. The model is *rented* from a provider (Anthropic, OpenAI, Google) or self-hosted from open weights; the team owns the wrapper — the prompt, the input assembly, the output schema, the evaluation harness, the logs. Used where the work is language-shaped — summarisation, classification, drafting — and the context fits in the prompt window.
 
-**Single agent.** An LLM with tools, planning a single task over multiple steps. The canonical pattern — reasoning traces interleaved with tool-use actions, as in ReAct [10] — lets the model decide *check this; if X, do this; if Y, do that* within a bounded branching factor.
+**Retrieval-augmented generation.** An LLM with a retriever over a knowledge base [2]. Rented model plus owned wrapper plus owned corpus. The corpus is the second thing the team owns at this level: chunking, currency, index, quality against the real questions. Requires the knowledge base to be retrievable-quality — chunked sensibly, kept current, indexed against the questions actually asked — so RAG pushes the engineering cost into corpus reform, not into model work.
 
-**Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; approaches that teach the model to invoke tools learned from demonstration, such as Toolformer [11], make the larger toolkit tractable at training time but do not remove the trajectory variance at runtime.
+**Single agent.** An LLM with tools, planning a single task over multiple steps. The canonical pattern — reasoning traces interleaved with tool-use actions, as in ReAct [10] — lets the model decide *check this; if X, do this; if Y, do that* within a bounded branching factor. Rented model plus owned wrapper; the wrapper now includes tool definitions, a trajectory logger, and a per-step evaluation surface.
 
-**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step on the atlas and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see Chapter 3's overlays section and the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)).
+**Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; approaches that teach the model to invoke tools from demonstration, such as Toolformer [11], make the larger toolkit tractable at training time but do not remove the trajectory variance at runtime. The wrapper carries that variance: tool dispatch, input and output validation, a rollback substrate, trajectory replay.
+
+**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step on the atlas and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)). The wrapper here is itself a distributed system — a message bus, a coordination protocol, worker sandboxes, per-agent audit streams.
 
 Three heuristics govern the choice of level.
 

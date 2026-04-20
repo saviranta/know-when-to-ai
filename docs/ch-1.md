@@ -21,7 +21,7 @@ The method can produce six different answers for any engagement, each named and 
 - **Off-limits to AI.** Some problems arrive as decisions that should not be handed to AI at all, regardless of capability. Welfare-eligibility scoring, immigration-risk assessment, predictive policing, automated sentencing. For categories like these, the honest recommendation is to keep AI out, now and later — however tempting the capability curve gets. The method makes that recommendation available, not hidden.
 - **Not a tech problem.** Some problems look technical but are not. Bad process, unclear ownership, a policy question dressed as a tooling question. The honest fix is policy, process, or people — not a tool. The method makes that redirection available as a named answer, not an embarrassment.
 - **Human-operated.** Some problems pass both checks, but when the routing work is done, no automation earns its place against a person doing the work. The decision and the doing stay with a human. Plenty of engagements end here, and ending here is not a failure — it is a finding.
-- **Non-AI automation.** Some problems are better carried by a rule, a script, or a classical machine-learning model than by anything generative. The substrate is fixed, the behaviour is repeatable, the audit trail is simple. A large share of what arrives framed as *an AI problem* is actually one of these in disguise.
+- **Non-AI automation.** Some problems are better carried by a rule, a script, or a constraint solver — a deterministic substrate that does not learn from data. The behaviour is repeatable, the logic is inspectable, the code is its own audit path. A large share of what arrives framed as *an AI problem* is actually one of these in disguise. (Classical machine learning — gradient-boosted trees, logistic regression, and so on — is AI, not Non-AI automation; it sits on the AI side of the atlas and produces *AI as assistant* or *Autonomous AI* routes.)
 - **AI as assistant.** Some problems pass both checks but, when routed, no AI level can be made responsible enough for the specific decision. AI stays in support — retrieval, summarisation, option generation — and the decision and its consequences belong to a person.
 - **Autonomous AI.** The rest are routable to AI that makes the call under controls built for it. The method says what has to be true of the specific placement — level, controls design, rollout — for the machine's decision to be trustworthy enough to delegate. That is where the rest of the book earns its space.
 
@@ -77,8 +77,8 @@ See Illustration 1.1.
   <text class="ch1-outcome-label" x="312.5" y="292">automation</text>
   <line class="ch1-outcome-rule" x1="250" y1="306" x2="375" y2="306" />
   <text class="ch1-outcome-sub" x="312.5" y="328">Rule, script, or</text>
-  <text class="ch1-outcome-sub" x="312.5" y="346">classical ML.</text>
-  <text class="ch1-outcome-sub" x="312.5" y="364">Fixed substrate.</text>
+  <text class="ch1-outcome-sub" x="312.5" y="346">constraint solver.</text>
+  <text class="ch1-outcome-sub" x="312.5" y="364">Deterministic.</text>
 
   <rect class="ch1-outcome-rect" x="415" y="242" width="175" height="140" rx="4" />
   <text class="ch1-outcome-label" x="502.5" y="276">AI as</text>
