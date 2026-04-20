@@ -130,7 +130,7 @@ Unlike the Technochauvinism check, this one is categorical. It does not turn on 
 
 **The artefact.** A one-paragraph written determination: *Off-limits to AI, because [category / dignitary / irreversibility / coercion / due-process]. This finding does not depend on future model capability.* The determination does not require a literature review to produce — the axes are fast to apply from the brief.
 
-**The Weizenbaum split.** A recurring temptation is to widen this check to cover Weizenbaum's 1976 line [4] — the broader claim that judgment-heavy decisions should not be handed to machines regardless of capability. [Chapter 3](ch-3.md) §3.2 explains why this book does not. In short, Weizenbaum's normative line is kept but split: the categorical refusal sits here at the Abolition check; the case-by-case refusal, which depends on whether adequate controls can be engineered for a specific decision, runs across G3, G4, and G5 as the controls discipline. The pre-gate stays narrow so it can be run quickly and from the brief alone.
+**The Weizenbaum split.** A recurring temptation is to widen this check to cover Weizenbaum's 1976 line [4] — the broader claim that judgment-heavy decisions should not be handed to machines regardless of capability. [Chapter 3](ch-3.md) explains why this book does not. In short, Weizenbaum's normative line is kept but split: the categorical refusal sits here at the Abolition check; the case-by-case refusal, which depends on whether adequate controls can be engineered for a specific decision, runs across G3, G4, and G5 as the controls discipline. The pre-gate stays narrow so it can be run quickly and from the brief alone.
 
 **Common failures of the check itself.**
 

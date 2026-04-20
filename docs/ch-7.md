@@ -1,6 +1,6 @@
 # Chapter 7 — G3 Route
 
-A piece that leaves this gate carries four things: a destination, a substrate, a controls design, and a one-sentence justification. A piece that does not carry those four things has not left the gate.
+A piece that leaves this gate carries four things: a destination, a substrate, a guardrails design, and a one-sentence justification. A piece that does not carry those four things has not left the gate.
 
 G3 is the gate most engagements fail at. It is also the gate that holds the whole method's weight. The two Tier-0 checks upstream can only refuse. G1 and G2 only prepare. G4 and G5 only sequence and commit what G3 has already routed. The four non-refusal outcomes the book produces — *Human-operated*, *Non-AI automation*, *AI as assistant*, *Autonomous AI* — are all produced here, one per piece, and none are produced anywhere else.
 
@@ -22,7 +22,7 @@ The noun closest to competing is *placement*, and it lost on purpose. *Placement
 
 G2 hands G3 an issue tree — a set of sub-problems that are mutually exclusive and collectively exhaustive [1]. Each sub-problem is a *piece*: small enough to be routed as a unit, independent enough that its route does not depend on another piece's route.
 
-What each piece does *not* carry is a destination. The stance the gate begins from is that no piece is automatable until its route is named and its controls are drawn.
+What each piece does *not* carry is a destination. The stance the gate begins from is that no piece is automatable until its route is named and its guardrails are drawn.
 
 The running example from [Chapter 5](ch-5.md) returns here. The freight-logistics situation statement pointed at inbound truck delay. G2's issue tree, at its simplest, splits the work into four pieces:
 
@@ -97,8 +97,8 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
   <text class="ch7r-branch" x="420" y="284">No</text>
 
   <rect class="ch7r-rect-q" x="285" y="312" width="230" height="52" rx="4" />
-  <text class="ch7r-label-q" x="400" y="332">Does an AI level clear</text>
-  <text class="ch7r-label-q" x="400" y="350">the controls bar?</text>
+  <text class="ch7r-label-q" x="400" y="332">Can AI hold this decision</text>
+  <text class="ch7r-label-q" x="400" y="350">under fitting guardrails?</text>
 
   <line class="ch7r-arrow" x1="285" y1="338" x2="175" y2="338" />
   <polygon class="ch7r-head" points="175,332 175,344 164,338" />
@@ -116,7 +116,7 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
   <text class="ch7r-label-out" x="706" y="334">Autonomous</text>
   <text class="ch7r-label-out" x="706" y="350">AI</text>
 
-  <text class="ch7r-band" x="400" y="410">Each outcome carries its own controls burden</text>
+  <text class="ch7r-band" x="400" y="410">Each outcome carries its own guardrail burden</text>
 
   <rect class="ch7r-rect-q" x="40" y="424" width="170" height="76" rx="4" />
   <text class="ch7r-sub" x="125" y="446">Human-operated:</text>
@@ -140,37 +140,59 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
 </svg>
 </div>
 
-*Illustration 7.1 — How a piece from G2 reaches one of four outcomes at G3. Three questions, four outcomes, one pass per piece. The controls burden is not zero at any outcome; it rises with machine autonomy.*
+*Illustration 7.1 — How a piece from G2 reaches one of four outcomes at G3. Three questions, four outcomes, one pass per piece. The guardrail burden is not zero at any outcome; it rises with AI autonomy and with the stakes of the decision.*
 
-**Human-operated.** The piece stays with a person. No automation earns its place here — not because automation is forbidden, but because the positive case for it has not been made. The person's workflow may get AI support at *build* time (training material, lookup aids, onboarding tools) without any of that appearing in the runtime substrate. In freight, an experienced yard manager negotiating with a driver after two missed windows fits here: the exception handling is improvised, relational, and depends on accumulated knowledge that is hard to specify. The route reads: *Human-operated. Substrate: yard manager. No system built at this point. Controls: operator training and escalation template. Justification: exception categories are open-ended; cost of an automated wrong call exceeds the cost of a human one.*
+**Human-operated.** The piece stays with a person. No automation earns its place here — not because automation is forbidden, but because the positive case for it has not been made. The person's workflow may get AI support at *build* time (training material, lookup aids, onboarding tools) without any of that appearing in the runtime substrate. In freight, an experienced yard manager negotiating with a driver after two missed windows fits here: the exception handling is improvised, relational, and depends on accumulated knowledge that is hard to specify. The route reads: *Human-operated. Substrate: yard manager. No system built at this point. Guardrails: operator training and escalation template. Justification: exception categories are open-ended; cost of an automated wrong call exceeds the cost of a human one.*
 
-**Non-AI automation.** The piece is carried by a rule, a script, or a classical machine-learning model — a fixed substrate with a simple audit trail. Classical ML is included here because a trained gradient-boosted tree or a logistic regression is fixed once deployed: the same input produces the same output, the feature set is explicit, and the audit path runs through the training notebook. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Controls: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.*
+**Non-AI automation.** The piece is carried by a rule, a script, or a classical machine-learning model — a fixed substrate with a simple audit trail. Classical ML is included here because a trained gradient-boosted tree or a logistic regression is fixed once deployed: the same input produces the same output, the feature set is explicit, and the audit path runs through the training notebook. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Guardrails: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.*
 
-**AI as assistant.** An AI level fits the piece, but no level clears the controls bar for machine-held responsibility. A human holds the decision; the AI supports with retrieval, drafts, summaries, or option generation. In freight, carrier-ETA exception triage fits here: a model surfaces the three late trailers whose risk profiles most resemble next week's likely bottleneck and drafts an outreach message for each, but the yard coordinator reads, adjusts, and sends. The route reads: *AI as assistant. Substrate: LLM with retrieval against the carrier-performance log. Controls: drafts always reviewed, send log, operator override one click away. Justification: the escalation decision is judgment-heavy, but model-suggested options reduce time-to-outreach measurably.*
+**AI as assistant.** An AI level fits the piece, but no level is defensible as AI-held under the guardrails the decision needs. A human holds the decision; the AI supports with retrieval, drafts, summaries, or option generation. The interaction pattern is drawn from the Human-AI Interaction guidelines [5] — drafts presented, easy to dismiss, easy to correct, reasoning exposed on request. In freight, carrier-ETA exception triage fits here: a model surfaces the three late trailers whose risk profiles most resemble next week's likely bottleneck and drafts an outreach message for each, but the yard coordinator reads, adjusts, and sends. The route reads: *AI as assistant. Substrate: LLM with retrieval against the carrier-performance log. Guardrails: drafts always reviewed, send log, operator override one click away. Justification: the escalation decision is judgment-heavy, but model-suggested options reduce time-to-outreach measurably.*
 
-**Autonomous AI.** An AI level fits the piece *and* clears the controls bar. Audit trail, rollback trigger, human review cadence, sunset criteria — all drawn up, all plausibly operable, all owned. The machine makes the call. In freight, yard-slot allocation twenty-four hours out is a candidate: a model predicts trailer volume per hour and reserves slots without a human in the loop, a named owner watches weekly accuracy, every allocation is logged with its features, allocations older than four hours can be swapped manually, and the system sunsets if accuracy drops below the published carrier baseline for two consecutive weeks. The route reads: *Autonomous AI. Substrate: gradient-boosted predictor with a thin LLM carrier-communication layer. Controls: weekly accuracy dashboard, override log, rollback to rules at eighty per cent of baseline, sunset at sixty per cent. Justification: decision is reversible within four hours, baseline is published, rollback substrate exists, owner is named.*
+**Autonomous AI.** An AI level fits the piece *and* can be operated under guardrails fitting the decision's reversibility, blast radius, and consequence time. The AI makes the call. In freight, yard-slot allocation twenty-four hours out is a candidate: a model predicts trailer volume per hour and reserves slots without a human in the loop, a named owner watches weekly accuracy, every allocation is logged with its features, allocations older than four hours can be swapped manually, and the system sunsets if accuracy drops below the published carrier baseline for two consecutive weeks. The route reads: *Autonomous AI. Substrate: gradient-boosted predictor with a thin LLM carrier-communication layer. Guardrails: weekly accuracy dashboard, override log, rollback to rules at eighty per cent of baseline, sunset at sixty per cent. Justification: decision is reversible within four hours, baseline is published, rollback substrate exists, owner is named.*
 
-Two quiet rules on the four outcomes. The first: **every outcome carries a controls burden**, including the non-AI outcomes. Human-operated needs training and an escalation path. Non-AI automation needs a fitness review and an explicit audit trail. Assistant and autonomous need progressively more. The burden is not zero anywhere, and it rises with machine autonomy. The second: **when in doubt, drop a column**. A piece whose case for *Autonomous AI* is half-drawn gets routed to *AI as assistant* until the case is whole; a piece whose case for *AI as assistant* is half-drawn gets routed to *Non-AI automation* or *Human-operated*. Conservative routing is the intended failure mode of the gate.
+Two quiet rules on the four outcomes. The first: **every outcome carries a guardrail burden**, including the non-AI outcomes. Human-operated needs training and an escalation path. Non-AI automation needs a fitness review and an explicit audit trail. Assistant and autonomous need progressively more. The burden is not zero anywhere, and it rises with AI autonomy and with the decision's stakes. The second: **when in doubt, drop a column**. A piece whose case for *Autonomous AI* is half-drawn gets routed to *AI as assistant* until the case is whole; a piece whose case for *AI as assistant* is half-drawn gets routed to *Non-AI automation* or *Human-operated*. Conservative routing is the intended failure mode of the gate.
 
-## 7.4 The controls bar
+## 7.4 Tools at G3
 
-The controls bar is the line between *AI as assistant* and *Autonomous AI*. It is the single most consequential decision inside the method.
+Each of the three questions in Illustration 7.1 has a small toolkit of frames and artefacts. None are invented here — they are borrowed from the analytical traditions the gate inherits from. Naming them keeps the work assessable rather than vibes-based.
 
-To clear the bar, a proposed AI route must answer four questions with concrete artefacts, not intentions:
+**Q1 — Does any automation earn its place?** Three analytical tools answer this without any AI-specific apparatus. *Operator shadowing*, picked up from G1 Observe, is the simplest: sit with the person doing the work for a full shift and write down what they actually do. *Time-and-motion records* — the classical industrial-engineering artefact — count the distribution of activity across a week and surface the places where repetition is genuine. *Value-stream mapping* from Lean production reads the flow end-to-end, flagging the steps where automation would merely displace a bottleneck one position downstream. If the three together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*; the gate does not use "we could probably automate this" as an input.
 
-**Audit.** Is every decision logged with its inputs, its features, and its chosen output? Can a specific decision, two months from now, be reconstructed from the logs well enough to explain it to the operator, the auditor, or the person the decision was made about?
+**Q2 — Does a rule, script, or classical ML fit?** The test here is whether the decision surface is explicit and stable. *Decision tables* — rows of conditions, columns of outcomes — are the fastest way to draw the surface on paper; if every row terminates cleanly, the piece is a rule. The *Decision Model and Notation* standard [9] is the industrial version of the same idea, pairing a decision-requirements diagram with executable decision tables. For classical ML, the test shifts to whether a stable label set and a maintainable labelling pipeline exist; without those, the problem shape fits but the enabling conditions do not (see routing error 4 in section 7.7).
 
-**Rollback.** What substrate takes over if the AI substrate fails or drifts? Is it the previous human workflow, a rule set, a classical model? Can the rollback be triggered within the blast radius of one bad decision — that is, before a wrong call has become a wrong cohort?
+**Q3 — Can AI hold this decision under fitting guardrails?** The question has two parts, and each part has a different toolkit.
 
-**Review.** At what cadence, and by whom, is the system's calibration checked? The cadence must be short enough that drift is detected before it has produced a meaningful cohort of wrong outputs. Weekly is common; daily is needed where the decision has short consequence-time; monthly is suspicious on its own.
+For *does AI work here?*, the tools are mostly empirical. Shadow deployment — the AI runs on live inputs but its outputs are not actioned — produces the first honest read. Offline evaluation on held-out operator decisions produces the second. A third, more expensive, is a controlled A/B against the current substrate, which some decisions (the ones with a blast radius larger than a small cohort) will not support; that constraint itself informs the routing.
 
-**Sunset.** What metric, at what absolute threshold, shuts the system down? The threshold is absolute, not relative to the system's own performance history. A system that grades itself against its own last quarter can drift indefinitely.
+For *can fitting guardrails be drawn?*, the tools are drawn from the governance and audit literature. The *NIST AI Risk Management Framework* [4] and *ISO/IEC 42001* [3] supply the vocabulary for risk identification, measurement, and management at the decision level. The *SMACTR* internal-audit protocol [7] — scoping, mapping, artefact collection, testing, reflection — supplies a reproducible procedure for drawing the audit trail and the rollback trigger before the system is built. *Model Cards* [8] document the model's training provenance, its performance slices, and its intended-use boundary on a single page the owner can hand to an auditor. Shneiderman's two-dimensional human-centred AI frame [6] — automation level on one axis, human control on the other — is the simplest way to sanity-check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate.
 
-Each of these is drawn from the controls discipline outlined at Ch 3 §3.5 and detailed in [Chapter 10](ch-10.md)'s overlays. At G3, they are not yet *built*; they are *drawn*. A credible sketch on a named owner's desk is the condition for an *Autonomous AI* route. The build comes at G4 Sequence and lives at G5 Commit.
+**Picking a level within the AI range.** Once the route is *AI as assistant* or *Autonomous AI*, four supporting tools govern level choice. The *adaptation decision tree* (Chapter 10 overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. The *label-budget calculation* estimates labeller-hours per month and disagreement-resolution cost, and is non-optional for classical-ML and fine-tuned routes. The *retrievable-quality test* asks whether the corpus is chunked, current, and indexed against the questions actually asked — the RAG precondition. The *total-cost-of-ownership ladder* (Chapter 10 overlay) attaches a per-call cost band to each atlas level, so that the cost implication of climbing is visible at the routing table, not at deployment.
 
-Two things the bar is not. It is not a score, and it is not a promise. It does not convert controls-quality into a number and threshold against it; and it does not require that the controls are already in place on day one. It requires that the controls are plausibly buildable by the team that will own them, and that the team has written them down with enough specificity that a sceptical reader can tell whether they were built when the next review comes around.
+None of these tools is a replacement for the gatekeeper's judgment. Each is a lens that makes a specific facet of the decision examinable. A routing map whose justifications cite the lenses by name ("we used operator shadowing to confirm Q1; DMN to draw the Q2 decision surface; Model Cards and SMACTR for the guardrail sketch") is a map the next engagement can challenge on its own terms. A routing map whose justifications read "team judgment" is a map that cannot be reviewed.
 
-## 7.5 The AI capability atlas — choosing a level within the AI column
+## 7.5 Guardrails for an AI route
+
+The line between *AI as assistant* and *Autonomous AI* is the single most consequential decision inside the method. The two-part question the gate answers at this line is *does AI work reliably for this decision?* and *can the guardrails this decision needs be drawn?*
+
+The second part deserves unpacking. Not every AI decision requires the same guardrail apparatus. A low-stakes, reversible decision with a short consequence time holds under a light audit log and a weekly review. An irreversible, high-blast-radius decision with a long consequence time needs the full set — detailed audit, rapid rollback, continuous review, an absolute sunset threshold. The guardrails are proportional to the decision, not uniform across AI routes. The test is not "has a fixed bar been cleared" but "have guardrails that fit this specific decision been drawn and owned".
+
+Four canonical parts are available. A route may use all four or some subset, depending on what the decision calls for.
+
+**Audit.** Every decision logged with its inputs, its features, and its chosen output — at a grain sufficient for a specific decision two months from now to be reconstructed. For high-stakes routes the audit trail extends to model version, retrieval context, and evaluation metadata; for low-stakes routes a decision log with inputs and outputs is enough.
+
+**Rollback.** A substrate that takes over if the AI substrate fails or drifts — the previous workflow, a rule set, a classical model — triggered within the blast radius of a single bad call, before a wrong decision has become a wrong cohort. For reversible decisions the rollback can be slower; for irreversible decisions it must be fast enough to beat the irreversibility window.
+
+**Review.** A cadence at which the system's calibration is checked, by a named owner. Short enough that drift is detected before it has produced a meaningful cohort of wrong outputs. Monthly is suspicious on its own; weekly is common; daily is needed where the decision has short consequence time.
+
+**Sunset.** An absolute metric threshold at which the system shuts down — absolute, not relative to its own performance history. A system graded only against its own last quarter can drift indefinitely.
+
+Three tests decide which parts a decision needs, and at what grain. *Reversibility* — can the decision be undone, and within what window? *Blast radius* — how many people, how much money, how much time is affected by one wrong call? *Consequence time* — how long until the wrongness of a wrong call is detectable? A decision that is reversible, low-blast-radius, and fast-to-detect needs a light set. A decision that is irreversible, high-blast-radius, or slow-to-detect needs more. Illustration 7.1 shows the four parts without grading them, because the grading is per-decision.
+
+At G3, the guardrails are not yet *built*; they are *drawn*. A credible sketch on a named owner's desk is the condition for an *Autonomous AI* route; the build comes at G4 Sequence and lives at G5 Commit. The sketch is not a score and not a promise. It does not convert guardrail-quality into a number and threshold against it; and it does not require that the guardrails are in place on day one. It requires that the guardrails are plausibly buildable by the team that will own them, and that the team has written them down with enough specificity that a sceptical reader can tell whether they were built when the next review comes around.
+
+When in doubt, the route drops a column. A piece whose guardrail design is half-finished on the page is routed to *AI as assistant* until the design is whole. This is the conservative rule, and it means that some problems the technology could handle well are held at assistant-level longer than they need to be. That is the intended failure mode of the gate.
+
+## 7.6 The AI capability atlas — choosing a level
 
 Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decision follows: *which AI level?* The AI capability atlas names seven levels, ordered from simplest to most capable (and from smallest to largest surface area). See Illustration 7.2.
 
@@ -194,13 +216,13 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
     .ch7a-head { fill: var(--md-default-fg-color, #000); opacity: 0.5; }
     .ch7a-axis-label { font: 500 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.12em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.55; }
     .ch7a-divider { stroke: var(--md-default-fg-color, #000); stroke-width: 1; opacity: 0.3; stroke-dasharray: 4 4; }
-    .ch7a-column-label { font: 600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.15em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.55; }
+    .ch7a-range-label { font: 600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.15em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.55; }
   </style>
 
   <text class="ch7a-band" x="400" y="18">The AI capability atlas &mdash; seven levels, simpler to more capable</text>
 
-  <text class="ch7a-column-label" x="135" y="44">Non-AI column</text>
-  <text class="ch7a-column-label" x="520" y="44">AI column</text>
+  <text class="ch7a-range-label" x="135" y="44">Non-AI levels</text>
+  <text class="ch7a-range-label" x="520" y="44">AI levels</text>
 
   <line class="ch7a-divider" x1="213" y1="54" x2="213" y2="230" />
 
@@ -268,9 +290,9 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 </svg>
 </div>
 
-*Illustration 7.2 — The AI capability atlas. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI/AI column break sits between classical ML and the LLM.*
+*Illustration 7.2 — The AI capability atlas. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI/AI boundary sits between classical ML and the LLM.*
 
-**Rule.** A deterministic if/then or lookup. Included at the edge of the atlas because the AI column borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
+**Rule.** A deterministic if/then or lookup. Included at the edge of the atlas because the AI range borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
 
 **Classical machine learning.** Gradient-boosted trees, logistic regression, random forests, support-vector machines. Fixed after training; explicit feature set; audit path runs through the training notebook. Claimable where the label set is stable and the features are explainable to a non-specialist.
 
@@ -278,27 +300,27 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 
 **Retrieval-augmented generation.** An LLM with a retriever over a knowledge base [2]. Used where the LLM needs grounding in a specific, refreshable corpus. Requires the knowledge base to be retrievable-quality: chunked sensibly, kept current, indexed against the questions actually asked.
 
-**Single agent.** An LLM with tools, planning a single task over multiple steps. Used where the work requires a short sequence of decisions — *check this; if X, do this; if Y, do that* — and the branching factor is bounded.
+**Single agent.** An LLM with tools, planning a single task over multiple steps. The canonical pattern — reasoning traces interleaved with tool-use actions, as in ReAct [10] — lets the model decide *check this; if X, do this; if Y, do that* within a bounded branching factor.
 
-**Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; it buys capability and sells predictability.
+**Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; approaches that teach the model to invoke tools learned from demonstration, such as Toolformer [11], make the larger toolkit tractable at training time but do not remove the trajectory variance at runtime.
 
-**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step on the atlas and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see Ch 3 §3.5, Ch 10's total-cost-of-ownership overlay).
+**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step on the atlas and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see Chapter 3's overlays section and the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)).
 
 Three heuristics govern the choice of level.
 
 **Prefer the simpler level.** The atlas climbs from rule to multi-agent in order of surface area — more code, more failure modes, more cost per call, more places to audit. Climbing must be earned. A route to a multi-agent system needs a case the tool-using-agent level cannot carry.
 
-**Retrieve before you fine-tune; fine-tune before you agent.** The adaptation decision tree — Ch 10's overlay — runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Most teams reach for agents three steps too early.
+**Retrieve before you fine-tune; fine-tune before you agent.** The adaptation decision tree (Chapter 10's overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Most teams reach for agents three steps too early.
 
 **Agent only for branching.** A single LLM call that returns structured output is not an agent. If the task can be done by one call with one schema, it does not need a planner. The planner pays its cost in trajectory variance; the task must justify that cost.
 
-## 7.6 Five routing errors
+## 7.7 Five routing errors
 
 The most common routing errors are variants of the same mistake: choosing an AI level before the routing is clear, or choosing a level without its enabling conditions in place. Each of the five below has a characteristic symptom, a root cause, and a corrective. They are not the only errors the gate can make. They are the five that most frequently get caught at the next engagement rather than at this one, because each looks defensible until its specific enabling condition is examined.
 
-**1. Promoting a rule-based piece to an LLM because LLMs are newer.** A dock-door assignment problem that resolves cleanly to a constraint solver gets re-routed to an LLM because the team has an LLM budget and the solver is ten years old. *Symptom:* intermittent unreasonable assignments that a rule would never make — one trailer sent to a door whose cargo type it does not handle, another to a door whose queue is already saturated. *Root cause:* the piece was routed by the substrate the team wanted to use, not by the substrate the work required. *Corrective:* if a rule fits and the rule is auditable, the rule wins. The fact that the rule is old is not a defect; it is a feature.
+**1. Promoting a rule-based piece to an LLM because LLMs are newer.** A dock-door assignment problem that resolves cleanly to a constraint solver gets re-routed to an LLM because the team has an LLM budget and the solver is ten years old. *Symptom:* intermittent unreasonable assignments that a rule would never make — one trailer sent to a door whose cargo type it does not handle, another to a door whose queue is already saturated. *Root cause:* the piece was routed by the substrate the team wanted to use, not by the substrate the work required. *Corrective:* if a rule fits and the rule is auditable, the rule wins. The fact that the rule is old is not a defect; it is a feature. A decision table or DMN [9] diagram of the rule surface, drawn before the LLM proposal landed, would have caught this.
 
-**2. Demoting a judgment piece to a classifier because the classifier performs well on training data.** An exception-triage task that depends on accumulated operator judgment gets re-routed to a classifier because the F1 score on last year's data looks good. *Symptom:* ninety-four per cent accuracy in the training distribution, a month of escalating complaints from operators, a quiet reversion to the old workflow. *Root cause:* the labels the classifier was trained on were proxies — the outcome the operator happened to pick, not the judgment the operator was making — and the proxies held until they did not. *Corrective:* classifiers for well-bounded label sets; assistants for judgment; humans for contested judgment. If the label set is contested, the route is not a classifier.
+**2. Demoting a judgment piece to a classifier because the classifier performs well on training data.** An exception-triage task that depends on accumulated operator judgment gets re-routed to a classifier because the F1 score on last year's data looks good. *Symptom:* ninety-four per cent accuracy in the training distribution, a month of escalating complaints from operators, a quiet reversion to the old workflow. *Root cause:* the labels the classifier was trained on were proxies — the outcome the operator happened to pick, not the judgment the operator was making — and the proxies held until they did not. *Corrective:* classifiers for well-bounded label sets; assistants for judgment; humans for contested judgment. A Model Card [8] documenting the label provenance and the known failure slices would have prevented the misroute.
 
 **3. Reaching for an agent when a single function call would do.** A summarisation task with one input, one output, and a fixed schema gets routed to a tool-using agent because the team has read about agents. *Symptom:* a twelve-step trajectory producing the three-sentence summary that a single-call schema would have produced in one step, at fifteen times the latency and thirty times the cost. *Root cause:* "agent" became a destination instead of a substrate — a name to reach rather than a shape of problem. *Corrective:* the adaptation decision tree says one call first; an agent is earned only when the task branches.
 
@@ -306,30 +328,30 @@ The most common routing errors are variants of the same mistake: choosing an AI 
 
 **5. Routing to retrieval-augmented generation when the knowledge base is not retrievable-quality.** A piece is routed to RAG because the team has a knowledge base, and RAG is the word for using a knowledge base with an LLM. *Symptom:* retrieval returns plausible fragments that cite decommissioned policies, pass current-looking text that contradicts the policy the organisation actually follows, and sometimes pull an internal memo that was never supposed to leave the author's team. *Root cause:* the corpus was written for human readers, not for chunk-based retrieval; it has inconsistent headings, buried cross-references, and stale sections alongside current ones. RAG presumes a retrievable corpus; the corpus was not one. *Corrective:* if the knowledge base is not retrievable-quality, route to *AI as assistant* with the knowledge base as a human-side reference, or invest in corpus reform before re-routing to RAG.
 
-## 7.7 The routing map
+## 7.8 The routing map
 
-The artefact G3 produces is a table. One row per piece. The columns are fixed: number, piece, outcome, level (if AI), controls sketch, justification.
+The artefact G3 produces is a table. One row per piece. The columns are fixed: number, piece, outcome, level (if AI), guardrails sketch, justification.
 
 For the freight example, the routing map reads:
 
-| # | Piece | Outcome | Level (if AI) | Controls sketch | Justification |
-|---|-------|---------|---------------|-----------------|---------------|
+| # | Piece | Outcome | Level (if AI) | Guardrails sketch | Justification |
+|---|-------|---------|---------------|-------------------|---------------|
 | 1 | Carrier ETA accuracy | AI as assistant | RAG over carrier-performance log | Drafts reviewed; send log; one-click operator override | Escalation is judgment-heavy; model surfaces candidates faster than the coordinator can scan |
 | 2 | Yard scheduling (24h out) | Autonomous AI | Classical ML (gradient-boosted) | Weekly accuracy dashboard; rollback to rules at 80% of baseline; sunset at 60%; named owner | Decision reversible within 4 hours; published baseline; rollback substrate exists |
 | 3 | Dock-door assignment | Non-AI automation | — | Daily queue-length report; monthly solver fitness review | Constraint problem; explicit objective; audit requires determinism |
 | 4 | Late-arrival exception handling | Human-operated | — | Operator training; escalation template | Exception categories open-ended; cost of an automated wrong call exceeds cost of a human one |
 
-Four rows, four outcomes, one justification per row, one controls sketch per row. The map is short because the issue tree is short; a more complex engagement would carry a longer one. The shape does not change.
+Four rows, four outcomes, one justification per row, one guardrails sketch per row. The map is short because the issue tree is short; a more complex engagement would carry a longer one. The shape does not change.
 
 The routing map is the input to G4 Sequence. G4 reads the map, draws the dependency graph across the routed pieces, and picks the order in which they are built. G5 Commit reads the map and names the owner for each piece, the rollback trigger, and the sunset criterion. G3 settles the *what*; G4 settles the *when*; G5 settles the *who*. Each gate trusts the previous gate's artefact. The map earns that trust by being specific. A row that reads *"mostly AI, to be determined per piece"* is not a row on a routing map; it is a declaration that G3 has not been run.
 
-## 7.8 What G3 produces, and what it does not
+## 7.9 What G3 produces, and what it does not
 
 G3 produces the routing map. It does not produce the build, the owner, or the implementation.
 
-What the gate *does* settle is the question no later gate can reopen without cost: *what substrate carries this piece when the system is live?* A change to that answer after G4 or G5 is a loopback, and loopbacks from later gates are expensive. The method accepts G3→G2 loopbacks as cheap and expected (see Ch 3 §3.3); G4→G3 and G5→G3 loopbacks are neither.
+What the gate *does* settle is the question no later gate can reopen without cost: *what substrate carries this piece when the system is live?* A change to that answer after G4 or G5 is a loopback, and loopbacks from later gates are expensive. The method accepts G3→G2 loopbacks as cheap and expected (see Chapter 3); G4→G3 and G5→G3 loopbacks are neither.
 
-The gate's conservatism is deliberate. A piece that could be *Autonomous AI* but arrives at G3 with a half-drawn controls design leaves the gate as *AI as assistant*. A piece that could be *AI as assistant* but arrives with an unclear label budget or a suspect corpus leaves as *Non-AI automation* or *Human-operated*. This is the gate under-reaching, on purpose. Over-reach is caught by the next engagement; under-reach is caught by the next refresh, and the cost difference between the two is the reason the method exists.
+The gate's conservatism is deliberate. A piece that could be *Autonomous AI* but arrives at G3 with a half-drawn guardrails design leaves the gate as *AI as assistant*. A piece that could be *AI as assistant* but arrives with an unclear label budget or a suspect corpus leaves as *Non-AI automation* or *Human-operated*. This is the gate under-reaching, on purpose. Over-reach is caught by the next engagement; under-reach is caught by the next refresh, and the cost difference between the two is the reason the method exists.
 
 The next chapter, [Chapter 8](ch-8.md), picks up the routing map and runs it through G4 Sequence and G5 Commit.
 
@@ -338,3 +360,21 @@ The next chapter, [Chapter 8](ch-8.md), picks up the routing map and runs it thr
 [1] Minto B. *The Pyramid Principle: Logic in Writing, Thinking and Problem Solving*. Pitman; 1987. **[verified]**
 
 [2] Lewis P, Perez E, Piktus A, et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: *NeurIPS*; 2020. arXiv:2005.11401. **[verified]**
+
+[3] ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system*. International Organization for Standardization; 2023. **[verified]**
+
+[4] NIST. *AI Risk Management Framework 1.0* (NIST AI 100-1). National Institute of Standards and Technology; 2023. **[verified]**
+
+[5] Amershi S, Weld D, Vorvoreanu M, et al. Guidelines for Human-AI Interaction. In: *Proc. CHI 2019*. DOI:10.1145/3290605.3300233. **[verified]**
+
+[6] Shneiderman B. *Human-Centered AI*. Oxford University Press; 2022. **[verified]**
+
+[7] Raji ID, Smart A, White RN, et al. Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing. In: *Proc. FAT\* 2020*. DOI:10.1145/3351095.3372873. **[verified]**
+
+[8] Mitchell M, Wu S, Zaldivar A, et al. Model Cards for Model Reporting. In: *Proc. FAT\* 2019*. DOI:10.1145/3287560.3287596. **[verified]**
+
+[9] Object Management Group. *Decision Model and Notation (DMN)*, version 1.4. OMG; 2022. **[verified]**
+
+[10] Yao S, Zhao J, Yu D, et al. ReAct: Synergizing Reasoning and Acting in Language Models. In: *ICLR 2023*. arXiv:2210.03629. **[verified]**
+
+[11] Schick T, Dwivedi-Yu J, Dessì R, et al. Toolformer: Language Models Can Teach Themselves to Use Tools. In: *NeurIPS 2023*. arXiv:2302.04761. **[verified]**
