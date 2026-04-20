@@ -88,6 +88,11 @@ nav:
       - "G3 — SIPOC": tool-sipoc.md
       - "G3 — Decision tables": tool-decision-tables.md
       - "G3 — DMN": tool-dmn.md
+      - "G3 — AI canvas": tool-ai-canvas.md
+      - "G3 — ML canvas": tool-ml-canvas.md
+      - "G3 — Cynefin framework": tool-cynefin.md
+      - "G3 — Pre-mortem": tool-pre-mortem.md
+      - "G3 — Pair worksheet": tool-pair-worksheet.md
       - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
       - "G4 — Reversibility classes": tool-reversibility-classes.md
       - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
