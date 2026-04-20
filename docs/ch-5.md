@@ -170,7 +170,83 @@ Five things belong in it, in this order:
 
 The last item is the one most often skipped. A good situation statement is falsifiable; it names what would have to be true for it to be wrong. If the diagnosis is *the boarding delay is upstream of the queue*, the statement says so, and names the measurement that would refute it — on-time catering on two consecutive weeks would settle the question in twelve days.
 
-A worked example, freight logistics:
+A worked example, freight logistics. The brief that arrived and the situation statement that G1 produced are shown side by side in Illustration 5.2; the close read follows below.
+
+See Illustration 5.2.
+
+<div style="max-width: 900px; margin: 2rem auto;">
+<svg viewBox="0 0 900 490" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch5-ill52-title">
+  <title id="ch5-ill52-title">The brief vs the situation statement &mdash; a freight-logistics case</title>
+
+  <style>
+    .ch5s-rect { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; }
+    .ch5s-rect-heavy { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 2.5; }
+    .ch5s-label { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; }
+    .ch5s-rule { stroke: var(--md-default-fg-color, #000); stroke-width: 1; opacity: 0.5; }
+    .ch5s-quote { font: italic 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); }
+    .ch5s-source { font: 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); opacity: 0.7; }
+    .ch5s-para { font: 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); }
+    .ch5s-arrow { stroke: var(--md-default-fg-color, #000); stroke-width: 2; fill: none; }
+    .ch5s-head { fill: var(--md-default-fg-color, #000); }
+    .ch5s-arrow-label { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.06em; fill: var(--md-default-fg-color, #000); text-anchor: middle; }
+    .ch5s-arrow-sub { font: italic 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.8; }
+    .ch5s-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.6; }
+    .ch5s-divider { stroke: var(--md-default-fg-color, #000); stroke-width: 1; opacity: 0.35; }
+    .ch5s-tick { font: 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); }
+    .ch5s-tick-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.22em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.55; }
+  </style>
+
+  <text class="ch5s-band" x="450" y="22">G1 Observe &mdash; the brief vs the situation statement</text>
+
+  <rect class="ch5s-rect" x="30" y="45" width="230" height="360" rx="4" />
+  <text class="ch5s-label" x="145" y="78">The brief</text>
+  <line class="ch5s-rule" x1="60" y1="92" x2="230" y2="92" />
+  <text class="ch5s-quote" x="48" y="165">&ldquo;Build a dispatch-</text>
+  <text class="ch5s-quote" x="48" y="187">priority model</text>
+  <text class="ch5s-quote" x="48" y="209">to cut inbound</text>
+  <text class="ch5s-quote" x="48" y="231">truck delay.&rdquo;</text>
+  <text class="ch5s-source" x="48" y="275">&mdash; sponsor, March</text>
+
+  <text class="ch5s-arrow-label" x="320" y="200">G1 Observe</text>
+  <text class="ch5s-arrow-sub" x="320" y="220">framing + diagnosis</text>
+  <line class="ch5s-arrow" x1="275" y1="240" x2="360" y2="240" />
+  <polygon class="ch5s-head" points="355,232 355,248 368,240" />
+  <text class="ch5s-arrow-sub" x="320" y="270">&mdash; observation loop &mdash;</text>
+
+  <rect class="ch5s-rect-heavy" x="380" y="45" width="490" height="360" rx="4" />
+  <text class="ch5s-label" x="625" y="78">The situation statement</text>
+  <line class="ch5s-rule" x1="410" y1="92" x2="840" y2="92" />
+
+  <text class="ch5s-para" x="400" y="122">Since the March peak, inbound trucks at the central hub</text>
+  <text class="ch5s-para" x="400" y="140">are being released from the dock forty minutes later</text>
+  <text class="ch5s-para" x="400" y="158">than the scheduled window, on average, on days when</text>
+  <text class="ch5s-para" x="400" y="176">more than one customs hold is active.</text>
+
+  <text class="ch5s-para" x="400" y="208">The delay lands on the carrier, not on the hub, because</text>
+  <text class="ch5s-para" x="400" y="226">the hold is counted as &ldquo;not yet released&rdquo; rather than</text>
+  <text class="ch5s-para" x="400" y="244">&ldquo;released-and-waiting&rdquo;.</text>
+
+  <text class="ch5s-para" x="400" y="276">Second-order: three carriers have begun re-routing</text>
+  <text class="ch5s-para" x="400" y="294">through the secondary hub, which the central hub&rsquo;s</text>
+  <text class="ch5s-para" x="400" y="312">cost model does not yet see.</text>
+
+  <text class="ch5s-para" x="400" y="344">The brief&rsquo;s dispatch-priority framing would show value</text>
+  <text class="ch5s-para" x="400" y="362">if dispatch order were the constraint; the data shows</text>
+  <text class="ch5s-para" x="400" y="380">it is not.</text>
+
+  <line class="ch5s-divider" x1="30" y1="420" x2="870" y2="420" />
+  <text class="ch5s-tick-band" x="450" y="438">What G1 Observe added</text>
+
+  <text class="ch5s-tick" x="40" y="462">&#10003;&nbsp; named the event</text>
+  <text class="ch5s-tick" x="215" y="462">&#10003;&nbsp; named who wears the cost</text>
+  <text class="ch5s-tick" x="440" y="462">&#10003;&nbsp; named a second-order effect</text>
+
+  <text class="ch5s-tick" x="120" y="482">&#10003;&nbsp; named a falsifiable refutation</text>
+  <text class="ch5s-tick" x="490" y="482">&#10003;&nbsp; refused the brief&rsquo;s framing</text>
+</svg>
+</div>
+
+*Illustration 5.2 — The brief names a tool; the situation statement names the event, the party who wears the cost, a second-order effect, and the condition under which the brief's framing would have held. The left panel is thin because briefs are thin; the right panel carries weight because the work of G1 is in what it adds.*
 
 > Since the March peak, inbound trucks at the central hub are being released from the dock forty minutes later than the scheduled window, on average, on days when more than one customs hold is active. The delay lands on the carrier, not on the hub, because the hold is counted as "not yet released" rather than "released-and-waiting". Second-order: three carriers have begun re-routing through the secondary hub, which the central hub's cost model does not yet see. The brief's framing — *build a dispatch-priority model* — would show value if the constraint were dispatch order; dispatch order is stable, and the data shows the queue is moving as fast as it can given when trucks enter it.
 
