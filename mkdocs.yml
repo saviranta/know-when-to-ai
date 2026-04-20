@@ -72,6 +72,11 @@ nav:
       - "10 — Access indices": ch-10.md
       - "11 — Overlays": ch-11.md
   - Toolkit:
+      - "Tier 0 — Technochauvinism check": tool-technochauvinism-check.md
+      - "Tier 0 — Abolition check": tool-abolition-check.md
+      - "G1 — Framed problem paragraph": tool-framed-problem-paragraph.md
+      - "G1 — Stakeholder map": tool-stakeholder-map.md
+      - "G1 — System description": tool-system-description.md
       - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
       - "G4 — Reversibility classes": tool-reversibility-classes.md
       - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
