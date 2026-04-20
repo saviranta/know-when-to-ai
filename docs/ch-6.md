@@ -6,15 +6,16 @@ Most problems that arrive as tangled are not tangled. They are badly cut. The wr
 
 This chapter teaches the frames and the failures. It runs them on one problem — a retail pricing team that arrives at G1 with the sentence *our pricing is broken, we need an AI pricing engine* — and lets the frames cut it into shapes the next gate can use. The pricing example runs through the chapter; by the end, it has a piece list.
 
-See Illustration 6.1.
+Illustration 6.1 gives the gate's generic anatomy. Illustration 6.2, at the end of the chapter, instantiates the same anatomy on the pricing example.
 
 <div style="max-width: 880px; margin: 2rem auto;">
-<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch6-ill61-title">
-  <title id="ch6-ill61-title">G2 Decompose — situation statement to piece list</title>
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch6-ill61-title">
+  <title id="ch6-ill61-title">G2 Decompose — generic anatomy</title>
 
   <style>
     .ch6d-node { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; }
     .ch6d-node-top { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 2.5; }
+    .ch6d-node-dashed { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; stroke-dasharray: 4 3; }
     .ch6d-label { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; }
     .ch6d-sub { font: italic 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.8; }
     .ch6d-tag { font: 500 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.7; }
@@ -24,80 +25,86 @@ See Illustration 6.1.
     .ch6d-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.6; }
   </style>
 
-  <text class="ch6d-band" x="400" y="22">G2 Decompose &mdash; one situation, five candidate pieces</text>
+  <text class="ch6d-band" x="400" y="22">G2 Decompose &mdash; generic anatomy</text>
 
   <rect class="ch6d-node-top" x="270" y="40" width="260" height="60" rx="4" />
   <text class="ch6d-label" x="400" y="65">Situation statement</text>
-  <text class="ch6d-sub" x="400" y="82">Pricing is broken; margins</text>
-  <text class="ch6d-sub" x="400" y="94">have compressed since March.</text>
+  <text class="ch6d-sub" x="400" y="82">One noun in the statement</text>
+  <text class="ch6d-sub" x="400" y="94">hides a structure.</text>
 
-  <line class="ch6d-arrow" x1="400" y1="100" x2="400" y2="130" />
-  <line class="ch6d-arrow" x1="95" y1="130" x2="705" y2="130" />
+  <line class="ch6d-arrow" x1="400" y1="100" x2="400" y2="125" />
 
-  <line class="ch6d-arrow" x1="95" y1="130" x2="95" y2="165" />
-  <polygon class="ch6d-head" points="90,160 100,160 95,170" />
-  <line class="ch6d-arrow" x1="245" y1="130" x2="245" y2="165" />
-  <polygon class="ch6d-head" points="240,160 250,160 245,170" />
-  <line class="ch6d-arrow" x1="400" y1="130" x2="400" y2="165" />
-  <polygon class="ch6d-head" points="395,160 405,160 400,170" />
-  <line class="ch6d-arrow" x1="555" y1="130" x2="555" y2="165" />
-  <polygon class="ch6d-head" points="550,160 560,160 555,170" />
-  <line class="ch6d-arrow" x1="705" y1="130" x2="705" y2="165" />
-  <polygon class="ch6d-head" points="700,160 710,160 705,170" />
+  <rect class="ch6d-node-dashed" x="180" y="125" width="440" height="38" rx="4" />
+  <text class="ch6d-tag" x="400" y="142">Apply a decomposition frame</text>
+  <text class="ch6d-sub" x="400" y="157">Pyramid / Issue Tree / JTBD / Ishikawa / 5 Whys / fault tree</text>
 
-  <rect class="ch6d-node" x="25" y="170" width="140" height="85" rx="4" />
-  <text class="ch6d-tag" x="95" y="189">Analytics</text>
-  <text class="ch6d-label" x="95" y="212">Did margins</text>
-  <text class="ch6d-label" x="95" y="226">move?</text>
-  <text class="ch6d-sub" x="95" y="244">Controlling for mix.</text>
+  <line class="ch6d-arrow" x1="400" y1="163" x2="400" y2="195" />
+  <line class="ch6d-arrow" x1="95" y1="195" x2="705" y2="195" />
 
-  <rect class="ch6d-node" x="175" y="170" width="140" height="85" rx="4" />
-  <text class="ch6d-tag" x="245" y="189">Observation</text>
-  <text class="ch6d-label" x="245" y="212">Competitive</text>
-  <text class="ch6d-label" x="245" y="226">visibility?</text>
-  <text class="ch6d-sub" x="245" y="244">Who matches whom.</text>
+  <line class="ch6d-arrow" x1="95" y1="195" x2="95" y2="228" />
+  <polygon class="ch6d-head" points="90,223 100,223 95,233" />
+  <line class="ch6d-arrow" x1="245" y1="195" x2="245" y2="228" />
+  <polygon class="ch6d-head" points="240,223 250,223 245,233" />
+  <line class="ch6d-arrow" x1="400" y1="195" x2="400" y2="228" />
+  <polygon class="ch6d-head" points="395,223 405,223 400,233" />
+  <line class="ch6d-arrow" x1="555" y1="195" x2="555" y2="228" />
+  <polygon class="ch6d-head" points="550,223 560,223 555,233" />
+  <line class="ch6d-arrow" x1="705" y1="195" x2="705" y2="228" />
+  <polygon class="ch6d-head" points="700,223 710,223 705,233" />
 
-  <rect class="ch6d-node" x="330" y="170" width="140" height="85" rx="4" />
-  <text class="ch6d-tag" x="400" y="189">JTBD</text>
-  <text class="ch6d-label" x="400" y="212">Which jobs</text>
-  <text class="ch6d-label" x="400" y="226">collide?</text>
-  <text class="ch6d-sub" x="400" y="244">On which SKUs.</text>
+  <rect class="ch6d-node" x="25" y="233" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="95" y="252">Placeable</text>
+  <text class="ch6d-label" x="95" y="275">Independent</text>
+  <text class="ch6d-label" x="95" y="289">piece</text>
+  <text class="ch6d-sub" x="95" y="307">Goes to one substrate.</text>
 
-  <rect class="ch6d-node" x="485" y="170" width="140" height="85" rx="4" />
-  <text class="ch6d-tag" x="555" y="189">Operations</text>
-  <text class="ch6d-label" x="555" y="212">Cycle time</text>
-  <text class="ch6d-label" x="555" y="226">to shelf?</text>
-  <text class="ch6d-sub" x="555" y="244">Two weeks or more.</text>
+  <rect class="ch6d-node" x="175" y="233" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="245" y="252">Placeable</text>
+  <text class="ch6d-label" x="245" y="275">Independent</text>
+  <text class="ch6d-label" x="245" y="289">piece</text>
+  <text class="ch6d-sub" x="245" y="307">Goes to one substrate.</text>
 
-  <rect class="ch6d-node" x="635" y="170" width="140" height="85" rx="4" />
-  <text class="ch6d-tag" x="705" y="189">Governance</text>
-  <text class="ch6d-label" x="705" y="212">Approval</text>
-  <text class="ch6d-label" x="705" y="226">authority?</text>
-  <text class="ch6d-sub" x="705" y="244">Above threshold.</text>
+  <rect class="ch6d-node" x="330" y="233" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="400" y="252">Placeable</text>
+  <text class="ch6d-label" x="400" y="275">Independent</text>
+  <text class="ch6d-label" x="400" y="289">piece</text>
+  <text class="ch6d-sub" x="400" y="307">Goes to one substrate.</text>
 
-  <line class="ch6d-arrow" x1="95" y1="255" x2="95" y2="310" />
-  <polygon class="ch6d-head" points="90,305 100,305 95,315" />
-  <line class="ch6d-arrow" x1="245" y1="255" x2="245" y2="310" />
-  <polygon class="ch6d-head" points="240,305 250,305 245,315" />
-  <line class="ch6d-arrow" x1="400" y1="255" x2="400" y2="310" />
-  <polygon class="ch6d-head" points="395,305 405,305 400,315" />
-  <line class="ch6d-arrow" x1="555" y1="255" x2="555" y2="310" />
-  <polygon class="ch6d-head" points="550,305 560,305 555,315" />
+  <rect class="ch6d-node" x="485" y="233" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="555" y="252">Declared</text>
+  <text class="ch6d-label" x="555" y="275">Wicked /</text>
+  <text class="ch6d-label" x="555" y="289">non-linear</text>
+  <text class="ch6d-sub" x="555" y="307">Forward with a tag.</text>
 
-  <path class="ch6d-arrow-back" d="M 705 255 C 790 255, 790 70, 540 70" />
+  <rect class="ch6d-node" x="635" y="233" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="705" y="252">Redirect</text>
+  <text class="ch6d-label" x="705" y="275">Belongs</text>
+  <text class="ch6d-label" x="705" y="289">upstream</text>
+  <text class="ch6d-sub" x="705" y="307">Not a placement.</text>
+
+  <line class="ch6d-arrow" x1="95" y1="318" x2="95" y2="370" />
+  <polygon class="ch6d-head" points="90,365 100,365 95,375" />
+  <line class="ch6d-arrow" x1="245" y1="318" x2="245" y2="370" />
+  <polygon class="ch6d-head" points="240,365 250,365 245,375" />
+  <line class="ch6d-arrow" x1="400" y1="318" x2="400" y2="370" />
+  <polygon class="ch6d-head" points="395,365 405,365 400,375" />
+  <line class="ch6d-arrow" x1="555" y1="318" x2="555" y2="370" />
+  <polygon class="ch6d-head" points="550,365 560,365 555,375" />
+
+  <path class="ch6d-arrow-back" d="M 705 318 C 790 318, 790 70, 540 70" />
   <polygon class="ch6d-head" points="550,65 550,75 540,70" />
-  <text class="ch6d-sub" x="750" y="160">Redirect</text>
-  <text class="ch6d-sub" x="750" y="173">upstream</text>
+  <text class="ch6d-sub" x="750" y="210">Redirect</text>
+  <text class="ch6d-sub" x="750" y="222">upstream</text>
 
-  <rect class="ch6d-node-top" x="30" y="315" width="600" height="60" rx="4" />
-  <text class="ch6d-label" x="330" y="340">Piece list &mdash; four pieces forward to G3</text>
-  <text class="ch6d-sub" x="330" y="360">Each piece carries a cut-kind tag; routing happens in the next chapter.</text>
+  <rect class="ch6d-node-top" x="30" y="375" width="600" height="60" rx="4" />
+  <text class="ch6d-label" x="330" y="400">Piece list &mdash; forward to G3</text>
+  <text class="ch6d-sub" x="330" y="420">Placeable and declared pieces carry forward. Redirects do not.</text>
 
-  <text class="ch6d-band" x="400" y="415">Decomposition produces placeable pieces. A piece may be a placement; a piece may be a redirect.</text>
+  <text class="ch6d-band" x="400" y="452">Three kinds of valid output: placed, declared, redirected.</text>
 </svg>
 </div>
 
-*Illustration 6.1 — G2 Decompose. One situation statement, five candidate pieces, four carried forward to G3, one returned upstream as a governance question.*
+*Illustration 6.1 — G2 Decompose, generic anatomy. The gate reads a situation statement, applies a decomposition frame, and produces a piece list. Pieces come in three kinds: **placeable** — most of them, carried forward to G3; **declared** — wicked or non-linearly composing, carried forward with a tag; **redirect** — not a placement, a signal that the piece belongs upstream.*
 
 ## 6.1 What decomposition is for
 
@@ -197,7 +204,98 @@ Five failures cost the gate more than any others.
 
 **The borrowed decomposition.** A prior engagement's tree is imported and filled in with the new problem's specifics. The branches are structurally sound because they worked last time; the cut is wrong because this is a different problem. The symptom is a tree that reads as professional but produces pieces nobody on the current team can place. Throw it out and draw a new one. An analogy is not a decomposition.
 
-Back to the pricing team. After the frames have run, the tangled sentence has opened into: an analytics question (did margins move, controlling for mix), an observation question (what is competitive visibility now, and who is matching whom), a JTBD question (which jobs are colliding on which stock-keeping units), an operations question (can a price change reach shelves in under two weeks), and a governance question (who approves changes above a threshold). Five pieces. Four head to G3. One will be sent back, because governance is not a routing target; it is an upstream repair. The decomposition is done.
+Back to the pricing team. After the frames have run, the tangled sentence has opened into: an analytics question (did margins move, controlling for mix), an observation question (what is competitive visibility now, and who is matching whom), a JTBD question (which jobs are colliding on which stock-keeping units), an operations question (can a price change reach shelves in under two weeks), and a governance question (who approves changes above a threshold). Five pieces. Four head to G3. One will be sent back, because governance is not a routing target; it is an upstream repair. The decomposition is done. See Illustration 6.2.
+
+<div style="max-width: 880px; margin: 2rem auto;">
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch6-ill62-title">
+  <title id="ch6-ill62-title">G2 Decompose — retail pricing, worked example</title>
+
+  <style>
+    .ch6p-node { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; }
+    .ch6p-node-top { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); stroke-width: 2.5; }
+    .ch6p-label { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; }
+    .ch6p-sub { font: italic 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.8; }
+    .ch6p-tag { font: 500 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.7; }
+    .ch6p-arrow { stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; fill: none; }
+    .ch6p-arrow-back { stroke: var(--md-default-fg-color, #000); stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; }
+    .ch6p-head { fill: var(--md-default-fg-color, #000); }
+    .ch6p-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.6; }
+  </style>
+
+  <text class="ch6p-band" x="400" y="22">G2 Decompose &mdash; retail pricing, worked</text>
+
+  <rect class="ch6p-node-top" x="270" y="40" width="260" height="60" rx="4" />
+  <text class="ch6p-label" x="400" y="65">Situation statement</text>
+  <text class="ch6p-sub" x="400" y="82">Pricing is broken; margins</text>
+  <text class="ch6p-sub" x="400" y="94">have compressed since March.</text>
+
+  <line class="ch6p-arrow" x1="400" y1="100" x2="400" y2="130" />
+  <line class="ch6p-arrow" x1="95" y1="130" x2="705" y2="130" />
+
+  <line class="ch6p-arrow" x1="95" y1="130" x2="95" y2="165" />
+  <polygon class="ch6p-head" points="90,160 100,160 95,170" />
+  <line class="ch6p-arrow" x1="245" y1="130" x2="245" y2="165" />
+  <polygon class="ch6p-head" points="240,160 250,160 245,170" />
+  <line class="ch6p-arrow" x1="400" y1="130" x2="400" y2="165" />
+  <polygon class="ch6p-head" points="395,160 405,160 400,170" />
+  <line class="ch6p-arrow" x1="555" y1="130" x2="555" y2="165" />
+  <polygon class="ch6p-head" points="550,160 560,160 555,170" />
+  <line class="ch6p-arrow" x1="705" y1="130" x2="705" y2="165" />
+  <polygon class="ch6p-head" points="700,160 710,160 705,170" />
+
+  <rect class="ch6p-node" x="25" y="170" width="140" height="85" rx="4" />
+  <text class="ch6p-tag" x="95" y="189">Analytics</text>
+  <text class="ch6p-label" x="95" y="212">Did margins</text>
+  <text class="ch6p-label" x="95" y="226">move?</text>
+  <text class="ch6p-sub" x="95" y="244">Controlling for mix.</text>
+
+  <rect class="ch6p-node" x="175" y="170" width="140" height="85" rx="4" />
+  <text class="ch6p-tag" x="245" y="189">Observation</text>
+  <text class="ch6p-label" x="245" y="212">Competitive</text>
+  <text class="ch6p-label" x="245" y="226">visibility?</text>
+  <text class="ch6p-sub" x="245" y="244">Who matches whom.</text>
+
+  <rect class="ch6p-node" x="330" y="170" width="140" height="85" rx="4" />
+  <text class="ch6p-tag" x="400" y="189">JTBD</text>
+  <text class="ch6p-label" x="400" y="212">Which jobs</text>
+  <text class="ch6p-label" x="400" y="226">collide?</text>
+  <text class="ch6p-sub" x="400" y="244">On which SKUs.</text>
+
+  <rect class="ch6p-node" x="485" y="170" width="140" height="85" rx="4" />
+  <text class="ch6p-tag" x="555" y="189">Operations</text>
+  <text class="ch6p-label" x="555" y="212">Cycle time</text>
+  <text class="ch6p-label" x="555" y="226">to shelf?</text>
+  <text class="ch6p-sub" x="555" y="244">Two weeks or more.</text>
+
+  <rect class="ch6p-node" x="635" y="170" width="140" height="85" rx="4" />
+  <text class="ch6p-tag" x="705" y="189">Governance</text>
+  <text class="ch6p-label" x="705" y="212">Approval</text>
+  <text class="ch6p-label" x="705" y="226">authority?</text>
+  <text class="ch6p-sub" x="705" y="244">Above threshold.</text>
+
+  <line class="ch6p-arrow" x1="95" y1="255" x2="95" y2="310" />
+  <polygon class="ch6p-head" points="90,305 100,305 95,315" />
+  <line class="ch6p-arrow" x1="245" y1="255" x2="245" y2="310" />
+  <polygon class="ch6p-head" points="240,305 250,305 245,315" />
+  <line class="ch6p-arrow" x1="400" y1="255" x2="400" y2="310" />
+  <polygon class="ch6p-head" points="395,305 405,305 400,315" />
+  <line class="ch6p-arrow" x1="555" y1="255" x2="555" y2="310" />
+  <polygon class="ch6p-head" points="550,305 560,305 555,315" />
+
+  <path class="ch6p-arrow-back" d="M 705 255 C 790 255, 790 70, 540 70" />
+  <polygon class="ch6p-head" points="550,65 550,75 540,70" />
+  <text class="ch6p-sub" x="750" y="160">Redirect</text>
+  <text class="ch6p-sub" x="750" y="173">upstream</text>
+
+  <rect class="ch6p-node-top" x="30" y="315" width="600" height="60" rx="4" />
+  <text class="ch6p-label" x="330" y="340">Piece list &mdash; four pieces forward to G3</text>
+  <text class="ch6p-sub" x="330" y="360">Each piece carries a cut-kind tag; routing happens in the next chapter.</text>
+
+  <text class="ch6p-band" x="400" y="415">One worked example of the anatomy in Illustration 6.1.</text>
+</svg>
+</div>
+
+*Illustration 6.2 — The pricing example. One situation statement, five candidate pieces, four forward to G3, one returned upstream as a governance question. The same anatomy as Illustration 6.1, instantiated on a single case.*
 
 Notice what the decomposition did not produce: an *AI pricing engine*. The frame that opened the tangle happened to reveal that three of the pieces are ordinary analytics work, one is an operations question about cycle time, and one is a governance decision that the original sentence was quietly assuming away. None of the five pieces is obviously best served by a new machine-learning system. Some may land there after G3, but that is G3's call, not G2's. Decomposition's job ends when the pieces are placeable; pretending to know the placement is how the method collapses into its opposite.
 
