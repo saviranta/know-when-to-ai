@@ -139,22 +139,22 @@ Four tools carry most of G4. Use them in the order the gate needs them.
 ??? note "Dependency graph (PERT / CPM)"
     Directed graph of preconditions across all routed pieces [1] [2]. Nodes are pieces or preconditions; edges run from precondition to dependent. Best for surfacing hidden coupling — two pieces that share a data pipeline or an operator workflow look independent until the graph is drawn. Weakest when the graph becomes a planning artefact in its own right; the graph is a sequencing input, not a Gantt chart.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Dependency graph (PERT/CPM)](tool-dependency-graph.md).*
 
 ??? note "Reversibility classes"
     A three-class taxonomy — fully reversible, soft-irreversible, hard-irreversible — tagged per piece, with the time-to-restore and cost-in-window noted next to the tag [3]. Best as a lightweight artefact on the routing map; the tag is what the sequencing rule acts on. Weakest when forced onto pieces that sit genuinely between classes; in those cases, name the specific threshold that would push the piece from one class to the next, rather than picking a class.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Reversibility classes](tool-reversibility-classes.md).*
 
 ??? note "Blast-radius estimation"
     Estimate, per piece: the population affected by a failure, the time over which harm accumulates, and whether the harm inside the blast is recoverable [4]. Best as a paragraph, not a number; the three facets matter more than a single score. Weakest when used to compare pieces across different populations — a small blast inside a regulated function can be worse than a large blast inside an advertising feature.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Blast-radius estimation](tool-blast-radius-estimation.md).*
 
 ??? note "Three-stage rollout pattern"
     Shadow → canary → progressive [5]. Shadow runs the piece on live inputs without actioning its outputs; canary actions its outputs on a small pre-agreed cohort; progressive expands the cohort on pre-declared gate metrics. Best as the rollout substrate for any hard-irreversible or high-blast piece; the substrate is what makes the sequencing rule buyable. Weakest when compressed — a shadow stage of three days teaches less than one of three weeks, and compressing the stages to fit a calendar defeats the rollout's purpose.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Three-stage rollout](tool-three-stage-rollout.md).*
 
 None of the four replace the gatekeeper's judgement. Each makes a specific property of a piece assessable; together they let the order be defended on grounds the next engagement can re-examine. An order whose justifications cite the tools — *"piece 4 runs last because hard-irreversible under the reversibility classes and large population under blast-radius estimation; its rollout is the three-stage pattern with a two-week shadow"* — is an order a future reviewer can challenge on its own terms. An order whose justification reads *"team consensus"* is not.
 

@@ -164,22 +164,22 @@ Four tools answer this without any AI-specific apparatus. Use them in that order
 ??? note "Operator shadowing"
     Sit with the person doing the work for a full shift and write down what they actually do, minute by minute. Best tool when the stated process and the observed process diverge. Weakest when the work is already well-documented or when the observed shift is not representative.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Operator shadowing](tool-operator-shadowing.md).*
 
 ??? note "Time-and-motion records"
     The classical industrial-engineering artefact: count the distribution of activity across a representative week and surface the steps where repetition is genuine. Best when the work is high-volume and repetitive enough to aggregate meaningfully. Weakest for low-frequency or creative work.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Time-and-motion records](tool-time-and-motion-records.md).*
 
 ??? note "Value-stream mapping (VSM)"
     From Lean production: draw the end-to-end flow and mark where each step adds value, where it waits, where it is reworked. Best when the question is *would automation here actually reduce cycle time?*. Weakest when the flow is too unstable to map.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Value-stream mapping](tool-value-stream-mapping.md).*
 
 ??? note "SIPOC"
     Suppliers, Inputs, Process, Outputs, Customers — a five-column scope map from Lean / Six Sigma. Best as a cheap starter sketch before VSM when the flow's boundaries are clearer than its internal steps. Weakest when the value question is about flow efficiency; VSM is the better tool there.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [SIPOC](tool-sipoc.md).*
 
 If the four together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
 
@@ -192,12 +192,12 @@ Two tools draw the surface. Draw the decision table first. If every row terminat
 ??? note "Decision tables"
     Rows of conditions, columns of outcomes, cells marked yes / no / —. The fastest way to draw the decision surface on paper. If every row terminates cleanly, the piece is a rule and the table is the specification.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Decision tables](tool-decision-tables.md).*
 
 ??? note "Decision Model and Notation (DMN)"
     The industrial version of the decision table, standardised by OMG [9]. Pairs a decision-requirements diagram with executable decision tables. Use when the rule surface has dependencies — decision A depends on decision B depends on decision C — and a flat table is no longer enough.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [DMN](tool-dmn.md).*
 
 Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — is an AI substrate, not a Q2 outcome. A piece that cannot be written as an enumerable decision surface but whose outcome space is small, well-labelled, and stable fits classical ML; the test then shifts to the AI-range precondition: is there a stable label set, a maintainable labelling pipeline, and a budget for both (see routing error 4 in section 7.7)? The label-budget calculation, listed under Q3's AI-range tools, is the right instrument.
 
@@ -214,44 +214,44 @@ On paper, five tools help. Run the AI Canvas first: it decomposes the decision i
 ??? note "AI Canvas"
     A single-page decomposition of the decision into seven cells — prediction, judgement, action, outcome, input, training, feedback [12]. Use as the first paper read. If the decision does not map cleanly onto a prediction sub-task with separable judgement, AI does not belong, regardless of how capable the candidate model is.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [AI canvas](tool-ai-canvas.md).*
 
 ??? note "Machine Learning Canvas"
     A ten-block template for an end-to-end ML project — value proposition, data sources, prediction task, features, decisions, making predictions, offline and live evaluation, model building, data collection [13]. Heavier than the AI Canvas. Best when the route looks classical-ML and the engineering plan needs drawing in depth.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [ML canvas](tool-ml-canvas.md).*
 
 ??? note "Cynefin"
     A five-domain triage frame for decision contexts — Clear, Complicated, Complex, Chaotic, and a central Confusion [14]. AI substrates fit the *Complicated* domain, where cause and effect can be discovered by analysis; the *Complex* domain, with emergent behaviour and retrospective causation, rewards a *probe–sense–respond* approach instead, not a model.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Cynefin framework](tool-cynefin.md).*
 
 ??? note "Pre-mortem"
     Imagine that the AI system has failed six months after launch, then list the reasons [15]. The prospective-hindsight move surfaces failure modes before any deploy. Best run as a forty-five-minute workshop with the whole team; each named reason becomes either a control to design or a precondition to verify.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Pre-mortem](tool-pre-mortem.md).*
 
 ??? note "PAIR User Needs + AI Strengths worksheet"
     A single-page worksheet from Google's People + AI Guidebook [16] that matches user-need statements to AI-strength statements, and forces the team to commit to explicit success criteria before the build. Best for user-facing AI where the user-need-to-model-capability match is load-bearing. Weakest for back-office decisions with no user-visible interface.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [PAIR worksheet](tool-pair-worksheet.md).*
 
 Then the empirical phase. Pick by how the decision's blast radius constrains the experiment. Shadow deployment is the cheapest and safest, because the outputs are not actioned. Offline evaluation uses the richest data (historical operator decisions) but can only measure against past distributions. A controlled A/B is the only test that measures against the current substrate under live conditions, but a decision with a blast radius larger than a small cohort will not admit an A/B at all — a constraint that itself informs the routing.
 
 ??? note "Shadow deployment"
     The AI runs on live inputs but its outputs are not actioned; outputs are logged and compared to the substrate in production. Best as the first empirical read. Weakest on decisions where the AI's output would have changed the input distribution the next step sees.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Shadow deployment](tool-shadow-deployment.md).*
 
 ??? note "Offline evaluation"
     Run the AI over a held-out set of historical operator decisions and compare. Best when the historical distribution is representative. Weakest when the decision distribution drifts fast, or when the historical labels are themselves noisy (see routing error 2).
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Offline evaluation](tool-offline-evaluation.md).*
 
 ??? note "Controlled A/B against the current substrate"
     Route a slice of live traffic to the AI substrate, the rest to the current one, compare outcomes over a pre-declared window. Best when the blast radius admits a small cohort. Not available for decisions with large or concentrated blast radius.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Controlled A/B](tool-controlled-ab.md).*
 
 **Can fitting controls be drawn?** Two families of tools help, and the distinction matters. One family *derives* the controls — it starts from the decision's failure modes and works outward to the barriers and constraints the controls sketch must contain. The other family *documents* them — it takes a derived set and writes it down in a shape the organisation, the auditor, and the next reviewer can read.
 
@@ -262,47 +262,47 @@ The documentation tools then pick by the grain the decision needs. NIST and ISO 
 ??? note "NIST AI Risk Management Framework"
     Voluntary framework for risk identification, measurement, and management at the system level [4]. Use as the organisation-level vocabulary when drawing risk categories and management functions; it names the pieces a controls sketch must address.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [NIST AI RMF](tool-nist-ai-rmf.md).*
 
 ??? note "ISO/IEC 42001"
     International management-system standard for AI [3]. Use where the organisation is seeking third-party certification or has contractual obligations that reference ISO standards. Sets the process discipline around the controls design rather than the design itself.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [ISO/IEC 42001](tool-iso-42001.md).*
 
 ??? note "SMACTR internal-audit protocol"
     Scoping, Mapping, Artefact collection, Testing, Reflection [7]. A reproducible procedure for drawing the audit trail and the rollback trigger *before* the system is built. Use to turn *"we will have controls"* into a named set of artefacts with owners against them.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [SMACTR internal audit](tool-smactr.md).*
 
 ??? note "Model Cards"
     A single-page document of a model's training provenance, performance slices, and intended-use boundary [8]. Use as the owner-facing artefact the controls set is anchored on; particularly strong for classical-ML and fine-tuned routes, where provenance and slice performance are load-bearing.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Model cards](tool-model-cards.md).*
 
 ??? note "Datasheets for Datasets"
     A template documenting a dataset's motivation, composition, collection process, preprocessing, uses, distribution, and maintenance [17]. The natural pair to Model Cards [8]: Model Cards document the model, Datasheets document the data. Particularly load-bearing for classical-ML and fine-tuned routes, where label provenance is the stability hinge.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Datasheets for datasets](tool-datasheets-for-datasets.md).*
 
 ??? note "HAX Workbook"
     A planning worksheet from the Microsoft HAX Toolkit [18] for prioritising which of the Human-AI Interaction guidelines [5] apply to a specific user-facing system, and for assigning an owner to each. Use as the bridge between Amershi's guidelines and a concrete per-system plan.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [HAX Workbook](tool-hax-workbook.md).*
 
 ??? note "Shneiderman two-axis frame"
     Automation level on one axis, human control on the other [6]. Use as a sanity check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate. Quick to apply at the line between assistant and autonomous.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Shneiderman two-axis](tool-shneiderman-two-axis.md).*
 
 ??? note "Bow-tie analysis"
     A diagram with one central hazard, prevention barriers on the left, mitigation barriers on the right [19]. Each barrier is a named control with an owner, a defeat-mode, and an effectiveness claim. Outputs feed the controls sketch directly: prevention barriers become *audit* and *review* entries (they catch the hazard before it lands); mitigation barriers become *rollback* entries (they act after it lands). The barrier defeat-modes — "this control fails if…" — become candidate rollback-trigger conditions at G5. Use when a decision has an identifiable central hazard and the reviewer needs the controls set on one page.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Bow-tie analysis](tool-bow-tie-analysis.md).*
 
 ??? note "STPA — Systems-Theoretic Process Analysis"
     Models the piece as a control hierarchy — controllers issuing control actions, controlled processes providing feedback — then enumerates unsafe control actions (UCAs) per control action and derives loss scenarios and safety constraints [20]. Each safety constraint is a control stated as *what must not happen*. UCAs become trigger metrics (the observable condition that indicates the unsafe action has occurred); safety constraints become entries in the controls sketch; loss scenarios become sunset criteria (the long-horizon conditions under which the piece must be retired). Use when the hazard is produced by feedback or coordination between components rather than by a single failing part — common for AI routes where the model interacts with operators and downstream systems.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [STPA](tool-stpa.md).*
 
 ### Picking a level within the AI range
 
@@ -311,22 +311,22 @@ Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choic
 ??? note "Adaptation decision tree"
     Chapter 11 overlay. Runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Use as the top-of-tree choice between levels; each step past *prompt* must be earned by a case the previous step cannot carry (see heuristic 2 in Illustration 7.2).
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Adaptation decision tree](tool-adaptation-decision-tree.md).*
 
 ??? note "Label-budget calculation"
     Labeller-hours per month, plus the cost of resolving disagreements between labellers. Non-optional for classical-ML and fine-tuned routes. A route without a label budget is a wish, not a plan (see routing error 4 in section 7.7).
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Label budget calculation](tool-label-budget-calculation.md).*
 
 ??? note "Retrievable-quality test"
     Is the corpus chunked sensibly, current, and indexed against the questions actually asked? The RAG precondition. A corpus that fails the test is not a RAG substrate; it is a human-side reference (see routing error 5).
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Retrievable quality test](tool-retrievable-quality-test.md).*
 
 ??? note "Total-cost-of-ownership ladder"
     Chapter 11 overlay. Attaches a per-call cost band to each level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [TCO ladder](tool-total-cost-of-ownership-ladder.md).*
 
 None of these tools replaces the gatekeeper's judgement. Each is a lens that makes a specific facet of the decision examinable. Together they let G3 be defended in a way no single overall heuristic could — and, on the way back from a failed engagement, debugged in a way no post-hoc story could.
 

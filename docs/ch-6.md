@@ -140,6 +140,21 @@ One note before moving on. The Pyramid wants an answer on top; you often do not 
 
 A useful diagnostic, while drawing the tree: ask whether each sub-question is answerable with evidence that does not already assume the top. If the evidence required to answer a sub-question is the same evidence required to confirm the top answer, the tree is circular and you have built a proof rather than a test. Redraw until the sub-questions could genuinely return unfavourable answers.
 
+??? note "Minto Pyramid"
+    An answer-first argument structure — recommendation on top, reasons beneath, evidence under each — from Minto's *Pyramid Principle* [1]. Best as the *what are we actually claiming* check before a decomposition is drawn. Weakest when forced onto a problem whose recommendation is not yet known; carry a working hypothesis on top and let the Issue Tree break it.
+
+    *Toolkit entry: [Minto pyramid](tool-minto-pyramid.md).*
+
+??? note "MECE check"
+    Mutually exclusive, collectively exhaustive — a running discipline on the branches of any tree, not a post-hoc audit. Best when redrawing a cut that has produced overlapping or gap-leaving branches. Weakest when treated as the decomposition itself; MECE polices the cut, it does not produce one.
+
+    *Toolkit entry: [MECE check](tool-mece.md).*
+
+??? note "Issue tree"
+    A question decomposed into independently-answerable sub-questions — MECE applied to a Pyramid in progress. Best when the argument for a recommendation is the unclear thing, not the symptom itself. Weakest when the sub-questions can only be answered by assuming the top; redraw until the evidence required can genuinely return unfavourable answers.
+
+    *Toolkit entry: [Issue tree](tool-issue-tree.md).*
+
 ## 6.3 Specialist frames
 
 The backbone carries most business problems. Four specialist frames handle the shapes the backbone mishandles.
@@ -148,9 +163,19 @@ The backbone carries most business problems. Four specialist frames handle the s
 
 For the pricing team, a JTBD cut changes the frame: *what job is the person at the shelf hiring this price for?* Signalling value relative to a competitor. Qualifying an item for a basket. Resolving an information gap between list and promotional price. Three jobs, three different pricing behaviours. This reveals that *promotion cannibalisation* is not a promotions problem; it is two jobs fighting each other on the same stock-keeping unit.
 
+??? note "Jobs-to-be-done"
+    An outcome-driven decomposition — what is someone *hiring* this offering to achieve? — in Ulwick's operational form, with a structured 150-outcome interview protocol [2]. Best when the shape of the right answer is unclear and the symptom is defined in product language rather than user language. Weakest when forced onto a symptom that is genuinely about cause, not purpose.
+
+    *Toolkit entry: [Jobs-to-be-done](tool-jtbd.md).*
+
 **Ishikawa.** The fishbone diagram. Cause-and-effect decomposition across categories — typically Man, Machine, Material, Method, Measurement, Milieu. Kaoru Ishikawa wrote the canonical *Guide to Quality Control* [3], published in English in 1968; the diagram itself dates to his work at Kawasaki Steel in 1943, the book is the pedagogical codification.
 
 Ishikawa is the right frame when the situation statement names a symptom and the cause is unknown. It works less well when the relevant causes are not category-shaped — when the cause is a single chain of decisions rather than a family of possibilities.
+
+??? note "Ishikawa (fishbone)"
+    A cause-and-effect fan across categories — typically Man, Machine, Material, Method, Measurement, Milieu — from Ishikawa's canonical *Guide to Quality Control* [3]. Best when the cause of a symptom is unknown and plural causes are plausible. Weakest when the causal structure is a single chain rather than a family; pair with 5 Whys if the chain turns out to be the shape.
+
+    *Toolkit entry: [Ishikawa (fishbone)](tool-ishikawa.md).*
 
 **5 Whys.** A linear chain of causal questions. Each answer becomes the next question. Taiichi Ohno documented the technique in *Toyota Production System* [4] and was explicit that the practice came from Sakichi Toyoda, the founder's father, not from Ohno himself.
 

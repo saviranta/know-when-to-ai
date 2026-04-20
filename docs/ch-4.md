@@ -105,6 +105,11 @@ None of these are technical problems. A model at any substrate will produce conf
 - *Deciding a problem is "partly technical, partly process" and keeping both halves of the brief.* The check's refusal is specific: *this problem, as framed*. A different sub-problem may survive the check; the sponsor's brief usually does not survive intact.
 - *Confusing technochauvinism with capability scepticism.* A problem can be plainly solvable with AI and still fail this check if the thing being solved is not the thing the sponsor said.
 
+??? note "Technochauvinism check"
+    A one-paragraph refusal check run from the brief alone: if AI were removed from the scope tomorrow, would the problem become a recognisable process, ownership, policy, or measurement problem? Best as the very first screen at Tier 0, before any tool is picked. Weakest when it is run on the sponsor's framing alone rather than against the stakeholder field.
+
+    *Toolkit entry: [Technochauvinism check](tool-technochauvinism-check.md).*
+
 ## 4.3 The Abolition check
 
 **Question.** *Is this decision in a category where no plausible set of controls could make AI delegation acceptable, regardless of future model capability?*
@@ -137,6 +142,11 @@ Unlike the Technochauvinism check, this one is categorical. It does not turn on 
 - *Waiting for case evidence.* The check is categorical. A request for case studies of a category failing badly before refusing is a category error; the axes are the case.
 - *Conflating with the Technochauvinism check.* A predictive-policing project is not technochauvinist — there is a plausible technical implementation. It is off-limits. The two checks are independent refusals on different grounds.
 - *Treating the list as a moving target.* Capability improvements do not unlock new categories. The axes do not weaken as models improve.
+
+??? note "Abolition check"
+    A categorical refusal check against four axes — dignitary harm, irreversibility, coercion, due process — drawing on McQuillan's redline categories and adjacent statutory lists. Best when the brief touches decisions about persons' standing, liberty, benefits, or enforcement. Weakest if mistaken for a capability objection — the *if it worked perfectly* rehearsal is what separates the two.
+
+    *Toolkit entry: [Abolition check](tool-abolition-check.md).*
 
 ## 4.4 How the two checks interact
 

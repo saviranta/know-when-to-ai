@@ -26,6 +26,11 @@ Schön called this *problem setting*: the reflection-in-action discipline that p
 
 Framing is reflective rather than procedural. You talk to the problem. You try a framing; you watch what it makes visible and what it hides; you try another; you compare. The paragraph that ends up on the page is not the first one you wrote. If it is, the framing has not been tested against the situation — only asserted over it.
 
+??? note "Framed-problem paragraph"
+    A single-paragraph artefact stating what the work is, what success means, and who the success is for — written, tested against the stakeholder field, and rewritten. Best as the first G1 artefact; the sponsor, the principal, and one affected-party voice should recognise themselves in it. Weakest when it restates the brief's vocabulary instead of the problem the brief was pointing at.
+
+    *Toolkit entry: [Framed-problem paragraph](tool-framed-problem-paragraph.md).*
+
 ### 5.2 The stakeholder map
 
 Framing names *who the success is for*. The stakeholder map is the artefact that makes the naming operational.
@@ -43,6 +48,11 @@ The third column is the useful one. It is the one most framings omit. Its omissi
 A retail-pricing example makes the columns concrete. A pricing team proposes a dynamic-pricing model for grocery staples. *Who decides:* pricing leadership, the commercial director, the legal function, the regulator for consumer protection. *Who is affected:* customers across income brackets whose weekly bill varies with the model's outputs; store managers who lose local discretion; competitors whose pricing is shaped by the model's public signals. *Who is absent:* low-income customers whose purchasing is most sensitive to price volatility; frontline staff whose jobs include explaining price changes to customers; consumer advocacy groups who will be the first to notice distributional effects. The framing can proceed without consulting the third column. The engagement will then be surprised by the third column's response later, at a cost that was predictable at framing time and was not predicted.
 
 The stakeholder map is also an input to the Tier-0 checks. When the *affected* column surfaces a category — a benefits-eligibility decision, an immigration-risk use, an automated-sanction path — the Abolition check in [Chapter 4](ch-4.md) fires categorically. When the *absent* column surfaces non-technical alternatives that were never considered, the Technochauvinism check fires. G1's framing conversation and Tier 0 share this artefact.
+
+??? note "Stakeholder map"
+    A one-page three-column map — *who decides*, *who is affected*, *who is absent* — adapted from Freeman's stakeholder frame. Best run alongside the framed-problem paragraph; the *absent* column is diagnostic and often feeds the Tier-0 checks. Weakest when the columns are filled with categories instead of named persons.
+
+    *Toolkit entry: [Stakeholder map](tool-stakeholder-map.md).*
 
 By the end of Part A, the framing conversation has produced a shared understanding of the problem in the world and the stakeholder field it touches — captured in two artefacts, the framed-problem paragraph (Section 5.1) and the stakeholder map (Section 5.2). Neither is the situation statement yet. Both feed into Part B, where the frame is tested against what the system actually does.
 
@@ -155,6 +165,11 @@ See Illustration 5.1.
 Observation that does not loop is note-taking. The loop is what turns notes into a diagnosis.
 
 By the end of Part B, the team has a tested understanding of the system the symptom lives in — the symptom located inside the system that generates it, with the cues, operators, and distributed arrangements that keep it running named — recorded in a system description. The frame from Part A is now tested against that description. Where the two agree, the situation statement writes itself. Where they disagree, one of them has to give — and the looped observation in Section 5.6 is what forces the disagreement to the surface before the gate closes.
+
+??? note "System description"
+    The diagnostic artefact of Part B: a short written account of the system the symptom lives in, built from looped observation across operators, times, and days, and triangulated with CDM, ShadowBox, or the Dreyfus screen where the seat requires it. Best when it names what would have to be true for the brief's diagnosis to survive. Weakest when it is written from a single pass, a single seat, or a single shift.
+
+    *Toolkit entry: [System description](tool-system-description.md).*
 
 ## 5.7 The situation statement
 

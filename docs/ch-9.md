@@ -130,22 +130,22 @@ Four tools carry most of G5. None replace the owner's judgement; each makes a sp
 ??? note "Named-owner discipline (DRI / single-threaded leader)"
     One person, named on the page, acknowledged by signature, with authority to change course [2] [3]. The vocabulary is Apple's (Directly Responsible Individual) or Amazon's (single-threaded leader); the rule is the same. Best as a hard constraint on the page's owner field — no page ships without a name. Weakest when the named person does not have either the visibility into the triggers or the authority to act on them; fix the authority or change the name.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Named-owner discipline](tool-named-owner-discipline.md).*
 
 ??? note "Rollback-trigger design"
     A metric with a threshold held for a window, paired with a one-sentence rollback action. Draws on Google's error-budget policies [4] for the metric-threshold-window shape and on SMACTR's [7] audit discipline for the *has this trigger ever fired in staging?* test. Best as a drafting discipline — every trigger is stated in the form *metric X below threshold T for window W; action is Z* — so that ambiguity cannot hide. Weakest when the action sentence cannot be written, in which case the trigger is not yet a trigger.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Rollback-trigger design](tool-rollback-trigger-design.md).*
 
 ??? note "Review-cadence matrix"
     A small table mapping each piece's consequence time to a minimum review frequency — weekly for autonomous under hours of consequence, monthly for assistant under days, quarterly for deterministic rules under weeks. Best as a default the owner can override with a written reason. Weakest as a rigid schedule; the rule of thumb is *shorter of consequence time and replacement time*, and the matrix is its first approximation.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Review-cadence matrix](tool-review-cadence-matrix.md).*
 
 ??? note "Sunset criteria worksheet"
     A three-row worksheet — adoption criterion, baseline-relative criterion, drift criterion — filled in before launch, with numeric thresholds and measurement windows. Best as the forcing function that makes pre-committed retirement a default rather than an ex-post conversation. Weakest when filled in as ritual; the criteria must be ones the owner would actually honour, or the worksheet is theatre.
 
-    *Toolkit entry: Part 4 (pending).*
+    *Toolkit entry: [Sunset criteria worksheet](tool-sunset-criteria-worksheet.md).*
 
 A note on what these tools are not. None of the four produces the commitment page; the owner does. The tools make the page harder to leave blank or vague, which is a different service. A commitment drafted with these tools still needs an owner willing to sign it. Without that, the page is a template.
 
