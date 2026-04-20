@@ -9,7 +9,7 @@ This chapter teaches the frames and the failures. It runs them on one problem �
 See Illustration 6.1.
 
 <div style="max-width: 880px; margin: 2rem auto;">
-<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch6-ill61-title">
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch6-ill61-title">
   <title id="ch6-ill61-title">G2 Decompose — situation statement to piece list</title>
 
   <style>
@@ -24,71 +24,76 @@ See Illustration 6.1.
     .ch6d-band { font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--md-default-fg-color, #000); text-anchor: middle; opacity: 0.6; }
   </style>
 
-  <text class="ch6d-band" x="400" y="20">G2 Decompose — one situation, five placeable pieces</text>
+  <text class="ch6d-band" x="400" y="22">G2 Decompose &mdash; one situation, five candidate pieces</text>
 
-  <rect class="ch6d-node-top" x="290" y="50" width="220" height="56" rx="4" />
-  <text class="ch6d-label" x="400" y="72">Situation statement</text>
-  <text class="ch6d-sub" x="400" y="88">Pricing is broken; margins</text>
-  <text class="ch6d-sub" x="400" y="99">compressed since March.</text>
+  <rect class="ch6d-node-top" x="270" y="40" width="260" height="60" rx="4" />
+  <text class="ch6d-label" x="400" y="65">Situation statement</text>
+  <text class="ch6d-sub" x="400" y="82">Pricing is broken; margins</text>
+  <text class="ch6d-sub" x="400" y="94">have compressed since March.</text>
 
-  <line class="ch6d-arrow" x1="120" y1="180" x2="120" y2="142" />
-  <polygon class="ch6d-head" points="115,146 125,146 120,136" transform="rotate(180 120 141)" />
-  <line class="ch6d-arrow" x1="260" y1="180" x2="320" y2="112" />
-  <polygon class="ch6d-head" points="315,116 325,116 320,106" transform="rotate(140 320 111)" />
-  <line class="ch6d-arrow" x1="400" y1="180" x2="400" y2="112" />
-  <polygon class="ch6d-head" points="395,116 405,116 400,106" transform="rotate(180 400 111)" />
-  <line class="ch6d-arrow" x1="540" y1="180" x2="480" y2="112" />
-  <polygon class="ch6d-head" points="475,116 485,116 480,106" transform="rotate(220 480 111)" />
-  <line class="ch6d-arrow" x1="680" y1="180" x2="680" y2="142" />
-  <polygon class="ch6d-head" points="675,146 685,146 680,136" transform="rotate(180 680 141)" />
+  <line class="ch6d-arrow" x1="400" y1="100" x2="400" y2="130" />
+  <line class="ch6d-arrow" x1="95" y1="130" x2="705" y2="130" />
 
-  <rect class="ch6d-node" x="50" y="185" width="140" height="70" rx="4" />
-  <text class="ch6d-tag" x="120" y="203">Analytics</text>
-  <text class="ch6d-label" x="120" y="222">Did margins move?</text>
-  <text class="ch6d-sub" x="120" y="239">Controlling for mix.</text>
+  <line class="ch6d-arrow" x1="95" y1="130" x2="95" y2="165" />
+  <polygon class="ch6d-head" points="90,160 100,160 95,170" />
+  <line class="ch6d-arrow" x1="245" y1="130" x2="245" y2="165" />
+  <polygon class="ch6d-head" points="240,160 250,160 245,170" />
+  <line class="ch6d-arrow" x1="400" y1="130" x2="400" y2="165" />
+  <polygon class="ch6d-head" points="395,160 405,160 400,170" />
+  <line class="ch6d-arrow" x1="555" y1="130" x2="555" y2="165" />
+  <polygon class="ch6d-head" points="550,160 560,160 555,170" />
+  <line class="ch6d-arrow" x1="705" y1="130" x2="705" y2="165" />
+  <polygon class="ch6d-head" points="700,160 710,160 705,170" />
 
-  <rect class="ch6d-node" x="200" y="185" width="140" height="70" rx="4" />
-  <text class="ch6d-tag" x="270" y="203">Observation</text>
-  <text class="ch6d-label" x="270" y="222">Competitive</text>
-  <text class="ch6d-label" x="270" y="236">visibility?</text>
+  <rect class="ch6d-node" x="25" y="170" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="95" y="189">Analytics</text>
+  <text class="ch6d-label" x="95" y="212">Did margins</text>
+  <text class="ch6d-label" x="95" y="226">move?</text>
+  <text class="ch6d-sub" x="95" y="244">Controlling for mix.</text>
 
-  <rect class="ch6d-node" x="330" y="185" width="140" height="70" rx="4" />
-  <text class="ch6d-tag" x="400" y="203">JTBD</text>
-  <text class="ch6d-label" x="400" y="222">Which jobs</text>
-  <text class="ch6d-label" x="400" y="236">collide on SKUs?</text>
+  <rect class="ch6d-node" x="175" y="170" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="245" y="189">Observation</text>
+  <text class="ch6d-label" x="245" y="212">Competitive</text>
+  <text class="ch6d-label" x="245" y="226">visibility?</text>
+  <text class="ch6d-sub" x="245" y="244">Who matches whom.</text>
 
-  <rect class="ch6d-node" x="470" y="185" width="140" height="70" rx="4" />
-  <text class="ch6d-tag" x="540" y="203">Operations</text>
-  <text class="ch6d-label" x="540" y="222">Cycle time to</text>
-  <text class="ch6d-label" x="540" y="236">shelf?</text>
+  <rect class="ch6d-node" x="330" y="170" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="400" y="189">JTBD</text>
+  <text class="ch6d-label" x="400" y="212">Which jobs</text>
+  <text class="ch6d-label" x="400" y="226">collide?</text>
+  <text class="ch6d-sub" x="400" y="244">On which SKUs.</text>
 
-  <rect class="ch6d-node" x="610" y="185" width="140" height="70" rx="4" />
-  <text class="ch6d-tag" x="680" y="203">Governance</text>
-  <text class="ch6d-label" x="680" y="222">Approval</text>
-  <text class="ch6d-label" x="680" y="236">authority?</text>
+  <rect class="ch6d-node" x="485" y="170" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="555" y="189">Operations</text>
+  <text class="ch6d-label" x="555" y="212">Cycle time</text>
+  <text class="ch6d-label" x="555" y="226">to shelf?</text>
+  <text class="ch6d-sub" x="555" y="244">Two weeks or more.</text>
 
-  <line class="ch6d-arrow" x1="120" y1="260" x2="120" y2="310" />
-  <polygon class="ch6d-head" points="115,305 125,305 120,315" />
-  <line class="ch6d-arrow" x1="270" y1="260" x2="270" y2="310" />
-  <polygon class="ch6d-head" points="265,305 275,305 270,315" />
-  <line class="ch6d-arrow" x1="400" y1="260" x2="400" y2="310" />
+  <rect class="ch6d-node" x="635" y="170" width="140" height="85" rx="4" />
+  <text class="ch6d-tag" x="705" y="189">Governance</text>
+  <text class="ch6d-label" x="705" y="212">Approval</text>
+  <text class="ch6d-label" x="705" y="226">authority?</text>
+  <text class="ch6d-sub" x="705" y="244">Above threshold.</text>
+
+  <line class="ch6d-arrow" x1="95" y1="255" x2="95" y2="310" />
+  <polygon class="ch6d-head" points="90,305 100,305 95,315" />
+  <line class="ch6d-arrow" x1="245" y1="255" x2="245" y2="310" />
+  <polygon class="ch6d-head" points="240,305 250,305 245,315" />
+  <line class="ch6d-arrow" x1="400" y1="255" x2="400" y2="310" />
   <polygon class="ch6d-head" points="395,305 405,305 400,315" />
-  <line class="ch6d-arrow" x1="540" y1="260" x2="540" y2="310" />
-  <polygon class="ch6d-head" points="535,305 545,305 540,315" />
+  <line class="ch6d-arrow" x1="555" y1="255" x2="555" y2="310" />
+  <polygon class="ch6d-head" points="550,305 560,305 555,315" />
 
-  <path class="ch6d-arrow-back" d="M 680 260 C 680 300, 760 330, 760 80 C 760 50, 600 50, 510 50" />
-  <polygon class="ch6d-head" points="515,45 515,55 505,50" />
+  <path class="ch6d-arrow-back" d="M 705 255 C 790 255, 790 70, 540 70" />
+  <polygon class="ch6d-head" points="550,65 550,75 540,70" />
+  <text class="ch6d-sub" x="750" y="160">Redirect</text>
+  <text class="ch6d-sub" x="750" y="173">upstream</text>
 
-  <rect class="ch6d-node" x="30" y="315" width="580" height="56" rx="4" />
-  <text class="ch6d-label" x="320" y="340">Piece list — four pieces route forward to G3</text>
-  <text class="ch6d-sub" x="320" y="357">Each piece carries a cut-kind tag; routing happens in the next chapter.</text>
+  <rect class="ch6d-node-top" x="30" y="315" width="600" height="60" rx="4" />
+  <text class="ch6d-label" x="330" y="340">Piece list &mdash; four pieces forward to G3</text>
+  <text class="ch6d-sub" x="330" y="360">Each piece carries a cut-kind tag; routing happens in the next chapter.</text>
 
-  <text class="ch6d-tag" x="680" y="302">Redirected</text>
-  <text class="ch6d-sub" x="680" y="317">Not a cut —</text>
-  <text class="ch6d-sub" x="680" y="330">a decision-rights</text>
-  <text class="ch6d-sub" x="680" y="343">repair upstream.</text>
-
-  <text class="ch6d-band" x="400" y="400">Decomposition produces placeable pieces. A piece may be a placement; a piece may be a redirect.</text>
+  <text class="ch6d-band" x="400" y="415">Decomposition produces placeable pieces. A piece may be a placement; a piece may be a redirect.</text>
 </svg>
 </div>
 
@@ -132,9 +137,9 @@ A useful diagnostic, while drawing the tree: ask whether each sub-question is an
 
 The backbone carries most business problems. Four specialist frames handle the shapes the backbone mishandles.
 
-**Jobs to be Done.** When the problem is about what an offering is *for*, not what it *is*, reach for Jobs to be Done. The question becomes: what outcome is the buyer hiring this thing to achieve? Tony Ulwick published the operational form — Outcome-Driven Innovation — in *What Customers Want* [2]. Christensen later popularised a looser narrative form; the operational toolkit is Ulwick's and the 150-desired-outcome interview protocol is the part a decomposition can actually use.
+**Jobs to be Done.** When the problem is about what an offering is *for*, not what it *is*, reach for Jobs to be Done. The question becomes: what outcome is someone hiring this thing to achieve? *Hiring* is JTBD's vocabulary and is not necessarily a purchase — a reader hires a briefing, a patient hires a clinic, a team hires a dashboard. Money may or may not change hands. The frame asks who is using the thing, and what outcome they are reaching for when they do. Tony Ulwick published the operational form — Outcome-Driven Innovation — in *What Customers Want* [2]. Christensen later popularised a looser narrative form; the operational toolkit is Ulwick's, and the 150-desired-outcome interview protocol is the part a decomposition can actually use.
 
-For the pricing team, a JTBD cut changes the frame: *what job is a shopper hiring a price for?* Signalling value relative to a competitor. Qualifying an item for a basket. Resolving an information gap between list and promotional price. Three jobs, three different pricing behaviours. This reveals that *promotion cannibalisation* is not a promotions problem; it is two jobs fighting each other on the same stock-keeping unit.
+For the pricing team, a JTBD cut changes the frame: *what job is the person at the shelf hiring this price for?* Signalling value relative to a competitor. Qualifying an item for a basket. Resolving an information gap between list and promotional price. Three jobs, three different pricing behaviours. This reveals that *promotion cannibalisation* is not a promotions problem; it is two jobs fighting each other on the same stock-keeping unit.
 
 **Ishikawa.** The fishbone diagram. Cause-and-effect decomposition across categories — typically Man, Machine, Material, Method, Measurement, Milieu. Kaoru Ishikawa wrote the canonical *Guide to Quality Control* [3], published in English in 1968; the diagram itself dates to his work at Kawasaki Steel in 1943, the book is the pedagogical codification.
 
@@ -150,7 +155,7 @@ Ishikawa is the right frame when the situation statement names a symptom and the
 
 Decomposition frames are not interchangeable. A short decision question selects the right one without ceremony.
 
-*Is the shape of the right answer unclear?* Reach for JTBD. The frame opens up what outcome is actually being bought, which is almost always the question that the situation statement leaves implicit.
+*Is the shape of the right answer unclear?* Reach for JTBD. The frame opens up what outcome is actually being sought — by the person using the thing, whether money changes hands or not — which is almost always the question that the situation statement leaves implicit.
 
 *Is the cause of the symptom unclear?* Reach for Ishikawa if the categories are likely to be plural, or 5 Whys if a single chain seems plausible. Run both if the first feels thin after ten minutes.
 
