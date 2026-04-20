@@ -6,6 +6,8 @@
 
 This site renders the book in progress. Chapters appear here as they move from manuscript into final form.
 
+Before the book, a short test: **[Six questions to disarm an AI proposal in fifteen minutes](six-questions.md)** — the meeting before the method runs.
+
 ## Currently published
 
 - **[Chapter 1 — What this book is](ch-1.md)** — two acts that keep needing a human, and the six answers the method can produce.

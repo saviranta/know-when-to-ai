@@ -59,6 +59,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Six questions: six-questions.md
   - Chapters:
       - "1 — What this book is": ch-1.md
       - "2 — Five modes of AI use": ch-2.md
@@ -72,7 +73,6 @@ nav:
       - "10 — Three worked engagements": ch-10.md
   - Toolkit:
       - "< 30-min thinking or session":
-          - "Tier 0 — Six questions to disarm": tool-disarm-questions.md
           - "Tier 0 — Technochauvinism check": tool-technochauvinism-check.md
           - "Tier 0 — Abolition check": tool-abolition-check.md
           - "G1 — Framed problem paragraph": tool-framed-problem-paragraph.md
