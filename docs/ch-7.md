@@ -160,7 +160,7 @@ Each question in the routing flow has a small toolkit — frames and artefacts t
 
 This question is not *could we automate this?* — almost any step could, given enough investment. It is *is the work shaped such that automation pays back?*. A step done once a month, or done fifty times a day but with heavy judgement on each call, or sitting downstream of a bottleneck that would simply move one position after automation, does not earn automation. The question asks the gatekeeper to look at the shape of the work, not at the appeal of the technology.
 
-Three tools answer this without any AI-specific apparatus. Use them in that order: shadowing first, because it produces the raw observations; time-and-motion records second, because they aggregate the observations into a distribution; VSM third, because it places the aggregate inside the end-to-end flow. Stop at the earliest one that settles the question.
+Four tools answer this without any AI-specific apparatus. Use them in that order: shadowing first, because it produces the raw observations; time-and-motion records second, because they aggregate the observations into a distribution; VSM third, because it places the aggregate inside the end-to-end flow. SIPOC is the cheapest alternative to VSM when the flow is not yet stable enough to map end-to-end — a five-column scope sketch that draws the boundaries without committing to a full flow. Stop at the earliest one that settles the question.
 
 ??? note "Operator shadowing"
     Sit with the person doing the work for a full shift and write down what they actually do, minute by minute. Best tool when the stated process and the observed process diverge. Weakest when the work is already well-documented or when the observed shift is not representative.
@@ -177,7 +177,12 @@ Three tools answer this without any AI-specific apparatus. Use them in that orde
 
     *Atlas entry: Part 4 (pending).*
 
-If the three together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
+??? note "SIPOC"
+    Suppliers, Inputs, Process, Outputs, Customers — a five-column scope map from Lean / Six Sigma. Best as a cheap starter sketch before VSM when the flow's boundaries are clearer than its internal steps. Weakest when the value question is about flow efficiency; VSM is the better tool there.
+
+    *Atlas entry: Part 4 (pending).*
+
+If the four together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
 
 ### Q2 — Does a rule, script, or classical ML fit?
 
@@ -203,7 +208,36 @@ This is the most dangerous question in the gate, because it is two questions wea
 
 Work the two parts in order. Establish empirical fitness first; if the model does not work, the controls discussion is moot. Then work controls. If controls cannot be drawn for the decision the model would make, the piece is routed to *AI as assistant* regardless of how well the model performs — the controls design is the gating condition, not the performance number.
 
-**Does AI work here?** Pick by how the decision's blast radius constrains the experiment. Shadow deployment is the cheapest and safest, because the outputs are not actioned. Offline evaluation uses the richest data (historical operator decisions) but can only measure against past distributions. A controlled A/B is the only test that measures against the current substrate under live conditions, but a decision with a blast radius larger than a small cohort will not admit an A/B at all — a constraint that itself informs the routing.
+**Does AI work here?** The question has two phases: paper first, empirical second. The paper phase decomposes the decision and triages whether AI even fits the problem shape. If it does, the empirical phase measures whether a specific AI substrate actually performs on the real data. Almost every failed route skipped the paper phase and went straight to a pilot; the routing errors in section 7.7 are the visible evidence.
+
+On paper, five tools help. Run the AI Canvas first: it decomposes the decision into prediction, judgement, action, outcome, input, training, and feedback, and the decomposition alone often resolves whether AI belongs. Use the Machine Learning Canvas when the route looks classical-ML and the engineering plan needs drawing in more depth than the AI Canvas admits. Cynefin triages the problem domain — AI fits the *Complicated* domain (pattern-based, analysable) but not the *Complex* one (emergent, causation only visible in retrospect). Pre-mortem imagines the AI system has failed six months after launch and works backwards; each named reason is either a control to design or a precondition to verify. The PAIR *User Needs + AI Strengths* worksheet is the right tool for user-facing AI where the match between a stated user need and a claimable model capability is the load-bearing question.
+
+??? note "AI Canvas"
+    A single-page decomposition of the decision into seven cells — prediction, judgement, action, outcome, input, training, feedback [12]. Use as the first paper read. If the decision does not map cleanly onto a prediction sub-task with separable judgement, AI does not belong, regardless of how capable the candidate model is.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Machine Learning Canvas"
+    A ten-block template for an end-to-end ML project — value proposition, data sources, prediction task, features, decisions, making predictions, offline and live evaluation, model building, data collection [13]. Heavier than the AI Canvas. Best when the route looks classical-ML and the engineering plan needs drawing in depth.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Cynefin"
+    A five-domain triage frame for decision contexts — Clear, Complicated, Complex, Chaotic, and a central Confusion [14]. AI substrates fit the *Complicated* domain, where cause and effect can be discovered by analysis; the *Complex* domain, with emergent behaviour and retrospective causation, rewards a *probe–sense–respond* approach instead, not a model.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Pre-mortem"
+    Imagine that the AI system has failed six months after launch, then list the reasons [15]. The prospective-hindsight move surfaces failure modes before any deploy. Best run as a forty-five-minute workshop with the whole team; each named reason becomes either a control to design or a precondition to verify.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "PAIR User Needs + AI Strengths worksheet"
+    A single-page worksheet from Google's People + AI Guidebook [16] that matches user-need statements to AI-strength statements, and forces the team to commit to explicit success criteria before the build. Best for user-facing AI where the user-need-to-model-capability match is load-bearing. Weakest for back-office decisions with no user-visible interface.
+
+    *Atlas entry: Part 4 (pending).*
+
+Then the empirical phase. Pick by how the decision's blast radius constrains the experiment. Shadow deployment is the cheapest and safest, because the outputs are not actioned. Offline evaluation uses the richest data (historical operator decisions) but can only measure against past distributions. A controlled A/B is the only test that measures against the current substrate under live conditions, but a decision with a blast radius larger than a small cohort will not admit an A/B at all — a constraint that itself informs the routing.
 
 ??? note "Shadow deployment"
     The AI runs on live inputs but its outputs are not actioned; outputs are logged and compared to the substrate in production. Best as the first empirical read. Weakest on decisions where the AI's output would have changed the input distribution the next step sees.
@@ -220,7 +254,7 @@ Work the two parts in order. Establish empirical fitness first; if the model doe
 
     *Atlas entry: Part 4 (pending).*
 
-**Can fitting controls be drawn?** The tools here are drawn from the governance and audit literature. Pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR and Model Cards supply per-system artefacts; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
+**Can fitting controls be drawn?** The tools here are drawn from the governance and audit literature. Pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR, Model Cards, and Datasheets for Datasets supply per-system and per-dataset artefacts; the HAX Workbook sits alongside Amershi's Human-AI Interaction guidelines for user-facing systems; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
 
 ??? note "NIST AI Risk Management Framework"
     Voluntary framework for risk identification, measurement, and management at the system level [4]. Use as the organisation-level vocabulary when drawing risk categories and management functions; it names the pieces a controls sketch must address.
@@ -239,6 +273,16 @@ Work the two parts in order. Establish empirical fitness first; if the model doe
 
 ??? note "Model Cards"
     A single-page document of a model's training provenance, performance slices, and intended-use boundary [8]. Use as the owner-facing artefact the controls set is anchored on; particularly strong for classical-ML and fine-tuned routes, where provenance and slice performance are load-bearing.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "Datasheets for Datasets"
+    A template documenting a dataset's motivation, composition, collection process, preprocessing, uses, distribution, and maintenance [17]. The natural pair to Model Cards [8]: Model Cards document the model, Datasheets document the data. Particularly load-bearing for classical-ML and fine-tuned routes, where label provenance is the stability hinge.
+
+    *Atlas entry: Part 4 (pending).*
+
+??? note "HAX Workbook"
+    A planning worksheet from the Microsoft HAX Toolkit [18] for prioritising which of the Human-AI Interaction guidelines [5] apply to a specific user-facing system, and for assigning an owner to each. Use as the bridge between Amershi's guidelines and a concrete per-system plan.
 
     *Atlas entry: Part 4 (pending).*
 
@@ -481,3 +525,17 @@ The next chapter, [Chapter 8](ch-8.md), picks up the routing map and runs it thr
 [10] Yao S, Zhao J, Yu D, et al. ReAct: Synergizing Reasoning and Acting in Language Models. In: *ICLR 2023*. arXiv:2210.03629. **[verified]**
 
 [11] Schick T, Dwivedi-Yu J, Dessì R, et al. Toolformer: Language Models Can Teach Themselves to Use Tools. In: *NeurIPS 2023*. arXiv:2302.04761. **[verified]**
+
+[12] Agrawal A, Gans J, Goldfarb A. A Simple Tool to Start Making Decisions with the Help of AI. *Harvard Business Review*; April 2018. **[verified]**
+
+[13] Dorard L. *The Machine Learning Canvas: a template for developing and documenting ML systems*. OWNML; 2015–. **[secondary]**
+
+[14] Snowden DJ, Boone ME. A Leader's Framework for Decision Making. *Harvard Business Review*; November 2007. **[verified]**
+
+[15] Klein G. Performing a Project Premortem. *Harvard Business Review*; September 2007. **[verified]**
+
+[16] Google People + AI Research. *People + AI Guidebook*. 2019–. Available at: pair.withgoogle.com/guidebook. **[verified]**
+
+[17] Gebru T, Morgenstern J, Vecchione B, et al. Datasheets for Datasets. *Commun. ACM* 2021;64(12):86–92. (arXiv:1803.09010, 2018). **[verified]**
+
+[18] Microsoft Research. *HAX Toolkit — Workbook*. Microsoft; 2021–. Available at: microsoft.com/en-us/haxtoolkit. **[verified]**
