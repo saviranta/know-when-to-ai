@@ -82,6 +82,12 @@ nav:
       - "G2 — MECE check": tool-mece.md
       - "G2 — Jobs-to-be-done": tool-jtbd.md
       - "G2 — Ishikawa (fishbone)": tool-ishikawa.md
+      - "G3 — Operator shadowing": tool-operator-shadowing.md
+      - "G3 — Time-and-motion records": tool-time-and-motion-records.md
+      - "G3 — Value-stream mapping": tool-value-stream-mapping.md
+      - "G3 — SIPOC": tool-sipoc.md
+      - "G3 — Decision tables": tool-decision-tables.md
+      - "G3 — DMN": tool-dmn.md
       - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
       - "G4 — Reversibility classes": tool-reversibility-classes.md
       - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
