@@ -15,6 +15,8 @@ This site renders the book in progress. Chapters appear here as they move from m
 - **[Chapter 5 — G1 Observe](ch-5.md)** — the situation statement, and the observation loop that produces it.
 - **[Chapter 6 — G2 Decompose](ch-6.md)** — the issue tree, Minto's pyramid, and the decomposition frames that feed it.
 - **[Chapter 7 — G3 Route](ch-7.md)** — four outcomes, the controls bar, the AI capability levels, the five routing errors, and the routing map.
+- **[Chapter 8 — G4 Sequence](ch-8.md)** — three lenses — dependencies, reversibility, blast radius — producing a dependency order the rollout substrate can carry.
+- **[Chapter 9 — G5 Commit](ch-9.md)** — a one-page commitment per piece: named owner, numeric rollback triggers, review cadence, sunset criteria.
 
 ## Rendering demos
 

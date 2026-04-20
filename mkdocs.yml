@@ -67,9 +67,13 @@ nav:
       - "5 — G1 Observe": ch-5.md
       - "6 — G2 Decompose": ch-6.md
       - "7 — G3 Route": ch-7.md
-      - "8 — G4 Sequence and G5 Commit": ch-8.md
-      - "9 — Access indices": ch-9.md
-      - "10 — Overlays": ch-10.md
+      - "8 — G4 Sequence": ch-8.md
+      - "9 — G5 Commit": ch-9.md
+      - "10 — Access indices": ch-10.md
+      - "11 — Overlays": ch-11.md
+  - Toolkit:
+      - "Blast-radius estimation": tool-blast-radius-estimation.md
+      - "Rollback-trigger design": tool-rollback-trigger-design.md
   - Rendering demos:
       - "Mermaid — method spine": illustration-1-1.md
       - "SVG — four answers": illustration-2-1.md

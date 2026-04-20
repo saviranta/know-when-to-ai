@@ -295,7 +295,7 @@ Then the empirical phase. Pick by how the decision's blast radius constrains the
 Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choice follows: which of the AI capability levels? The levels themselves are in section 7.6; the question here is which tools help make the choice. Four tools do most of the work. Run them in order. The adaptation decision tree picks between prompt, retrieval, fine-tune, and agent. The precondition tests follow — a label budget if the tree arrives at fine-tune or classical ML, a retrievable-quality test if it arrives at RAG. The total-cost-of-ownership ladder then sanity-checks the choice against the cost the owning team can actually carry, indefinitely.
 
 ??? note "Adaptation decision tree"
-    Chapter 10 overlay. Runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Use as the top-of-tree choice between levels; each step past *prompt* must be earned by a case the previous step cannot carry (see heuristic 2 in Illustration 7.2).
+    Chapter 11 overlay. Runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Use as the top-of-tree choice between levels; each step past *prompt* must be earned by a case the previous step cannot carry (see heuristic 2 in Illustration 7.2).
 
     *Toolkit entry: Part 4 (pending).*
 
@@ -310,7 +310,7 @@ Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choic
     *Toolkit entry: Part 4 (pending).*
 
 ??? note "Total-cost-of-ownership ladder"
-    Chapter 10 overlay. Attaches a per-call cost band to each level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
+    Chapter 11 overlay. Attaches a per-call cost band to each level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
 
     *Toolkit entry: Part 4 (pending).*
 
@@ -452,13 +452,13 @@ A note before the levels. At every level above *Rule*, the substrate has two lay
 
 **Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; approaches that teach the model to invoke tools from demonstration, such as Toolformer [11], make the larger toolkit tractable at training time but do not remove the trajectory variance at runtime. The wrapper carries that variance: tool dispatch, input and output validation, a rollback substrate, trajectory replay.
 
-**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step up the levels and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)). The wrapper here is itself a distributed system — a message bus, a coordination protocol, worker sandboxes, per-agent audit streams.
+**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step up the levels and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see the total-cost-of-ownership overlay in [Chapter 11](ch-11.md)). The wrapper here is itself a distributed system — a message bus, a coordination protocol, worker sandboxes, per-agent audit streams.
 
 Three heuristics govern the choice of level.
 
 **Prefer the simpler level.** The levels climb from rule to multi-agent in order of surface area — more code, more failure modes, more cost per call, more places to audit. Climbing must be earned. A route to a multi-agent system needs a case the tool-using-agent level cannot carry.
 
-**Retrieve before you fine-tune; fine-tune before you agent.** The adaptation decision tree (Chapter 10's overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Most teams reach for agents three steps too early.
+**Retrieve before you fine-tune; fine-tune before you agent.** The adaptation decision tree (Chapter 11's overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Most teams reach for agents three steps too early.
 
 **Agent only for branching.** A single LLM call that returns structured output is not an agent. If the task can be done by one call with one schema, it does not need a planner. The planner pays its cost in trajectory variance; the task must justify that cost.
 
