@@ -72,51 +72,54 @@ nav:
       - "10 — Access indices": ch-10.md
       - "11 — Overlays": ch-11.md
   - Toolkit:
-      - "Tier 0 — Technochauvinism check": tool-technochauvinism-check.md
-      - "Tier 0 — Abolition check": tool-abolition-check.md
-      - "G1 — Framed problem paragraph": tool-framed-problem-paragraph.md
-      - "G1 — Stakeholder map": tool-stakeholder-map.md
-      - "G1 — System description": tool-system-description.md
-      - "G2 — Minto pyramid": tool-minto-pyramid.md
-      - "G2 — Issue tree": tool-issue-tree.md
-      - "G2 — MECE check": tool-mece.md
-      - "G2 — Jobs-to-be-done": tool-jtbd.md
-      - "G2 — Ishikawa (fishbone)": tool-ishikawa.md
-      - "G3 — Operator shadowing": tool-operator-shadowing.md
-      - "G3 — Time-and-motion records": tool-time-and-motion-records.md
-      - "G3 — Value-stream mapping": tool-value-stream-mapping.md
-      - "G3 — SIPOC": tool-sipoc.md
-      - "G3 — Decision tables": tool-decision-tables.md
-      - "G3 — DMN": tool-dmn.md
-      - "G3 — AI canvas": tool-ai-canvas.md
-      - "G3 — ML canvas": tool-ml-canvas.md
-      - "G3 — Cynefin framework": tool-cynefin.md
-      - "G3 — Pre-mortem": tool-pre-mortem.md
-      - "G3 — Pair worksheet": tool-pair-worksheet.md
-      - "G3 — Shadow deployment": tool-shadow-deployment.md
-      - "G3 — Offline evaluation": tool-offline-evaluation.md
-      - "G3 — Controlled A/B": tool-controlled-ab.md
-      - "G3 — Adaptation decision tree": tool-adaptation-decision-tree.md
-      - "G3 — Label budget calculation": tool-label-budget-calculation.md
-      - "G3 — Retrievable quality test": tool-retrievable-quality-test.md
-      - "G3 — TCO ladder": tool-total-cost-of-ownership-ladder.md
-      - "G3 — NIST AI RMF": tool-nist-ai-rmf.md
-      - "G3 — ISO/IEC 42001": tool-iso-42001.md
-      - "G3 — SMACTR internal audit": tool-smactr.md
-      - "G3 — Model cards": tool-model-cards.md
-      - "G3 — Datasheets for datasets": tool-datasheets-for-datasets.md
-      - "G3 — HAX Workbook": tool-hax-workbook.md
-      - "G3 — Shneiderman two-axis": tool-shneiderman-two-axis.md
-      - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
-      - "G4 — Reversibility classes": tool-reversibility-classes.md
-      - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
-      - "G4 — Three-stage rollout": tool-three-stage-rollout.md
-      - "G5 — Rollback-trigger design": tool-rollback-trigger-design.md
-      - "G5 — Named-owner discipline": tool-named-owner-discipline.md
-      - "G5 — Review-cadence matrix": tool-review-cadence-matrix.md
-      - "G5 — Sunset criteria worksheet": tool-sunset-criteria-worksheet.md
-      - "Cross-gate — Bow-tie analysis": tool-bow-tie-analysis.md
-      - "Cross-gate — STPA": tool-stpa.md
+      - "< 30-min thinking or session":
+          - "Tier 0 — Technochauvinism check": tool-technochauvinism-check.md
+          - "Tier 0 — Abolition check": tool-abolition-check.md
+          - "G1 — Framed problem paragraph": tool-framed-problem-paragraph.md
+          - "G2 — MECE check": tool-mece.md
+          - "G3 — Cynefin framework": tool-cynefin.md
+          - "G4 — Reversibility classes": tool-reversibility-classes.md
+          - "G5 — Named-owner discipline": tool-named-owner-discipline.md
+      - "Workshop or reflection":
+          - "G1 — Stakeholder map": tool-stakeholder-map.md
+          - "G2 — Minto pyramid": tool-minto-pyramid.md
+          - "G2 — Issue tree": tool-issue-tree.md
+          - "G2 — Jobs-to-be-done": tool-jtbd.md
+          - "G2 — Ishikawa (fishbone)": tool-ishikawa.md
+          - "G3 — SIPOC": tool-sipoc.md
+          - "G3 — Decision tables": tool-decision-tables.md
+          - "G3 — DMN": tool-dmn.md
+          - "G3 — AI canvas": tool-ai-canvas.md
+          - "G3 — ML canvas": tool-ml-canvas.md
+          - "G3 — Pre-mortem": tool-pre-mortem.md
+          - "G3 — Pair worksheet": tool-pair-worksheet.md
+          - "G3 — Adaptation decision tree": tool-adaptation-decision-tree.md
+          - "G3 — Label budget calculation": tool-label-budget-calculation.md
+          - "G3 — TCO ladder": tool-total-cost-of-ownership-ladder.md
+          - "G3 — NIST AI RMF": tool-nist-ai-rmf.md
+          - "G3 — ISO/IEC 42001": tool-iso-42001.md
+          - "G3 — Model cards": tool-model-cards.md
+          - "G3 — Datasheets for datasets": tool-datasheets-for-datasets.md
+          - "G3 — HAX Workbook": tool-hax-workbook.md
+          - "G3 — Shneiderman two-axis": tool-shneiderman-two-axis.md
+          - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
+          - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
+          - "G5 — Rollback-trigger design": tool-rollback-trigger-design.md
+          - "G5 — Review-cadence matrix": tool-review-cadence-matrix.md
+          - "G5 — Sunset criteria worksheet": tool-sunset-criteria-worksheet.md
+          - "Cross-gate — Bow-tie analysis": tool-bow-tie-analysis.md
+          - "Cross-gate — STPA": tool-stpa.md
+      - "Test or process (needs operating)":
+          - "G1 — System description": tool-system-description.md
+          - "G3 — Operator shadowing": tool-operator-shadowing.md
+          - "G3 — Time-and-motion records": tool-time-and-motion-records.md
+          - "G3 — Value-stream mapping": tool-value-stream-mapping.md
+          - "G3 — Shadow deployment": tool-shadow-deployment.md
+          - "G3 — Offline evaluation": tool-offline-evaluation.md
+          - "G3 — Controlled A/B": tool-controlled-ab.md
+          - "G3 — Retrievable quality test": tool-retrievable-quality-test.md
+          - "G3 — SMACTR internal audit": tool-smactr.md
+          - "G4 — Three-stage rollout": tool-three-stage-rollout.md
   - Rendering demos:
       - "Mermaid — method spine": illustration-1-1.md
       - "SVG — four answers": illustration-2-1.md
