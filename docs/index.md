@@ -17,15 +17,11 @@ This site renders the book in progress. Chapters appear here as they move from m
 - **[Chapter 7 — G3 Route](ch-7.md)** — four outcomes, the controls bar, the AI capability levels, the five routing errors, and the routing map.
 - **[Chapter 8 — G4 Sequence](ch-8.md)** — three lenses — dependencies, reversibility, blast radius — producing a dependency order the rollout substrate can carry.
 - **[Chapter 9 — G5 Commit](ch-9.md)** — a one-page commitment per piece: named owner, numeric rollback triggers, review cadence, sunset criteria.
+- **[Chapter 10 — Three worked engagements](ch-10.md)** — three European healthcare-operations briefs run through the method: an Abolition refusal, a Non-AI routing, and an assist-plus-autonomous mix.
 
 ## Toolkit
 
 Forty-five cards covering Tier 0 and all five gates. Each card has the same twelve-section anatomy — problem, use, inputs, outputs, a visualisation, a worked paper trail, pitfalls, when not to use, provenance, related tools, verification. Grouped three ways in the sidebar: **under thirty minutes** (thinking or session), **workshop or reflection**, and **test or process** (needs operating). Start at any card the chapters link to, or browse the three groups directly in the left-hand nav.
-
-## In progress
-
-- **[Chapter 10 — Access indices](ch-10.md)** — by-gate and by-situation lookups into the toolkit. *Drafting.*
-- **[Chapter 11 — Overlays](ch-11.md)** — cross-gate patterns: bow-tie, STPA, adaptation tree, TCO ladder. *Drafting.*
 
 ## Rendering demos
 
