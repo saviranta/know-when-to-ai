@@ -73,6 +73,7 @@ nav:
       - "11 — Overlays": ch-11.md
   - Toolkit:
       - "< 30-min thinking or session":
+          - "Tier 0 — Six questions to disarm": tool-disarm-questions.md
           - "Tier 0 — Technochauvinism check": tool-technochauvinism-check.md
           - "Tier 0 — Abolition check": tool-abolition-check.md
           - "G1 — Framed problem paragraph": tool-framed-problem-paragraph.md
