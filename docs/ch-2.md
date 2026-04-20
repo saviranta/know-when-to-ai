@@ -12,7 +12,7 @@ Most of the noise about AI lumps every use into one pile. This book does not. Th
 
 **Augmentation.** AI enables a faculty that was limited. Real-time translation during a conversation, image description for a blind user, live captioning, voice for a non-verbal user. Not producing, not deciding — removing friction that was in the way. Examples: accessibility tools, real-time language support, situational awareness during a meeting.
 
-**Problem-solving.** AI deployed inside an organisation to help carry or make a decision, where the person running the system and the person affected by its output are usually not the same. Examples: triaging a support queue, scoring a loan application, recommending a treatment path, routing an incident. This is the mode the rest of the book teaches. It is the only mode where the four answers of [Chapter 1](ch-1.md) — *Off-limits to AI*, *Not an AI problem*, *AI as assistant*, *Autonomous AI* — are the right question to ask.
+**Problem-solving.** AI deployed inside an organisation to help carry or make a decision, where the person running the system and the person affected by its output are usually not the same. Examples: triaging a support queue, scoring a loan application, recommending a treatment path, routing an incident. This is the mode the rest of the book teaches. It is the only mode where the six answers of [Chapter 1](ch-1.md) — *Off-limits to AI*, *Not a tech problem*, *Human-operated*, *Non-AI automation*, *AI as assistant*, *Autonomous AI* — are the right question to ask.
 
 See Illustration 2.1.
 

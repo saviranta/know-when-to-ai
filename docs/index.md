@@ -8,7 +8,7 @@ This site renders the book in progress. Chapters appear here as they move from m
 
 ## Currently published
 
-- **[Chapter 1 — What this book is](ch-1.md)** — two acts that keep needing a human, and the four answers the method can produce.
+- **[Chapter 1 — What this book is](ch-1.md)** — two acts that keep needing a human, and the six answers the method can produce.
 - **[Chapter 2 — Five modes of AI use](ch-2.md)** — generative, conversation, building, augmentation, and the fifth: AI deployed inside an organisation.
 - **[Chapter 3 — The method at a glance](ch-3.md)** — two gates above, five triage gates inside, the atlas below.
 
@@ -17,7 +17,7 @@ This site renders the book in progress. Chapters appear here as they move from m
 Three representative illustrations, shown as standalone pages so you can see how each technique behaves in light and dark mode:
 
 - [Mermaid flowchart — the method spine](illustration-1-1.md)
-- [Inline SVG — the four answers](illustration-2-1.md)
+- [Inline SVG — the six answers](illustration-2-1.md)
 - [CSS matrix — routing](illustration-8-1.md)
 
 ## House rule

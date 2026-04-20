@@ -1,6 +1,6 @@
 # Chapter 4 — Tier 0: the two checks before the gates
 
-Two questions have to be answered before the method reaches G1. Both are about whether the engagement belongs to this method at all. Both are answerable from the brief, in a single framing conversation, without decomposition or routing. Both are binary — pass or fail — and a failure on either produces one of the book's four answers.
+Two questions have to be answered before the method reaches G1. Both are about whether the engagement belongs to this method at all. Both are answerable from the brief, in a single framing conversation, without decomposition or routing. Both are binary — pass or fail — and a failure on either produces one of the book's two refusals: *Off-limits to AI* or *Not a tech problem*. The other four answers — *Human-operated*, *Non-AI automation*, *AI as assistant*, *Autonomous AI* — are only reachable if both checks pass and the engagement opens into Tier 1.
 
 Tier 0 is where this happens.
 
@@ -48,7 +48,7 @@ See Illustration 4.1.
   <polygon class="ch4t-head" points="658,178 672,178 665,188" />
 
   <rect class="ch4t-rect-out" x="60" y="195" width="280" height="70" rx="4" />
-  <text class="ch4t-label-sm" x="200" y="220">Not an AI problem</text>
+  <text class="ch4t-label-sm" x="200" y="220">Not a tech problem</text>
   <text class="ch4t-sub-sm" x="200" y="245">Fix is process, ownership, policy, or measurement.</text>
 
   <rect class="ch4t-rect-out" x="460" y="195" width="280" height="70" rx="4" />
@@ -97,7 +97,7 @@ None of these are technical problems. A model at any substrate will produce conf
 
 *The Broussard single-question test.* From the original work [1]: *does this problem arise because of the absence of a tool, or despite the presence of one?* A problem that arises because the tool is absent is a candidate for a tool. A problem that arises despite the tool is not tooling's problem to solve.
 
-**The artefact.** A one-paragraph written determination: *Not an AI problem, because [process / ownership / policy / measurement]. The fix is [specific change]. The remaining AI scope, if any, is [residual problem or none].* This determination is not the engagement's end; it is the engagement's real brief.
+**The artefact.** A one-paragraph written determination: *Not a tech problem, because [process / ownership / policy / measurement]. The fix is [specific change]. The remaining AI scope, if any, is [residual problem or none].* This determination is not the engagement's end; it is the engagement's real brief.
 
 **Common failures of the check itself.**
 
@@ -148,7 +148,7 @@ The checks run in a conversation, not a process. A single hour with the sponsor,
 
 ## 4.5 When Tier 0 is not decisive
 
-Most engagements pass both checks and move to G1. Passing Tier 0 is not an endorsement; it is just the statement that the book's method applies. The other two outcomes — *AI as assistant* and *Autonomous AI* — are still live, and both of them can still conclude in a refusal to automate a specific sub-problem at G3. Tier 0's refusals are categorical; G3's refusals are controls-based. A book with only the first kind would refuse too much. A book with only the second kind would refuse too little.
+Most engagements pass both checks and move to G1. Passing Tier 0 is not an endorsement; it is just the statement that the book's method applies. The other four outcomes — *Human-operated*, *Non-AI automation*, *AI as assistant*, *Autonomous AI* — are still live. Any of them can be reached at G3, and two of them (*Human-operated* and *Non-AI automation*) are quiet refusals of their own kind — they decline to place AI against a specific sub-problem on controls grounds, not categorical grounds. Tier 0's refusals are categorical; G3's refusals are controls-based. A book with only the first kind would refuse too much. A book with only the second kind would refuse too little.
 
 Next: G1 Observe, where framing and diagnosis fold into one iterative pass and the situation statement is written.
 
