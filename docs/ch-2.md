@@ -6,7 +6,7 @@ Most of the noise about AI lumps every use into one pile. This book does not. Th
 
 **Generative work.** AI produces an artefact. Copy, image, audio, video, code snippet, slide, jingle. The output is the point. Someone with taste asks the AI to make the thing, reads or watches or listens, and keeps what is useful. Examples: marketing copy, a storyboard, product imagery, a draft blog post.
 
-**Conversation and reflection.** AI as thinking partner. Learning, researching, challenging, steel-manning, talking a decision through. The output is not an artefact — it is a better-informed person. Examples: getting up to speed on an unfamiliar field, pressure-testing a draft argument, asking for the view from a different angle.
+**Conversation and reflection.** AI as thinking partner. Researching, learning, summarising, interpreting, challenging, steel-manning, talking a decision through. The primary output is a better-informed person — even when the work leaves behind notes, a briefing, or a themes document along the way. The artefact, if there is one, is a working document for the thinker; the point is still the thinking. Examples: researching an unfamiliar field before a decision, pressure-testing a draft argument, interpreting a long report, asking for the view from a different angle.
 
 **Building.** AI as co-builder. Code, prototypes, drafts, small utilities. Faster, smoother, more ambitious than the builder alone — but the builder is still in charge of what gets built. Examples: pair-programming on a feature, drafting a spec with the AI in the room, prototyping a data transform you would never otherwise find time for.
 
@@ -48,7 +48,7 @@ See Illustration 2.1.
   <line class="ch2mod-rule" x1="200" y1="95" x2="280" y2="95" />
   <text class="ch2mod-sub" x="240" y="120">AI as</text>
   <text class="ch2mod-sub" x="240" y="138">thinking partner.</text>
-  <text class="ch2mod-ex" x="240" y="168">learn, challenge</text>
+  <text class="ch2mod-ex" x="240" y="168">research, learn</text>
 
   <rect class="ch2mod-rect" x="320" y="35" width="140" height="150" rx="4" />
   <text class="ch2mod-label" x="390" y="75">Building</text>
