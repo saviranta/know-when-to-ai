@@ -143,7 +143,7 @@ G3 produces four outcomes, one per piece. Every piece leaves the gate with exact
 
 **Human-operated.** The piece stays with a person. No automation earns its place here — not because automation is forbidden, but because the positive case for it has not been made. The person's workflow may get AI support at *build* time (training material, lookup aids, onboarding tools) without any of that appearing in the runtime substrate. In freight, an experienced yard manager negotiating with a driver after two missed windows fits here: the exception handling is improvised, relational, and depends on accumulated knowledge that is hard to specify. The route reads: *Human-operated. Substrate: yard manager. No system built at this point. Controls: operator training and escalation template. Justification: exception categories are open-ended; cost of an automated wrong call exceeds the cost of a human one.*
 
-**Non-AI automation.** The piece is carried by a rule, a script, a constraint solver, or another deterministic substrate — nothing that learns from data. The behaviour is repeatable, the logic is inspectable, and the audit path is the code itself. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Controls: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.* Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — sits on the AI side of the atlas, not here. A piece that fits classical ML is an AI candidate, routed through Q3 to *AI as assistant* or *Autonomous AI*.
+**Non-AI automation.** The piece is carried by a rule, a script, a constraint solver, or another deterministic substrate — nothing that learns from data. The behaviour is repeatable, the logic is inspectable, and the audit path is the code itself. In freight, dock-door assignment fits: it is a constrained-optimisation problem (door compatibility, current queue, cargo type) with well-defined inputs and a verifiable objective. The route reads: *Non-AI automation. Substrate: constraint solver against the door-compatibility matrix. Controls: daily queue-length report, monthly solver fitness review. Justification: deterministic reproducibility is required for audit, and the problem fits a classical solver.* Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — sits above the Non-AI / AI boundary, not here. A piece that fits classical ML is an AI candidate, routed through Q3 to *AI as assistant* or *Autonomous AI*.
 
 **AI as assistant.** An AI level fits the piece, but no level is defensible as AI-held under the controls the decision needs. A human holds the decision; the AI supports with retrieval, drafts, summaries, or option generation. The interaction pattern is drawn from the Human-AI Interaction guidelines [5] — drafts presented, easy to dismiss, easy to correct, reasoning exposed on request. In freight, carrier-ETA exception triage fits here: a model surfaces the three late trailers whose risk profiles most resemble next week's likely bottleneck and drafts an outreach message for each, but the yard coordinator reads, adjusts, and sends. The route reads: *AI as assistant. Substrate: LLM with retrieval against the carrier-performance log. Controls: drafts always reviewed, send log, operator override one click away. Justification: the escalation decision is judgment-heavy, but model-suggested options reduce time-to-outreach measurably.*
 
@@ -164,22 +164,22 @@ Four tools answer this without any AI-specific apparatus. Use them in that order
 ??? note "Operator shadowing"
     Sit with the person doing the work for a full shift and write down what they actually do, minute by minute. Best tool when the stated process and the observed process diverge. Weakest when the work is already well-documented or when the observed shift is not representative.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Time-and-motion records"
     The classical industrial-engineering artefact: count the distribution of activity across a representative week and surface the steps where repetition is genuine. Best when the work is high-volume and repetitive enough to aggregate meaningfully. Weakest for low-frequency or creative work.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Value-stream mapping (VSM)"
     From Lean production: draw the end-to-end flow and mark where each step adds value, where it waits, where it is reworked. Best when the question is *would automation here actually reduce cycle time?*. Weakest when the flow is too unstable to map.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "SIPOC"
     Suppliers, Inputs, Process, Outputs, Customers — a five-column scope map from Lean / Six Sigma. Best as a cheap starter sketch before VSM when the flow's boundaries are clearer than its internal steps. Weakest when the value question is about flow efficiency; VSM is the better tool there.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 If the four together cannot name the automation case in a paragraph, the piece is routed to *Human-operated*. The gate does not use *"we could probably automate this"* as an input.
 
@@ -192,12 +192,12 @@ Two tools draw the surface. Draw the decision table first. If every row terminat
 ??? note "Decision tables"
     Rows of conditions, columns of outcomes, cells marked yes / no / —. The fastest way to draw the decision surface on paper. If every row terminates cleanly, the piece is a rule and the table is the specification.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Decision Model and Notation (DMN)"
     The industrial version of the decision table, standardised by OMG [9]. Pairs a decision-requirements diagram with executable decision tables. Use when the rule surface has dependencies — decision A depends on decision B depends on decision C — and a flat table is no longer enough.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 Classical machine learning — gradient-boosted trees, logistic regression, support-vector machines — is an AI substrate, not a Q2 outcome. A piece that cannot be written as an enumerable decision surface but whose outcome space is small, well-labelled, and stable fits classical ML; the test then shifts to the AI-range precondition: is there a stable label set, a maintainable labelling pipeline, and a budget for both (see routing error 4 in section 7.7)? The label-budget calculation, listed under Q3's AI-range tools, is the right instrument.
 
@@ -214,105 +214,105 @@ On paper, five tools help. Run the AI Canvas first: it decomposes the decision i
 ??? note "AI Canvas"
     A single-page decomposition of the decision into seven cells — prediction, judgement, action, outcome, input, training, feedback [12]. Use as the first paper read. If the decision does not map cleanly onto a prediction sub-task with separable judgement, AI does not belong, regardless of how capable the candidate model is.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Machine Learning Canvas"
     A ten-block template for an end-to-end ML project — value proposition, data sources, prediction task, features, decisions, making predictions, offline and live evaluation, model building, data collection [13]. Heavier than the AI Canvas. Best when the route looks classical-ML and the engineering plan needs drawing in depth.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Cynefin"
     A five-domain triage frame for decision contexts — Clear, Complicated, Complex, Chaotic, and a central Confusion [14]. AI substrates fit the *Complicated* domain, where cause and effect can be discovered by analysis; the *Complex* domain, with emergent behaviour and retrospective causation, rewards a *probe–sense–respond* approach instead, not a model.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Pre-mortem"
     Imagine that the AI system has failed six months after launch, then list the reasons [15]. The prospective-hindsight move surfaces failure modes before any deploy. Best run as a forty-five-minute workshop with the whole team; each named reason becomes either a control to design or a precondition to verify.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "PAIR User Needs + AI Strengths worksheet"
     A single-page worksheet from Google's People + AI Guidebook [16] that matches user-need statements to AI-strength statements, and forces the team to commit to explicit success criteria before the build. Best for user-facing AI where the user-need-to-model-capability match is load-bearing. Weakest for back-office decisions with no user-visible interface.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 Then the empirical phase. Pick by how the decision's blast radius constrains the experiment. Shadow deployment is the cheapest and safest, because the outputs are not actioned. Offline evaluation uses the richest data (historical operator decisions) but can only measure against past distributions. A controlled A/B is the only test that measures against the current substrate under live conditions, but a decision with a blast radius larger than a small cohort will not admit an A/B at all — a constraint that itself informs the routing.
 
 ??? note "Shadow deployment"
     The AI runs on live inputs but its outputs are not actioned; outputs are logged and compared to the substrate in production. Best as the first empirical read. Weakest on decisions where the AI's output would have changed the input distribution the next step sees.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Offline evaluation"
     Run the AI over a held-out set of historical operator decisions and compare. Best when the historical distribution is representative. Weakest when the decision distribution drifts fast, or when the historical labels are themselves noisy (see routing error 2).
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Controlled A/B against the current substrate"
     Route a slice of live traffic to the AI substrate, the rest to the current one, compare outcomes over a pre-declared window. Best when the blast radius admits a small cohort. Not available for decisions with large or concentrated blast radius.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 **Can fitting controls be drawn?** The tools here are drawn from the governance and audit literature. Pick by the grain the decision needs. NIST and ISO 42001 set the vocabulary at the organisation level; SMACTR, Model Cards, and Datasheets for Datasets supply per-system and per-dataset artefacts; the HAX Workbook sits alongside Amershi's Human-AI Interaction guidelines for user-facing systems; Shneiderman's two-axis frame is a fast sanity check at the level-choice line.
 
 ??? note "NIST AI Risk Management Framework"
     Voluntary framework for risk identification, measurement, and management at the system level [4]. Use as the organisation-level vocabulary when drawing risk categories and management functions; it names the pieces a controls sketch must address.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "ISO/IEC 42001"
     International management-system standard for AI [3]. Use where the organisation is seeking third-party certification or has contractual obligations that reference ISO standards. Sets the process discipline around the controls design rather than the design itself.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "SMACTR internal-audit protocol"
     Scoping, Mapping, Artefact collection, Testing, Reflection [7]. A reproducible procedure for drawing the audit trail and the rollback trigger *before* the system is built. Use to turn *"we will have controls"* into a named set of artefacts with owners against them.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Model Cards"
     A single-page document of a model's training provenance, performance slices, and intended-use boundary [8]. Use as the owner-facing artefact the controls set is anchored on; particularly strong for classical-ML and fine-tuned routes, where provenance and slice performance are load-bearing.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Datasheets for Datasets"
     A template documenting a dataset's motivation, composition, collection process, preprocessing, uses, distribution, and maintenance [17]. The natural pair to Model Cards [8]: Model Cards document the model, Datasheets document the data. Particularly load-bearing for classical-ML and fine-tuned routes, where label provenance is the stability hinge.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "HAX Workbook"
     A planning worksheet from the Microsoft HAX Toolkit [18] for prioritising which of the Human-AI Interaction guidelines [5] apply to a specific user-facing system, and for assigning an owner to each. Use as the bridge between Amershi's guidelines and a concrete per-system plan.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Shneiderman two-axis frame"
     Automation level on one axis, human control on the other [6]. Use as a sanity check that *Autonomous AI* is not being chosen where a higher-control, lower-automation configuration would be both safer and adequate. Quick to apply at the line between assistant and autonomous.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ### Picking a level within the AI range
 
-Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choice follows: which level in the capability atlas? The atlas itself is in section 7.6; the question here is which tools help make the choice. Four tools do most of the work. Run them in order. The adaptation decision tree picks between prompt, retrieval, fine-tune, and agent. The precondition tests follow — a label budget if the tree arrives at fine-tune or classical ML, a retrievable-quality test if it arrives at RAG. The total-cost-of-ownership ladder then sanity-checks the choice against the cost the owning team can actually carry, indefinitely.
+Once the route is *AI as assistant* or *Autonomous AI*, a second, narrower choice follows: which of the AI capability levels? The levels themselves are in section 7.6; the question here is which tools help make the choice. Four tools do most of the work. Run them in order. The adaptation decision tree picks between prompt, retrieval, fine-tune, and agent. The precondition tests follow — a label budget if the tree arrives at fine-tune or classical ML, a retrievable-quality test if it arrives at RAG. The total-cost-of-ownership ladder then sanity-checks the choice against the cost the owning team can actually carry, indefinitely.
 
 ??? note "Adaptation decision tree"
     Chapter 10 overlay. Runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Use as the top-of-tree choice between levels; each step past *prompt* must be earned by a case the previous step cannot carry (see heuristic 2 in Illustration 7.2).
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Label-budget calculation"
     Labeller-hours per month, plus the cost of resolving disagreements between labellers. Non-optional for classical-ML and fine-tuned routes. A route without a label budget is a wish, not a plan (see routing error 4 in section 7.7).
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Retrievable-quality test"
     Is the corpus chunked sensibly, current, and indexed against the questions actually asked? The RAG precondition. A corpus that fails the test is not a RAG substrate; it is a human-side reference (see routing error 5).
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 ??? note "Total-cost-of-ownership ladder"
-    Chapter 10 overlay. Attaches a per-call cost band to each atlas level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
+    Chapter 10 overlay. Attaches a per-call cost band to each level, so the cost implication of climbing is visible at the routing table, not at deployment. Use to sanity-check whether the owning team can carry the cost the chosen level implies, indefinitely.
 
-    *Atlas entry: Part 4 (pending).*
+    *Toolkit entry: Part 4 (pending).*
 
 None of these tools replaces the gatekeeper's judgement. Each is a lens that makes a specific facet of the decision examinable. Together they let G3 be defended in a way no single overall heuristic could — and, on the way back from a failed engagement, debugged in a way no post-hoc story could.
 
@@ -338,13 +338,13 @@ At G3, the controls are not yet *built*; they are *drawn*. A credible sketch on 
 
 When in doubt, the route steps back one outcome. A piece whose controls design is half-finished on the page is routed to *AI as assistant* until the design is whole. This is the conservative rule, and it means that some problems the technology could handle well are held at assistant-level longer than they need to be. That is the intended failure mode of the gate.
 
-## 7.6 The AI capability atlas — choosing a level
+## 7.6 The AI capability levels — choosing a level
 
-Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decision follows: *which AI level?* The AI capability atlas names seven levels, ordered from simplest to most capable (and from smallest to largest surface area). See Illustration 7.2.
+Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decision follows: *which AI level?* Seven levels, ordered from simplest to most capable (and from smallest to largest surface area). See Illustration 7.2.
 
 <div style="max-width: 900px; margin: 2rem auto;">
 <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ch7a-title">
-  <title id="ch7a-title">The AI capability atlas</title>
+  <title id="ch7a-title">The AI capability levels</title>
 
   <style>
     .ch7a-rect { fill: var(--md-default-bg-color, #fff); stroke: var(--md-default-fg-color, #000); }
@@ -365,7 +365,7 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
     .ch7a-range-label { font: 600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.15em; fill: var(--md-default-fg-color, #000); text-anchor: middle; text-transform: uppercase; opacity: 0.55; }
   </style>
 
-  <text class="ch7a-band" x="400" y="18">The AI capability atlas &mdash; seven levels, simpler to more capable</text>
+  <text class="ch7a-band" x="400" y="18">The AI capability levels &mdash; seven levels, simpler to more capable</text>
 
   <text class="ch7a-range-label" x="65" y="44">Non-AI</text>
   <text class="ch7a-range-label" x="405" y="44">AI levels</text>
@@ -420,7 +420,7 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
   <text class="ch7a-axis-label" x="649" y="203">costlier</text>
   <text class="ch7a-axis-label" x="649" y="216">larger surface</text>
 
-  <text class="ch7a-band" x="400" y="258">Three heuristics for climbing the atlas</text>
+  <text class="ch7a-band" x="400" y="258">Three heuristics for climbing the levels</text>
 
   <text class="ch7a-sub" x="160" y="282">1. Prefer the simpler level.</text>
   <text class="ch7a-sub" x="160" y="298">Climbing must be earned by</text>
@@ -436,11 +436,11 @@ Once a piece is routed to *AI as assistant* or *Autonomous AI*, a second decisio
 </svg>
 </div>
 
-*Illustration 7.2 — The AI capability atlas. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI / AI boundary sits between rule and classical ML: the moment a substrate learns from data, it is AI.*
+*Illustration 7.2 — The AI capability levels. Seven levels from rule to multi-agent, ordered left-to-right by increasing capability and surface area. Stroke-weight carries the climb: a thicker border encodes larger operational surface, not more goodness. The Non-AI / AI boundary sits between rule and classical ML: the moment a substrate learns from data, it is AI.*
 
 A note before the levels. At every level above *Rule*, the substrate has two layers: a *model* that produces predictions or generations, and a *wrapper* that decides what goes in, what comes out, how the model is called, how its outputs are measured, and what happens when the model fails. For classical machine learning, the team typically owns both layers — labels, features, training pipeline, scorer, monitoring. From LLM upward, the model is almost always rented from a provider (Anthropic, OpenAI, Google) or self-hosted from open weights; the team owns the wrapper — the prompt, the retriever, the tools, the orchestration, the evaluation harness, the logs, and the controls. For most AI routes today, the engineering cost and the failure surface live in the wrapper, not in the model. The levels below are shapes of system, not shapes of model; at each level, what the team owns is named.
 
-**Rule.** A deterministic if/then, lookup, or constraint solver. No model; the rule surface itself is the substrate, and the code is its own audit path. Included at the edge of the atlas because the AI range borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
+**Rule.** A deterministic if/then, lookup, or constraint solver. No model; the rule surface itself is the substrate, and the code is its own audit path. Included at the edge because the AI range borders it; many pieces that look like AI candidates resolve to rules once their decision surface is drawn.
 
 **Classical machine learning.** Gradient-boosted trees, logistic regression, random forests, support-vector machines. The simplest AI level: the team typically *owns the model* — labels, features, training pipeline, retraining cadence — wrapped by a thin scorer and a monitoring job. The audit path runs through the training notebook and the feature store. Claimable where the label set is stable, the features are explainable to a non-specialist, and the team has a labelling budget it can carry for the life of the system.
 
@@ -452,11 +452,11 @@ A note before the levels. At every level above *Rule*, the substrate has two lay
 
 **Tool-using agent.** An LLM with an extended toolset, planning longer or more branchy task trajectories. The step from single agent to tool-using agent is a step in cost and in surface area; approaches that teach the model to invoke tools from demonstration, such as Toolformer [11], make the larger toolkit tractable at training time but do not remove the trajectory variance at runtime. The wrapper carries that variance: tool dispatch, input and output validation, a rollback substrate, trajectory replay.
 
-**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step on the atlas and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)). The wrapper here is itself a distributed system — a message bus, a coordination protocol, worker sandboxes, per-agent audit streams.
+**Multi-agent system.** A coordinator and specialised workers, often with their own tool access. The step from tool-using agent to multi-agent is the last step up the levels and the costliest; published figures suggest per-task cost at roughly ten to twenty times a single LLM call (see the total-cost-of-ownership overlay in [Chapter 10](ch-10.md)). The wrapper here is itself a distributed system — a message bus, a coordination protocol, worker sandboxes, per-agent audit streams.
 
 Three heuristics govern the choice of level.
 
-**Prefer the simpler level.** The atlas climbs from rule to multi-agent in order of surface area — more code, more failure modes, more cost per call, more places to audit. Climbing must be earned. A route to a multi-agent system needs a case the tool-using-agent level cannot carry.
+**Prefer the simpler level.** The levels climb from rule to multi-agent in order of surface area — more code, more failure modes, more cost per call, more places to audit. Climbing must be earned. A route to a multi-agent system needs a case the tool-using-agent level cannot carry.
 
 **Retrieve before you fine-tune; fine-tune before you agent.** The adaptation decision tree (Chapter 10's overlay) runs prompt → retrieval → fine-tune → agent, with stop rules at each step. Most teams reach for agents three steps too early.
 

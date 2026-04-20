@@ -17,21 +17,21 @@ flowchart TD
     S1[G1 Observe] --> S2[G2 Decompose] --> S3[G3 Route] --> S4[G4 Sequence] --> S5[G5 Commit]
   end
 
-  SPINE -.-> ATLAS[["Atlas &mdash; tools invoked at each gate"]]
+  SPINE -.-> TOOLKIT[["Toolkit &mdash; tools invoked at each gate"]]
 
   classDef tier0Gate stroke-width:3px,font-weight:bold;
   classDef tier1Stage stroke-width:1.5px;
-  classDef atlasNote stroke-dasharray:4 4,stroke-width:1px,font-style:italic;
+  classDef toolkitNote stroke-dasharray:4 4,stroke-width:1px,font-style:italic;
   class G1,G2 tier0Gate;
   class S1,S2,S3,S4,S5 tier1Stage;
-  class ATLAS atlasNote;
+  class TOOLKIT toolkitNote;
 ```
 
 Encoding:
 
 - Tier-0 gates — **3-pixel border** and bold type. Heavier border reads as gating.
 - Tier-1 stages — standard border, standard weight. A sequence without visual drama.
-- Atlas strip — dashed border, italic, reads as *ancillary*.
+- Toolkit strip — dashed border, italic, reads as *ancillary*.
 - Band arrow (Tier 0 → Tier 1) — thick (`==>`). Stage-to-stage arrows (within the spine) — normal. The band-to-band transition is the one emphasis in the diagram; everything else recedes.
 
 ## What the house rule buys
