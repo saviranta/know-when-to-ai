@@ -100,6 +100,13 @@ nav:
       - "G3 — Label budget calculation": tool-label-budget-calculation.md
       - "G3 — Retrievable quality test": tool-retrievable-quality-test.md
       - "G3 — TCO ladder": tool-total-cost-of-ownership-ladder.md
+      - "G3 — NIST AI RMF": tool-nist-ai-rmf.md
+      - "G3 — ISO/IEC 42001": tool-iso-42001.md
+      - "G3 — SMACTR internal audit": tool-smactr.md
+      - "G3 — Model cards": tool-model-cards.md
+      - "G3 — Datasheets for datasets": tool-datasheets-for-datasets.md
+      - "G3 — HAX Workbook": tool-hax-workbook.md
+      - "G3 — Shneiderman two-axis": tool-shneiderman-two-axis.md
       - "G4 — Dependency graph (PERT/CPM)": tool-dependency-graph.md
       - "G4 — Reversibility classes": tool-reversibility-classes.md
       - "G4 — Blast-radius estimation": tool-blast-radius-estimation.md
